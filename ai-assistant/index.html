@@ -29,6 +29,9 @@
     "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.live/"}
 }
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://learn.intellitrade.live/"},{"@type":"ListItem","position":2,"name":"AI Assistant","item":"https://learn.intellitrade.live/ai-assistant/"}]}
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
@@ -178,7 +181,7 @@
                 </ul>
 
                 <div class="edu-diagram">
-                    <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="AI Brain input and output flow showing data sources and trading analysis">
                         <!-- Title -->
                         <text x="350" y="22" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="14" fill="rgba(255,255,255,0.90)">AI Brain: Input / Output Flow</text>
 
@@ -292,7 +295,7 @@
                 </ul>
 
                 <h3>Regime-Aware Suggestions</h3>
-                <p>The AI Brain understands the same <a href="/gex/#gex-regimes">GEX regime rules</a> that the auto-trading system enforces. It will never suggest a bullish trade in negative GEX or a bearish trade in positive GEX. Its suggestions are always aligned with the systematic rules, but it can explain the <em>reasoning</em> behind those rules in real-time context.</p>
+                <p>The AI Brain understands the same <a href="/gex/#gex-regimes">GEX regime rules</a> that the auto-trading system enforces. It will never suggest a bullish trade in negative GEX or a bearish trade in positive GEX. This is especially critical for <a href="/zero-dte/">0DTE strategies</a> where rapid theta decay leaves no room for directional errors. Its suggestions are always aligned with the systematic rules, but it can explain the <em>reasoning</em> behind those rules in real-time context.</p>
 
                 <h2 id="futures-tab">Futures Analysis</h2>
                 <p>The <strong>Futures tab</strong> provides analysis specific to <a href="/futures/">futures trading</a>:</p>

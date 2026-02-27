@@ -29,6 +29,9 @@
     "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.live/"}
 }
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://learn.intellitrade.live/"},{"@type":"ListItem","position":2,"name":"Auto Trading","item":"https://learn.intellitrade.live/auto-trading/"}]}
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
@@ -178,7 +181,7 @@
                 <ul>
                     <li><strong>Option data feed</strong> &mdash; Real-time options chain data from Tradier, with CBOE for GEX calculations</li>
                     <li><strong>Trade generation engine</strong> &mdash; Scans market conditions and generates trade ideas based on <a href="/gex/#gex-regimes">GEX regime</a>, price levels, and volatility</li>
-                    <li><strong>Broker integration</strong> &mdash; Connects to Tradier API for options, IBKR for futures &mdash; built as a plug-in architecture for flexibility</li>
+                    <li><strong>Broker integration</strong> &mdash; Connects to Tradier API for options, IBKR for futures via <a href="/tradingview/">TradingView webhook signals</a> &mdash; built as a plug-in architecture for flexibility</li>
                     <li><strong>Position monitor</strong> &mdash; Tracks every open position with real-time P&amp;L from live option mid-prices</li>
                     <li><strong>Database tracking</strong> &mdash; Every trade idea, execution, and outcome is recorded for analysis and backtesting</li>
                 </ul>
@@ -200,7 +203,7 @@
                         <div class="compare-header purple-bg">IntelliAgent <span class="edu-pill purple">AI</span></div>
                         <div class="compare-body">
                             <p><strong>Window:</strong> <span class="val">All Day</span></p>
-                            <p><strong>Engine:</strong> Claude AI analyzes market conditions in real time</p>
+                            <p><strong>Engine:</strong> <a href="/ai-assistant/">Claude AI</a> analyzes market conditions in real time</p>
                             <p><strong>Role:</strong> Second perspective alongside rule-based agent</p>
                             <p><strong>Basis:</strong> AI-powered with regime-aware suggestions</p>
                         </div>
@@ -302,7 +305,7 @@
                 <p>Getting into a trade is only half the battle. The <strong>Dynamic Exit Manager</strong> monitors every open position every 30 seconds and applies a priority-ordered set of exit rules:</p>
 
                 <div class="edu-diagram">
-                    <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="Exit Manager decision tree showing priority-ordered exit rules">
                         <!-- Title -->
                         <text x="350" y="24" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="14" fill="rgba(255,255,255,0.90)">Exit Manager Decision Tree (Priority Order)</text>
 

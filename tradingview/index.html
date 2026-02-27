@@ -29,6 +29,9 @@
     "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.live/"}
 }
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://learn.intellitrade.live/"},{"@type":"ListItem","position":2,"name":"TradingView","item":"https://learn.intellitrade.live/tradingview/"}]}
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
@@ -60,6 +63,13 @@
         <a href="/zero-dte/">0DTE</a>
         <a href="/ira-collars/">IRA Collars</a>
         <a href="/tradingview/" class="active">TradingView</a>
+        <a href="/beyond-stocks/">Beyond Stocks</a>
+        <a href="/prop-firms/">Prop Firms</a>
+        <a href="/risk-management/">Risk Management</a>
+        <a href="/market-structure/">Market Structure</a>
+        <a href="/trading-plan/">Trading Plan</a>
+        <a href="/paper-trading/">Paper Trading</a>
+        <a href="/trading-taxes/">Trading Taxes</a>
     </nav>
     <main class="learn-main">
         <article class="edu-page">
@@ -478,7 +488,7 @@ alertcondition(shortBreak, "ORB Short", "Price broke below ORB Low")
                 </pre>
 
                 <h2 id="intellitrade-integration">IntelliTrade + TradingView Integration</h2>
-                <p>IntelliTrade's <strong>IBKR Webhook Bridge</strong> is designed to receive TradingView webhook alerts and execute trades through Interactive Brokers. This is how the <a href="/futures/">futures trading</a> system works.</p>
+                <p>IntelliTrade's <strong>IBKR Webhook Bridge</strong> is designed to receive TradingView webhook alerts and execute trades through Interactive Brokers. This is how the <a href="/futures/">futures trading</a> system works, combining webhook execution with <a href="/gex/">GEX analysis</a> for market context.</p>
 
                 <h3>Architecture</h3>
                 <div class="edu-diagram">
@@ -533,7 +543,7 @@ alertcondition(shortBreak, "ORB Short", "Price broke below ORB Low")
                 </ul>
 
                 <div class="edu-callout success">
-                    <strong>Hands-Free Execution:</strong> Once your TradingView alert and IntelliTrade bridge are configured, the entire flow is automated. Your Pine Script detects a signal, TradingView fires the webhook, the bridge validates and sends it to IB, and the trade is placed &mdash; all in under 2 seconds. You can be away from your computer entirely.
+                    <strong>Hands-Free Execution:</strong> Once your TradingView alert and IntelliTrade bridge are configured, the entire flow is automated. Your Pine Script detects a signal, TradingView fires the webhook, the bridge validates and sends it to IB, and the trade is placed &mdash; all in under 2 seconds. You can be away from your computer entirely. For SPX options, IntelliTrade's <a href="/auto-trading/">auto-trading agents</a> handle trade generation natively without TradingView.
                 </div>
 
                 <h2 id="orb-strategy">Example: Opening Range Breakout Strategy</h2>
@@ -657,7 +667,7 @@ alertcondition(shortBreak, "ORB Short", "Price broke below ORB Low")
                 </ul>
 
                 <div class="edu-callout">
-                    <strong>Getting Started:</strong> If you're new to TradingView, start with the free plan to explore charting and indicators. When you're ready to automate, upgrade to Essential or Plus for webhook support, set up the IntelliTrade IBKR Bridge, and start with paper trading. The <a href="https://intellitrade.live">IntelliTrade dashboard</a> provides setup instructions at the TV Alerts page.
+                    <strong>Getting Started:</strong> If you're new to TradingView, start with the free plan to explore charting and indicators. When you're ready to automate, upgrade to Essential or Plus for webhook support, set up the IntelliTrade IBKR Bridge, and start with paper trading. The <a href="https://intellitrade.live">IntelliTrade dashboard</a> provides setup instructions at the TV Alerts page. For <a href="/zero-dte/">0DTE options strategies</a>, IntelliTrade automates the entire process without TradingView.
                 </div>
             </div>
 

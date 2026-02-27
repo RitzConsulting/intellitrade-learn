@@ -29,6 +29,12 @@
     "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.live/"}
 }
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://learn.intellitrade.live/"},{"@type":"ListItem","position":2,"name":"IRA Collars","item":"https://learn.intellitrade.live/ira-collars/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What happens if the stock crashes in a collar strategy?","acceptedAnswer":{"@type":"Answer","text":"The put protects your downside. Short call premiums exceed the put cost, so you still end up positive."}},{"@type":"Question","name":"What is the best case scenario for a collar spread?","acceptedAnswer":{"@type":"Answer","text":"Stock stays flat or rises moderately. All options expire worthless, you keep all premium plus the stock. Repeat next year."}},{"@type":"Question","name":"What if the stock soars past the call strikes?","acceptedAnswer":{"@type":"Answer","text":"Short calls get exercised but the long call caps your risk. Profit is limited but guaranteed positive."}}]}
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
@@ -112,7 +118,7 @@
                 </ol>
 
                 <div class="edu-diagram">
-                    <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="max-width:500px;">
+                    <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="max-width:500px;" role="img" aria-label="Zero-loss collar spread payoff diagram showing protected downside and capped upside">
                         <!-- Background grid -->
                         <line x1="60" y1="180" x2="460" y2="180" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
                         <line x1="60" y1="110" x2="460" y2="110" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4"/>
@@ -255,7 +261,7 @@
                 </ul>
 
                 <h3>3. Tax-Deferred Growth</h3>
-                <p>In a Traditional IRA or Roth IRA, the call premium you collect and any gains from rolling the collar are <strong>not taxed</strong> until withdrawal (Traditional) or are <strong>tax-free</strong> forever (Roth). This lets you compound the strategy's returns without tax drag.</p>
+                <p>In a Traditional IRA or Roth IRA, the call premium you collect and any gains from rolling the collar are <strong>not taxed</strong> until withdrawal (Traditional) or are <strong>tax-free</strong> forever (Roth). This lets you compound the strategy's returns without tax drag. See our <a href="/trading-taxes/">trading taxes guide</a> for details on how different account types affect your tax obligations.</p>
 
                 <div class="edu-callout">
                     <strong>IRA Compatibility:</strong> Most brokers (Schwab, Fidelity, Interactive Brokers, TD Ameritrade) allow covered calls and protective puts in IRA accounts. You typically need Level 1 or Level 2 options approval, which requires a simple application.
@@ -437,7 +443,7 @@
                 </table>
 
                 <div class="edu-diagram">
-                    <svg viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;">
+                    <svg viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;" role="img" aria-label="SPY collar performance chart showing stock price with collar protection range">
                         <defs>
                             <linearGradient id="spy-grad" x1="0" y1="0" x2="0" y2="1">
                                 <stop offset="0%" stop-color="#2FD068" stop-opacity="0.35"/>
@@ -555,6 +561,7 @@
                 <p>The collar is a conservative strategy, but it's not without trade-offs:</p>
 
                 <h3>Key Risks</h3>
+                <p>As with any trading strategy, understanding and managing risk is essential. Review our complete <a href="/risk-management/">risk management framework</a> for broader principles.</p>
                 <ul>
                     <li><strong>Upside cap</strong> &mdash; If the stock surges 40%, you only capture gains up to your call strike. This is the cost of protection.</li>
                     <li><strong>Opportunity cost</strong> &mdash; In a strong bull market, an unprotected position outperforms. However, you can't predict bull vs. bear in advance.</li>

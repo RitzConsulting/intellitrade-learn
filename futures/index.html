@@ -29,6 +29,9 @@
     "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.live"}
 }
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://learn.intellitrade.live/"},{"@type":"ListItem","position":2,"name":"Futures Trading","item":"https://learn.intellitrade.live/futures/"}]}
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
@@ -99,7 +102,7 @@
 
             <div class="edu-body">
                 <h2 id="what-are-futures">What Are Futures Contracts?</h2>
-                <p>A futures contract is a standardized agreement to buy or sell an asset at a predetermined price on a specific future date. Unlike stocks (where you own shares of a company), futures are <strong>derivative contracts</strong> &mdash; their value is derived from an underlying asset like an index, commodity, or currency.</p>
+                <p>A futures contract is a standardized agreement to buy or sell an asset at a predetermined price on a specific future date. Unlike stocks (where you own shares of a company), futures are <strong>derivative contracts</strong> &mdash; their value is derived from an underlying asset like an index, commodity, or currency. If you are new to trading, review the <a href="/trading-basics/">trading basics</a> first.</p>
 
                 <div class="edu-stat-grid">
                     <div class="edu-stat-card green">
@@ -231,7 +234,7 @@
                 </dl>
 
                 <div class="edu-callout danger">
-                    <strong>Leverage Warning:</strong> If ES is at 6,000, one contract represents $300,000 in notional value (6,000 &times; $50). With $12,000 margin, you are leveraged 25:1. A 2% move against you ($120 points = $6,000) would wipe out half your margin. Always use <a href="/trading-basics/#risk-management">stop losses</a>.
+                    <strong>Leverage Warning:</strong> If ES is at 6,000, one contract represents $300,000 in notional value (6,000 &times; $50). With $12,000 margin, you are leveraged 25:1. A 2% move against you ($120 points = $6,000) would wipe out half your margin. Always use <a href="/trading-basics/#risk-management">stop losses</a> and follow a disciplined <a href="/risk-management/">risk management plan</a>.
                 </div>
 
                 <h2 id="trading-sessions">Trading Sessions</h2>
@@ -347,7 +350,7 @@
 
                 <h3>Safety Features</h3>
                 <ul>
-                    <li><strong>Simulation mode</strong> &mdash; Default mode where no real orders are sent. Practice risk-free.</li>
+                    <li><strong>Simulation mode</strong> &mdash; Default mode where no real orders are sent. Practice risk-free via <a href="/auto-trading/">the auto-trading system</a>.</li>
                     <li><strong>Position limits</strong> &mdash; Maximum contracts per account (default: 1)</li>
                     <li><strong>Daily loss limit</strong> &mdash; Automatically stops trading when the daily loss threshold is reached</li>
                     <li><strong>Kill switch</strong> &mdash; Instantly flattens all positions and blocks new orders</li>
@@ -356,7 +359,7 @@
 
                 <h3>GEX Integration</h3>
                 <p>While futures themselves don't have gamma exposure, IntelliTrade uses <a href="/gex/">GEX levels</a> from the options market as support and resistance for futures trades. Key GEX strikes (Put Wall, Call Wall, GEX PIN) act as magnets and barriers for SPX/ES price, making them valuable reference points for futures entries and exits.</p>
-                <p>The <a href="/ai-assistant/">AI Brain</a> also provides futures-specific analysis, combining ORB signals with GEX context for more informed trading decisions.</p>
+                <p>The <a href="/ai-assistant/">AI Brain</a> also provides futures-specific analysis, combining ORB signals with GEX context for more informed trading decisions. Many futures traders use <a href="/prop-firms/">prop firm funded accounts</a> to trade with firm capital, reducing personal risk while still earning real profits.</p>
             </div>
 
             <nav class="edu-nav-bottom" aria-label="Education navigation">
