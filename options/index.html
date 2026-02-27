@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Options Trading 101: Calls, Puts &amp; Spreads - IntelliTrade Learn</title>
+<meta name="description" content="Understand options trading from scratch. Learn calls, puts, credit spreads, the Greeks, and how IntelliTrade uses options for 0DTE strategies.">
+<meta name="keywords" content="options trading, calls, puts, credit spreads, the Greeks, delta, gamma, theta, vega, iron condor, iron fly, IntelliTrade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Options Trading 101: Calls, Puts &amp; Spreads - IntelliTrade Learn">
+<meta property="og:description" content="Understand options trading from scratch. Learn calls, puts, credit spreads, the Greeks, and how IntelliTrade uses options for 0DTE strategies.">
+<meta property="og:url" content="https://learn.intellitrade.app/options/">
+<meta property="og:site_name" content="IntelliTrade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Options Trading 101: Calls, Puts &amp; Spreads - IntelliTrade Learn">
+<meta name="twitter:description" content="Understand options trading from scratch. Learn calls, puts, credit spreads, the Greeks, and how IntelliTrade uses options for 0DTE strategies.">
+<link rel="canonical" href="https://learn.intellitrade.app/options/">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Options Trading 101: Calls, Puts and Spreads",
+    "description": "Understand options trading from scratch. Learn calls, puts, credit spreads, the Greeks, and how IntelliTrade uses options for 0DTE strategies.",
+    "author": {"@type": "Organization", "name": "IntelliTrade"},
+    "publisher": {"@type": "Organization", "name": "IntelliTrade", "url": "https://intellitrade.live"},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://learn.intellitrade.app/options/"},
+    "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.app"}
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<header class="learn-header">
+    <a href="/" class="lh-brand">
+        <span class="lh-gem">&#9889;</span>
+        <span class="lh-wordmark">Intelli<span>Trade</span></span>
+    </a>
+    <span class="lh-sep"></span>
+    <span class="lh-title">Education</span>
+    <span class="lh-spacer"></span>
+    <a href="https://intellitrade.app" class="lh-back">&larr; Dashboard</a>
+    <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
+</header>
+<div class="learn-layout">
+    <nav class="learn-sidebar" aria-label="Education topics">
+        <a href="/">Overview</a>
+        <a href="/trading-basics/">Trading Basics</a>
+        <a href="/options/" class="active">Options 101</a>
+        <a href="/futures/">Futures</a>
+        <a href="/gex/">GEX</a>
+        <a href="/auto-trading/">Auto Trading</a>
+        <a href="/ai-assistant/">AI Assistant</a>
+        <a href="/zero-dte/">0DTE</a>
+    </nav>
+    <main class="learn-main">
+        <article class="edu-page">
+            <nav class="edu-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Learn</a>
+                <span class="sep">/</span>
+                <span>Options 101</span>
+            </nav>
+
+            <header class="edu-header">
+                <h1>Options Trading 101</h1>
+                <p class="edu-subtitle">Calls, puts, the Greeks, and common strategies &mdash; the building blocks every options trader needs to understand.</p>
+                <div class="edu-meta">
+                    <span class="difficulty-badge beginner">Beginner</span>
+                    <span>15 min read</span>
+                </div>
+            </header>
+
+            <nav class="edu-toc" aria-label="Table of contents">
+                <h3>In This Article</h3>
+                <ol>
+                    <li><a href="#what-are-options">What Are Options?</a></li>
+                    <li><a href="#calls-vs-puts">Calls vs. Puts</a></li>
+                    <li><a href="#the-greeks">The Greeks</a></li>
+                    <li><a href="#options-pricing">Options Pricing</a></li>
+                    <li><a href="#common-strategies">Common Strategies</a></li>
+                    <li><a href="#intellitrade-options">How IntelliTrade Uses Options</a></li>
+                </ol>
+            </nav>
+
+            <div class="edu-body">
+                <h2 id="what-are-options">What Are Options?</h2>
+                <p>An option is a financial contract that gives you the <strong>right, but not the obligation</strong>, to buy or sell an underlying asset at a specific price (the <strong>strike price</strong>) before a certain date (the <strong>expiration date</strong>).</p>
+                <p>Options are powerful because they allow you to:</p>
+                <ul>
+                    <li>Profit from price movements with less capital than buying stock directly</li>
+                    <li>Generate income by selling options and collecting premium</li>
+                    <li>Hedge existing positions against adverse price moves</li>
+                    <li>Define your exact maximum risk before entering a trade</li>
+                </ul>
+
+                <div class="edu-callout">
+                    <strong>Why Options for SPX?</strong> IntelliTrade focuses on <strong>SPX (S&P 500 Index) options</strong> because they are European-style (cash-settled, no early assignment risk), extremely liquid, and offer tax advantages (60% long-term / 40% short-term capital gains under Section 1256).
+                </div>
+
+                <h3>Key Terminology</h3>
+                <dl>
+                    <dt>Premium</dt>
+                    <dd>The price you pay to buy an option, or the price you receive when you sell one. This is the option's market price.</dd>
+
+                    <dt>Strike Price</dt>
+                    <dd>The price at which the option allows you to buy (call) or sell (put) the underlying asset.</dd>
+
+                    <dt>Expiration Date</dt>
+                    <dd>The last day the option is valid. After this date, the option ceases to exist. <a href="/zero-dte/">0DTE options</a> expire on the same day they are traded.</dd>
+
+                    <dt>In-the-Money (ITM)</dt>
+                    <dd>A call is ITM when the stock price is above the strike price. A put is ITM when the stock price is below the strike price. ITM options have intrinsic value.</dd>
+
+                    <dt>Out-of-the-Money (OTM)</dt>
+                    <dd>The opposite of ITM. A call is OTM when the stock price is below the strike price. OTM options have only time (extrinsic) value.</dd>
+
+                    <dt>At-the-Money (ATM)</dt>
+                    <dd>When the stock price is very close to the strike price.</dd>
+                </dl>
+
+                <h2 id="calls-vs-puts">Calls vs. Puts</h2>
+                <p>There are two types of options, and each can be bought or sold:</p>
+
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>Call Option</h4>
+                        <p>Gives the holder the right to <strong>buy</strong> the underlying asset at the strike price. Buying a call is a <strong>bullish</strong> bet &mdash; you profit when the price goes up. Selling a call is a bearish or neutral bet.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Put Option</h4>
+                        <p>Gives the holder the right to <strong>sell</strong> the underlying asset at the strike price. Buying a put is a <strong>bearish</strong> bet &mdash; you profit when the price goes down. Selling a put is a bullish or neutral bet.</p>
+                    </div>
+                </div>
+
+                <h3>Buyers vs. Sellers</h3>
+                <p>Every options trade has a buyer and a seller. Their roles and risk profiles are very different:</p>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Buyer (Long)</th>
+                        <th>Seller (Short)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Pays/Receives</strong></td>
+                        <td>Pays premium (debit)</td>
+                        <td>Receives premium (credit)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Max Loss</strong></td>
+                        <td>Limited to premium paid</td>
+                        <td>Can be substantial (unless spread)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Max Profit</strong></td>
+                        <td>Potentially unlimited (calls)</td>
+                        <td>Limited to premium received</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Time Decay</strong></td>
+                        <td>Works against you</td>
+                        <td>Works in your favor</td>
+                    </tr>
+                </table>
+
+                <div class="edu-callout success">
+                    <strong>IntelliTrade's Approach:</strong> IntelliTrade primarily <strong>sells</strong> options (credit strategies) rather than buying them. This means time decay works in our favor &mdash; as the day progresses, options lose value, and we profit from the premium collected.
+                </div>
+
+                <h2 id="the-greeks">The Greeks</h2>
+                <p>The Greeks are measurements that describe how an option's price changes in response to various factors. Understanding them is essential for managing options positions.</p>
+
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>Delta</h4>
+                        <p>How much the option price changes for a $1 move in the underlying. A delta of 0.30 means the option gains $0.30 for every $1 the stock moves. Calls have positive delta; puts have negative delta.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Gamma</h4>
+                        <p>How much delta changes for a $1 move in the underlying. High gamma means delta can change rapidly. <strong>Gamma is the foundation of <a href="/gex/">GEX analysis</a></strong> &mdash; it tells us how market makers need to hedge.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Theta</h4>
+                        <p>How much value the option loses per day from time decay. A theta of -0.50 means the option loses $0.50 per day. Theta accelerates as expiration approaches &mdash; this is why <a href="/zero-dte/">0DTE strategies</a> are powerful for sellers.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Vega</h4>
+                        <p>How much the option price changes for a 1% change in implied volatility. High vega means the option is very sensitive to volatility changes. Rising VIX generally increases all option prices.</p>
+                    </div>
+                </div>
+
+                <h2 id="options-pricing">Options Pricing</h2>
+                <p>An option's price (premium) has two components:</p>
+
+                <h3>Intrinsic Value</h3>
+                <p>The amount the option is in-the-money. A call with a strike of 6000 when SPX is at 6050 has $50 of intrinsic value. Out-of-the-money options have zero intrinsic value.</p>
+
+                <h3>Extrinsic (Time) Value</h3>
+                <p>Everything beyond intrinsic value. This is the "hope" premium &mdash; the chance that the option could become more valuable before expiration. Extrinsic value is influenced by:</p>
+                <ul>
+                    <li><strong>Time to expiration</strong> &mdash; More time = more extrinsic value</li>
+                    <li><strong>Implied volatility</strong> &mdash; Higher volatility = more extrinsic value</li>
+                    <li><strong>Distance from the money</strong> &mdash; ATM options have the most extrinsic value</li>
+                </ul>
+
+                <div class="edu-callout">
+                    <strong>Time Decay in Action:</strong> A 0DTE option at 10:00 AM might be worth $5.00. By 2:00 PM, even with no price change, it could be worth only $2.00 due to theta decay. By 3:30 PM, it might be worth just $0.50. This rapid decay is what makes selling 0DTE options profitable.
+                </div>
+
+                <h2 id="common-strategies">Common Strategies</h2>
+                <p>Rather than buying or selling single options, most traders use <strong>spreads</strong> &mdash; combinations of options that define both maximum risk and maximum reward.</p>
+
+                <h3>Credit Spread (Vertical Spread)</h3>
+                <p>Sell one option and buy another at a different strike, same expiration. You collect a net credit. If the underlying stays away from your sold strike, you keep the credit as profit.</p>
+                <ul>
+                    <li><strong>Bull Put Spread</strong> (bullish) &mdash; Sell a put, buy a lower-strike put. Profit if price stays above your sold strike.</li>
+                    <li><strong>Bear Call Spread</strong> (bearish) &mdash; Sell a call, buy a higher-strike call. Profit if price stays below your sold strike.</li>
+                </ul>
+
+                <h3>Iron Condor (IC)</h3>
+                <p>A combination of a bull put spread and a bear call spread. You collect credit from both sides, creating a "profit zone" between the two sold strikes. Best used when you expect the market to stay <strong>range-bound</strong>.</p>
+                <pre>
+  Bear Call Spread (above)    Sell 6080C / Buy 6100C
+  ─────────────────────────────────────────────────
+  SPX Price:  6050
+  ─────────────────────────────────────────────────
+  Bull Put Spread (below)     Sell 6020P / Buy 6000P
+                </pre>
+
+                <h3>Iron Fly (IF)</h3>
+                <p>Like an Iron Condor, but the sold call and sold put share the <strong>same strike</strong> (at-the-money). Collects more premium than an Iron Condor but has a narrower profit zone. Best used when you expect the market to <strong>pin</strong> at a specific level &mdash; exactly what <a href="/gex/">GEX analysis</a> can predict.</p>
+
+                <h3>Directional Spreads</h3>
+                <p>When the market has a clear direction, IntelliTrade uses directional spreads:</p>
+                <ul>
+                    <li><strong>Put Spread</strong> (bullish) &mdash; Used in positive <a href="/gex/">GEX regimes</a> when the market bias is upward</li>
+                    <li><strong>Call Spread</strong> (bearish) &mdash; Used in negative GEX regimes when the market bias is downward</li>
+                </ul>
+
+                <div class="edu-callout warning">
+                    <strong>Important Rule:</strong> IntelliTrade never goes bullish (put spread) when GEX is negative, and never goes bearish (call spread) when GEX is positive. This <a href="/gex/">GEX regime alignment</a> is a core safety feature.
+                </div>
+
+                <h2 id="intellitrade-options">How IntelliTrade Uses Options</h2>
+                <p>IntelliTrade combines multiple layers of analysis to select and execute options trades:</p>
+                <ol>
+                    <li><strong>GEX Analysis</strong> &mdash; Identifies support, resistance, and pinning levels from options market maker positioning (<a href="/gex/">learn more</a>)</li>
+                    <li><strong>Quality Gates</strong> &mdash; Checks VIX levels, ATR (volatility), consolidation, and momentum before allowing any trade (<a href="/auto-trading/">learn more</a>)</li>
+                    <li><strong>Strategy Selection</strong> &mdash; Chooses between Iron Fly, Iron Condor, or directional spreads based on market conditions</li>
+                    <li><strong>Dynamic Exit Management</strong> &mdash; Monitors positions every 30 seconds with trailing stops, breakeven protection, and GEX-based exits (<a href="/auto-trading/">learn more</a>)</li>
+                </ol>
+                <p>All of this happens automatically through the <a href="/auto-trading/">trading agents</a>, with the <a href="/ai-assistant/">AI Brain</a> providing additional market context and suggestions.</p>
+            </div>
+
+            <nav class="edu-nav-bottom" aria-label="Education navigation">
+                <a href="/trading-basics/" class="edu-nav-link prev">
+                    <span class="nav-direction">Previous</span>
+                    <span class="nav-title">Trading Basics</span>
+                </a>
+                <a href="/futures/" class="edu-nav-link next">
+                    <span class="nav-direction">Next</span>
+                    <span class="nav-title">Futures Trading</span>
+                </a>
+            </nav>
+        </article>
+
+        <div class="site-cta">
+            <h3>Ready to trade smarter?</h3>
+            <p>IntelliTrade automates options and futures trading with GEX analysis, AI insights, and risk management.</p>
+            <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
+        </div>
+        <footer class="site-footer">
+            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+        </footer>
+    </main>
+</div>
+</body>
+</html>

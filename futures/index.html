@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Futures Trading Guide: ES, MES &amp; NQ Contracts - IntelliTrade Learn</title>
+<meta name="description" content="Learn futures trading fundamentals: contracts, margin, E-mini S&amp;P 500 (ES), Micro E-mini (MES), Nasdaq (NQ), and how IntelliTrade automates futures trading.">
+<meta name="keywords" content="futures trading, ES futures, MES futures, NQ futures, E-mini S&amp;P 500, margin, leverage, CME, IntelliTrade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Futures Trading Guide: ES, MES &amp; NQ Contracts - IntelliTrade Learn">
+<meta property="og:description" content="Learn futures trading fundamentals: contracts, margin, E-mini S&amp;P 500 (ES), Micro E-mini (MES), Nasdaq (NQ), and how IntelliTrade automates futures trading.">
+<meta property="og:url" content="https://learn.intellitrade.app/futures/">
+<meta property="og:site_name" content="IntelliTrade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Futures Trading Guide: ES, MES &amp; NQ Contracts - IntelliTrade Learn">
+<meta name="twitter:description" content="Learn futures trading fundamentals: contracts, margin, E-mini S&amp;P 500 (ES), Micro E-mini (MES), Nasdaq (NQ), and how IntelliTrade automates futures trading.">
+<link rel="canonical" href="https://learn.intellitrade.app/futures/">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Futures Trading Guide: ES, MES and NQ Contracts",
+    "description": "Learn futures trading fundamentals: contracts, margin, E-mini S&P 500 (ES), Micro E-mini (MES), Nasdaq (NQ), and how IntelliTrade automates futures trading.",
+    "author": {"@type": "Organization", "name": "IntelliTrade"},
+    "publisher": {"@type": "Organization", "name": "IntelliTrade", "url": "https://intellitrade.live"},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://learn.intellitrade.app/futures/"},
+    "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.app"}
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<header class="learn-header">
+    <a href="/" class="lh-brand">
+        <span class="lh-gem">&#9889;</span>
+        <span class="lh-wordmark">Intelli<span>Trade</span></span>
+    </a>
+    <span class="lh-sep"></span>
+    <span class="lh-title">Education</span>
+    <span class="lh-spacer"></span>
+    <a href="https://intellitrade.app" class="lh-back">&larr; Dashboard</a>
+    <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
+</header>
+<div class="learn-layout">
+    <nav class="learn-sidebar" aria-label="Education topics">
+        <a href="/">Overview</a>
+        <a href="/trading-basics/">Trading Basics</a>
+        <a href="/options/">Options 101</a>
+        <a href="/futures/" class="active">Futures</a>
+        <a href="/gex/">GEX</a>
+        <a href="/auto-trading/">Auto Trading</a>
+        <a href="/ai-assistant/">AI Assistant</a>
+        <a href="/zero-dte/">0DTE</a>
+    </nav>
+    <main class="learn-main">
+        <article class="edu-page">
+            <nav class="edu-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Learn</a>
+                <span class="sep">/</span>
+                <span>Futures Trading</span>
+            </nav>
+
+            <header class="edu-header">
+                <h1>Futures Trading Guide</h1>
+                <p class="edu-subtitle">Understand futures contracts, margin, leverage, and the key index futures (ES, MES, NQ) that IntelliTrade trades.</p>
+                <div class="edu-meta">
+                    <span class="difficulty-badge beginner">Beginner</span>
+                    <span>12 min read</span>
+                </div>
+            </header>
+
+            <nav class="edu-toc" aria-label="Table of contents">
+                <h3>In This Article</h3>
+                <ol>
+                    <li><a href="#what-are-futures">What Are Futures Contracts?</a></li>
+                    <li><a href="#key-contracts">Key Contracts: ES, MES, NQ</a></li>
+                    <li><a href="#margin-leverage">Margin and Leverage</a></li>
+                    <li><a href="#trading-sessions">Trading Sessions</a></li>
+                    <li><a href="#orb">Opening Range Breakout (ORB)</a></li>
+                    <li><a href="#intellitrade-futures">How IntelliTrade Trades Futures</a></li>
+                </ol>
+            </nav>
+
+            <div class="edu-body">
+                <h2 id="what-are-futures">What Are Futures Contracts?</h2>
+                <p>A futures contract is a standardized agreement to buy or sell an asset at a predetermined price on a specific future date. Unlike stocks (where you own shares of a company), futures are <strong>derivative contracts</strong> &mdash; their value is derived from an underlying asset like an index, commodity, or currency.</p>
+                <p>Key characteristics of futures:</p>
+                <ul>
+                    <li><strong>Standardized</strong> &mdash; Exchange-defined contract sizes, tick sizes, and expiration dates</li>
+                    <li><strong>Leveraged</strong> &mdash; You control a large notional value with a small margin deposit</li>
+                    <li><strong>Two-sided</strong> &mdash; You can go long (buy) or short (sell) equally easily</li>
+                    <li><strong>Cash-settled</strong> &mdash; Index futures (like ES) settle in cash, not physical delivery</li>
+                    <li><strong>Near 24-hour trading</strong> &mdash; Available almost around the clock on weekdays</li>
+                </ul>
+
+                <div class="edu-callout">
+                    <strong>Futures vs. Options:</strong> Options give you the <em>right</em> to trade; futures give you the <em>obligation</em>. With options, your max loss is the premium paid. With futures, gains and losses are calculated dollar-for-dollar with price movement, making risk management critical.
+                </div>
+
+                <h2 id="key-contracts">Key Contracts: ES, MES, NQ</h2>
+                <p>IntelliTrade focuses on index futures that track major U.S. stock indices:</p>
+
+                <table>
+                    <tr>
+                        <th>Contract</th>
+                        <th>Full Name</th>
+                        <th>$/Point</th>
+                        <th>10pt Move</th>
+                        <th>Exchange</th>
+                    </tr>
+                    <tr>
+                        <td><strong>ES</strong></td>
+                        <td>E-mini S&amp;P 500</td>
+                        <td>$50</td>
+                        <td style="color: var(--accent-green);">$500</td>
+                        <td>CME</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MES</strong></td>
+                        <td>Micro E-mini S&amp;P 500</td>
+                        <td>$5</td>
+                        <td style="color: var(--accent-green);">$50</td>
+                        <td>CME</td>
+                    </tr>
+                    <tr>
+                        <td><strong>NQ</strong></td>
+                        <td>E-mini Nasdaq 100</td>
+                        <td>$20</td>
+                        <td style="color: var(--accent-green);">$200</td>
+                        <td>CME</td>
+                    </tr>
+                </table>
+
+                <h3>Which Contract Should You Trade?</h3>
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>MES (Micro E-mini)</h4>
+                        <p>Best for beginners and small accounts. At $5/point, a 10-point move is only $50. Ideal for learning and testing strategies with real money but limited risk.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>ES (E-mini)</h4>
+                        <p>The standard for experienced traders. At $50/point, it is 10x the exposure of MES. Extremely liquid with tight bid-ask spreads. Most institutional traders use ES.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>NQ (Nasdaq)</h4>
+                        <p>Tracks the tech-heavy Nasdaq 100. More volatile than ES, meaning bigger moves in both directions. At $20/point, it offers a middle ground in sizing.</p>
+                    </div>
+                </div>
+
+                <h3>Tick Size and Value</h3>
+                <p>Futures prices move in increments called <strong>ticks</strong>:</p>
+                <ul>
+                    <li><strong>ES/MES:</strong> Minimum tick = 0.25 points ($12.50 for ES, $1.25 for MES)</li>
+                    <li><strong>NQ:</strong> Minimum tick = 0.25 points ($5.00 per tick)</li>
+                </ul>
+
+                <h2 id="margin-leverage">Margin and Leverage</h2>
+                <p>Futures trading uses <strong>margin</strong> &mdash; a good-faith deposit that lets you control a much larger position than your deposit. This leverage amplifies both gains and losses.</p>
+
+                <h3>Types of Margin</h3>
+                <dl>
+                    <dt>Initial Margin</dt>
+                    <dd>The amount required to open a new position. Set by the exchange (CME) and varies by contract. For ES, it is typically around $12,000-$15,000 per contract.</dd>
+
+                    <dt>Maintenance Margin</dt>
+                    <dd>The minimum balance you must maintain while holding a position. If your account falls below this level, you receive a <strong>margin call</strong> and must add funds or close positions.</dd>
+
+                    <dt>Day Trading Margin</dt>
+                    <dd>Many brokers offer reduced margin for positions opened and closed within the same day. This can be as low as $500 per ES contract, though this varies by broker.</dd>
+                </dl>
+
+                <div class="edu-callout danger">
+                    <strong>Leverage Warning:</strong> If ES is at 6,000, one contract represents $300,000 in notional value (6,000 &times; $50). With $12,000 margin, you are leveraged 25:1. A 2% move against you ($120 points = $6,000) would wipe out half your margin. Always use <a href="/trading-basics/#risk-management">stop losses</a>.
+                </div>
+
+                <h2 id="trading-sessions">Trading Sessions</h2>
+                <p>Futures markets trade in defined sessions (all times Eastern):</p>
+
+                <table>
+                    <tr>
+                        <th>Session</th>
+                        <th>Hours (ET)</th>
+                        <th>Notes</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Globex (Overnight)</strong></td>
+                        <td>6:00 PM &ndash; 9:30 AM</td>
+                        <td>Lower volume, wider spreads. Reacts to international news.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RTH (Regular)</strong></td>
+                        <td>9:30 AM &ndash; 4:00 PM</td>
+                        <td>Highest volume and tightest spreads. Most institutional activity.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ETH (Extended)</strong></td>
+                        <td>4:00 PM &ndash; 6:00 PM</td>
+                        <td>Post-market session. Volume drops off after stock market close.</td>
+                    </tr>
+                </table>
+
+                <p>IntelliTrade's futures strategies primarily focus on <strong>RTH (Regular Trading Hours)</strong> when volume and liquidity are highest, particularly the first 30 minutes after the open when the Opening Range is established.</p>
+
+                <h2 id="orb">Opening Range Breakout (ORB)</h2>
+                <p>The <strong>Opening Range Breakout</strong> is one of the most popular intraday futures strategies. Here is how it works:</p>
+
+                <h3>The Concept</h3>
+                <ol>
+                    <li><strong>Identify the Opening Range</strong> &mdash; During the first 15-25 minutes of RTH (9:30-9:55 AM), the market establishes a high and low. This range captures the initial battle between buyers and sellers.</li>
+                    <li><strong>Wait for a Breakout</strong> &mdash; When price breaks above the range high, it signals potential upward momentum. When it breaks below the range low, it signals potential downward momentum.</li>
+                    <li><strong>Enter the Trade</strong> &mdash; Enter in the direction of the breakout with a stop loss on the other side of the range.</li>
+                    <li><strong>Manage the Trade</strong> &mdash; Use trailing stops to lock in profits as the move extends.</li>
+                </ol>
+
+                <div class="edu-callout success">
+                    <strong>IntelliTrade's ORB v11:</strong> IntelliTrade uses a refined version of this strategy (ORB v11) that runs as a Pine Script on TradingView. It detects the opening range on 5-minute charts, identifies breakout/breakdown signals, and sends automated webhooks to the <a href="https://intellitrade.app/futures">IBKR Bridge</a> for execution.
+                </div>
+
+                <h3>Why ORB Works</h3>
+                <p>The opening range captures overnight positioning and early institutional order flow. A breakout from this range often leads to sustained moves because:</p>
+                <ul>
+                    <li>Institutional traders use the opening range to set their day's bias</li>
+                    <li>Stop orders cluster above the high and below the low, fueling the breakout</li>
+                    <li>Momentum traders pile in once the range is broken</li>
+                </ul>
+
+                <h2 id="intellitrade-futures">How IntelliTrade Trades Futures</h2>
+                <p>IntelliTrade's futures system connects TradingView charting to Interactive Brokers execution through a webhook bridge:</p>
+
+                <h3>Signal Flow</h3>
+                <pre>
+TradingView Chart (Pine Script ORB v11)
+  &darr;  webhook POST with JSON payload
+IBKR Webhook Bridge (localhost:5001)
+  &darr;  validates &rarr; maps symbol &rarr; routes to account
+IBKR Gateway / TWS
+  &darr;  order submitted
+CME Exchange (fills)
+                </pre>
+
+                <h3>Safety Features</h3>
+                <ul>
+                    <li><strong>Simulation mode</strong> &mdash; Default mode where no real orders are sent. Practice risk-free.</li>
+                    <li><strong>Position limits</strong> &mdash; Maximum contracts per account (default: 1)</li>
+                    <li><strong>Daily loss limit</strong> &mdash; Automatically stops trading when the daily loss threshold is reached</li>
+                    <li><strong>Kill switch</strong> &mdash; Instantly flattens all positions and blocks new orders</li>
+                    <li><strong>Duplicate detection</strong> &mdash; 5-second window prevents accidental double entries</li>
+                </ul>
+
+                <h3>GEX Integration</h3>
+                <p>While futures themselves don't have gamma exposure, IntelliTrade uses <a href="/gex/">GEX levels</a> from the options market as support and resistance for futures trades. Key GEX strikes (Put Wall, Call Wall, GEX PIN) act as magnets and barriers for SPX/ES price, making them valuable reference points for futures entries and exits.</p>
+                <p>The <a href="/ai-assistant/">AI Brain</a> also provides futures-specific analysis, combining ORB signals with GEX context for more informed trading decisions.</p>
+            </div>
+
+            <nav class="edu-nav-bottom" aria-label="Education navigation">
+                <a href="/options/" class="edu-nav-link prev">
+                    <span class="nav-direction">Previous</span>
+                    <span class="nav-title">Options 101</span>
+                </a>
+                <a href="/gex/" class="edu-nav-link next">
+                    <span class="nav-direction">Next</span>
+                    <span class="nav-title">GEX Explained</span>
+                </a>
+            </nav>
+        </article>
+
+        <div class="site-cta">
+            <h3>Ready to trade smarter?</h3>
+            <p>IntelliTrade automates options and futures trading with GEX analysis, AI insights, and risk management.</p>
+            <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
+        </div>
+        <footer class="site-footer">
+            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+        </footer>
+    </main>
+</div>
+</body>
+</html>

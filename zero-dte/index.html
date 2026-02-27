@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>0DTE Options Strategies: Iron Condor, Iron Fly &amp; Spreads - IntelliTrade Learn</title>
+<meta name="description" content="Zero days to expiration (0DTE) options strategies for daily income. Learn Iron Condor, Iron Fly, and directional spread strategies on SPX with IntelliTrade.">
+<meta name="keywords" content="0DTE options, zero days to expiration, iron condor, iron fly, credit spreads, SPX options, daily income, theta decay, options selling, IntelliTrade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0DTE Options Strategies: Iron Condor, Iron Fly &amp; Spreads - IntelliTrade Learn">
+<meta property="og:description" content="Zero days to expiration (0DTE) options strategies for daily income. Learn Iron Condor, Iron Fly, and directional spread strategies on SPX with IntelliTrade.">
+<meta property="og:url" content="https://learn.intellitrade.app/zero-dte/">
+<meta property="og:site_name" content="IntelliTrade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="0DTE Options Strategies: Iron Condor, Iron Fly &amp; Spreads - IntelliTrade Learn">
+<meta name="twitter:description" content="Zero days to expiration (0DTE) options strategies for daily income. Learn Iron Condor, Iron Fly, and directional spread strategies on SPX with IntelliTrade.">
+<link rel="canonical" href="https://learn.intellitrade.app/zero-dte/">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "0DTE Options Strategies: Iron Condor, Iron Fly and Spreads",
+    "description": "Zero days to expiration (0DTE) options strategies for daily income. Learn Iron Condor, Iron Fly, and directional spread strategies on SPX.",
+    "author": {"@type": "Organization", "name": "IntelliTrade"},
+    "publisher": {"@type": "Organization", "name": "IntelliTrade", "url": "https://intellitrade.live"},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://learn.intellitrade.app/zero-dte/"},
+    "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.app/"}
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<header class="learn-header">
+    <a href="/" class="lh-brand">
+        <span class="lh-gem">&#9889;</span>
+        <span class="lh-wordmark">Intelli<span>Trade</span></span>
+    </a>
+    <span class="lh-sep"></span>
+    <span class="lh-title">Education</span>
+    <span class="lh-spacer"></span>
+    <a href="https://intellitrade.app" class="lh-back">&larr; Dashboard</a>
+    <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
+</header>
+<div class="learn-layout">
+    <nav class="learn-sidebar" aria-label="Education topics">
+        <a href="/">Overview</a>
+        <a href="/trading-basics/">Trading Basics</a>
+        <a href="/options/">Options 101</a>
+        <a href="/futures/">Futures</a>
+        <a href="/gex/">GEX</a>
+        <a href="/auto-trading/">Auto Trading</a>
+        <a href="/ai-assistant/">AI Assistant</a>
+        <a href="/zero-dte/" class="active">0DTE</a>
+    </nav>
+    <main class="learn-main">
+        <article class="edu-page">
+            <nav class="edu-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Learn</a>
+                <span class="sep">/</span>
+                <span>0DTE Strategies</span>
+            </nav>
+
+            <header class="edu-header">
+                <h1>0DTE Options Strategies</h1>
+                <p class="edu-subtitle">Zero days to expiration options &mdash; how to generate daily income by selling options that expire the same day, using Iron Condors, Iron Flies, and directional spreads on SPX.</p>
+                <div class="edu-meta">
+                    <span class="difficulty-badge advanced">Advanced</span>
+                    <span>18 min read</span>
+                </div>
+            </header>
+
+            <nav class="edu-toc" aria-label="Table of contents">
+                <h3>In This Article</h3>
+                <ol>
+                    <li><a href="#what-is-0dte">What Are 0DTE Options?</a></li>
+                    <li><a href="#why-sell">Why Sell 0DTE Options?</a></li>
+                    <li><a href="#iron-condor">0DTE Iron Condor Strategy</a></li>
+                    <li><a href="#iron-fly">0DTE Iron Fly Strategy</a></li>
+                    <li><a href="#directional">Directional Spreads</a></li>
+                    <li><a href="#risk">Managing 0DTE Risk</a></li>
+                    <li><a href="#intellitrade-0dte">How IntelliTrade Trades 0DTE</a></li>
+                </ol>
+            </nav>
+
+            <div class="edu-body">
+                <h2 id="what-is-0dte">What Are 0DTE Options?</h2>
+                <p>0DTE (zero days to expiration) options are <a href="/options/">options contracts</a> that expire on the same day they are traded. For SPX (S&amp;P 500 Index), weekly options expire on Mondays, Wednesdays, and Fridays, providing three trading opportunities per week.</p>
+                <p>What makes 0DTE options unique:</p>
+                <ul>
+                    <li><strong>Extreme time decay</strong> &mdash; <a href="/options/#the-greeks">Theta</a> is at its maximum on expiration day. A $5.00 option at 10 AM might be worth $0.50 by 3:30 PM even with no price change.</li>
+                    <li><strong>High gamma</strong> &mdash; Small price changes cause large delta swings, which is what drives <a href="/gex/">GEX-based market maker hedging</a>.</li>
+                    <li><strong>No overnight risk</strong> &mdash; Positions are opened and closed the same day, eliminating gap risk from overnight events.</li>
+                    <li><strong>Cash settlement</strong> &mdash; SPX options settle in cash at expiration. No assignment, no shares to manage.</li>
+                </ul>
+
+                <div class="edu-callout">
+                    <strong>Daily Income Potential:</strong> If you are looking for steady daily income through options trading, 0DTE strategies can be executed with limited time commitment and generate profits regardless of whether the market moves up, down, or sideways &mdash; as long as it stays within your expected range.
+                </div>
+
+                <h2 id="why-sell">Why Sell 0DTE Options?</h2>
+                <p>Predicting which direction the stock market may move is a difficult task. Even the most sophisticated traders cannot tell you where the markets could be after a certain period. So, as a trader, what should be your approach?</p>
+                <p>The benefit of <strong>selling options</strong> is that you can make money even when the expected movement is small and directionally uncertain. Instead of betting on direction, you are betting on <em>range</em> &mdash; that the market will stay within a defined zone.</p>
+
+                <h3>The Seller's Edge: Time Decay</h3>
+                <p>When you sell a 0DTE option, time is your ally. The premium you collect erodes throughout the day as <a href="/options/#the-greeks">theta</a> works in your favor. With 0DTE options, this decay is dramatic:</p>
+                <ul>
+                    <li><strong>10:00 AM:</strong> Option worth $5.00 (full extrinsic value)</li>
+                    <li><strong>12:00 PM:</strong> Option worth $3.20 (35% decayed)</li>
+                    <li><strong>2:00 PM:</strong> Option worth $1.50 (70% decayed)</li>
+                    <li><strong>3:30 PM:</strong> Option worth $0.30 (94% decayed)</li>
+                </ul>
+                <p>If the underlying price doesn't move past your strike, you keep the entire premium as profit.</p>
+
+                <h3>Probability of Success</h3>
+                <p>Market neutral strategies like the <a href="#iron-condor">Iron Condor</a> have historically shown high win rates on SPX. The key is that the strategy requires the index to trade within a range &mdash; not reach a specific price. The wider your range, the higher your probability of success (but the lower your premium collected).</p>
+
+                <div class="edu-callout warning">
+                    <strong>Important Caveat:</strong> While the win rate can be high, some big losses can be enough to wipe days of profits. This is why <a href="#risk">risk management</a> and the <a href="/auto-trading/#exit-management">exit management system</a> are absolutely critical for 0DTE trading.
+                </div>
+
+                <h2 id="iron-condor">0DTE Iron Condor Strategy</h2>
+                <p>The <a href="/options/#common-strategies">Iron Condor</a> is a market-neutral strategy that profits when SPX stays within a defined range. It involves four options trades:</p>
+
+                <h3>How It Works</h3>
+                <ol>
+                    <li><strong>Sell an out-of-the-money call</strong> &mdash; Above the current price (e.g., SPX at 6050, sell the 6080 call)</li>
+                    <li><strong>Buy a further OTM call</strong> &mdash; To cap your upside risk (e.g., buy the 6100 call)</li>
+                    <li><strong>Sell an out-of-the-money put</strong> &mdash; Below the current price (e.g., sell the 6020 put)</li>
+                    <li><strong>Buy a further OTM put</strong> &mdash; To cap your downside risk (e.g., buy the 6000 put)</li>
+                </ol>
+
+                <pre>
+    Buy 6100C ─────── Wing (protection)
+    Sell 6080C ────── Short call (resistance)
+
+    ──── SPX: 6050 ─── Current price (profit zone)
+
+    Sell 6020P ────── Short put (support)
+    Buy 6000P ─────── Wing (protection)
+
+    Max Profit: Net credit received
+    Max Loss:   Wing width - credit received
+    Profit Zone: 6020 to 6080 (60 points wide)
+                </pre>
+
+                <h3>Example Trade</h3>
+                <p>Suppose SPX is trading at 6,050. You expect it to trade within a 60-point range today:</p>
+                <table>
+                    <tr>
+                        <th>Leg</th>
+                        <th>Strike</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Long Call</td>
+                        <td>6100</td>
+                        <td>$1.20</td>
+                        <td>Buy (debit)</td>
+                    </tr>
+                    <tr>
+                        <td>Short Call</td>
+                        <td>6080</td>
+                        <td>$3.50</td>
+                        <td>Sell (credit)</td>
+                    </tr>
+                    <tr>
+                        <td>Short Put</td>
+                        <td>6020</td>
+                        <td>$3.80</td>
+                        <td>Sell (credit)</td>
+                    </tr>
+                    <tr>
+                        <td>Long Put</td>
+                        <td>6000</td>
+                        <td>$1.50</td>
+                        <td>Buy (debit)</td>
+                    </tr>
+                </table>
+                <p><strong>Net credit:</strong> ($3.50 + $3.80) - ($1.20 + $1.50) = $4.60 per share = $460 per contract</p>
+                <p><strong>Max loss:</strong> $20 (wing width) - $4.60 = $15.40 per share = $1,540 per contract</p>
+                <p><strong>Return on risk:</strong> $460 / $1,540 = 29.9%</p>
+
+                <h3>When to Use</h3>
+                <ul>
+                    <li><strong>Positive <a href="/gex/#gex-regimes">GEX regime</a></strong> &mdash; Market makers dampening moves keeps price range-bound</li>
+                    <li><strong>Moderate VIX</strong> (15-25) &mdash; Enough premium to collect, but not so volatile that the range breaks</li>
+                    <li><strong>Price between Put Wall and Call Wall</strong> &mdash; <a href="/gex/#gex-levels">GEX levels</a> define natural boundaries</li>
+                </ul>
+
+                <h2 id="iron-fly">0DTE Iron Fly Strategy</h2>
+                <p>The Iron Fly is a more aggressive version of the Iron Condor where <strong>both short strikes are at-the-money</strong>. This collects more premium but has a narrower profit zone.</p>
+
+                <h3>How It Works</h3>
+                <pre>
+    Buy 6075C ────── Wing (protection)
+    Sell 6050C ───── Short call (ATM)
+    Sell 6050P ───── Short put  (ATM)   &larr; Same strike!
+    Buy 6025P ────── Wing (protection)
+
+    Max Profit: Net credit received (larger than IC)
+    Max Loss:   Wing width - credit received
+    Profit Zone: Narrow (centered on 6050)
+                </pre>
+
+                <h3>When to Use</h3>
+                <p>The Iron Fly is specifically designed for <strong>pinning</strong> scenarios:</p>
+                <ul>
+                    <li><strong>Price within 5-10 points of <a href="/gex/#gex-levels">GEX PIN</a></strong> &mdash; Strong evidence of pinning behavior</li>
+                    <li><strong>Positive GEX</strong> &mdash; Dealers are dampening moves, keeping price contained</li>
+                    <li><strong>Low ATR%</strong> (&lt;0.20%) &mdash; Price volatility is low, supporting the narrow profit zone</li>
+                    <li><strong>Consolidation detected</strong> &mdash; 30-minute range &le;15 points confirms tight price action</li>
+                    <li><strong>No momentum</strong> &mdash; No three consecutive same-direction candles (not trending)</li>
+                </ul>
+
+                <div class="edu-callout">
+                    <strong>Iron Fly vs. Iron Condor:</strong> The Iron Fly collects more premium (higher max profit) but requires tighter price pinning to succeed. The Iron Condor gives you more room for error with a wider profit zone but collects less premium. IntelliTrade chooses between them based on real-time <a href="/gex/">GEX conditions</a>.
+                </div>
+
+                <h2 id="directional">Directional Spreads</h2>
+                <p>When the market has a clear directional bias (not range-bound), IntelliTrade uses single-side credit spreads:</p>
+
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>Bull Put Spread (Bullish)</h4>
+                        <p>Sell a put, buy a lower put. Profit when SPX stays above your short strike. Used in <strong>positive GEX</strong> when the market has upward bias. Time decay and gravity toward GEX PIN work in your favor.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Bear Call Spread (Bearish)</h4>
+                        <p>Sell a call, buy a higher call. Profit when SPX stays below your short strike. Used in <strong>negative GEX</strong> when the market has downward bias. Resistance from the Call Wall provides protection.</p>
+                    </div>
+                </div>
+
+                <div class="edu-callout danger">
+                    <strong>Regime Alignment is Non-Negotiable:</strong> IntelliTrade enforces strict <a href="/gex/#gex-regimes">GEX regime</a> alignment for directional spreads. A bullish Put Spread is <strong>only allowed in positive GEX</strong>. A bearish Call Spread is <strong>only allowed in negative GEX</strong>. This rule exists because of real losses &mdash; a bullish trade in negative GEX on Feb 23 resulted in a -129% loss.
+                </div>
+
+                <h2 id="risk">Managing 0DTE Risk</h2>
+                <p>0DTE trading has an asymmetric risk profile: you can have many small wins, but one large loss can erase days of profits. Managing this risk is the difference between consistent profitability and ruin.</p>
+
+                <h3>Key Risk Factors</h3>
+                <ul>
+                    <li><strong>Gamma risk</strong> &mdash; 0DTE options have very high <a href="/options/#the-greeks">gamma</a>. A 10-point move in SPX can flip your position from profitable to deep loss quickly.</li>
+                    <li><strong>Breakout risk</strong> &mdash; If SPX breaks through a major <a href="/gex/#gex-levels">GEX wall</a>, range-bound strategies can suffer catastrophic losses.</li>
+                    <li><strong>Liquidity risk</strong> &mdash; Late in the day, bid-ask spreads can widen, making exits more expensive.</li>
+                    <li><strong>Pin risk</strong> &mdash; If SPX expires very close to your short strike, the outcome becomes uncertain.</li>
+                </ul>
+
+                <h3>IntelliTrade's Risk Framework</h3>
+                <p>The system addresses these risks through multiple layers:</p>
+                <ol>
+                    <li><strong>Pre-entry <a href="/auto-trading/#quality-gates">quality gates</a></strong> &mdash; VIX, ATR, consolidation, momentum, and GEX regime checks filter out high-risk conditions before any trade is placed</li>
+                    <li><strong>Dynamic <a href="/auto-trading/#exit-management">exit management</a></strong> &mdash; 30-second monitoring with breakeven breach, GEX flip, trailing stops, and time-scaled loss cuts</li>
+                    <li><strong>Time-decay profit targets</strong> &mdash; Capture accelerating theta by lowering profit thresholds as the day progresses</li>
+                    <li><strong>Defined-risk spreads</strong> &mdash; Maximum loss is always known upfront (wing width minus credit)</li>
+                    <li><strong>Minimum 30% ROR</strong> &mdash; Every trade must offer favorable risk-reward</li>
+                </ol>
+
+                <div class="edu-callout success">
+                    <strong>Paper Trade First:</strong> If you are looking to try 0DTE strategies, it is highly recommended that you begin with a paper trading account. IntelliTrade supports full simulation mode where you can experience the strategy without risking real money. This lets you see how the system handles real market conditions before committing capital.
+                </div>
+
+                <h2 id="intellitrade-0dte">How IntelliTrade Trades 0DTE</h2>
+                <p>IntelliTrade's 0DTE SPX agent combines all the concepts from this education series into a unified system:</p>
+
+                <h3>The Complete Flow</h3>
+                <ol>
+                    <li><strong><a href="/gex/">GEX analysis</a></strong> determines the market regime and identifies key levels</li>
+                    <li><strong><a href="/auto-trading/#quality-gates">Quality gates</a></strong> verify conditions are favorable for the selected strategy</li>
+                    <li><strong><a href="#iron-condor">Strategy selection</a></strong> picks Iron Fly, Iron Condor, or directional spread based on conditions</li>
+                    <li><strong>Trade execution</strong> places limit orders through the broker API</li>
+                    <li><strong><a href="/auto-trading/#exit-management">Exit management</a></strong> monitors positions every 30 seconds with dynamic rules</li>
+                    <li><strong><a href="/ai-assistant/">AI Brain</a></strong> provides real-time analysis and context</li>
+                    <li><strong>Daily summary</strong> captures lessons learned for continuous improvement</li>
+                </ol>
+
+                <p>The result is a systematic approach to 0DTE trading that captures the statistical edge of time decay while managing the risks that can derail undisciplined traders.</p>
+            </div>
+
+            <nav class="edu-nav-bottom" aria-label="Education navigation">
+                <a href="/ai-assistant/" class="edu-nav-link prev">
+                    <span class="nav-direction">Previous</span>
+                    <span class="nav-title">AI Trading Assistant</span>
+                </a>
+                <a href="/" class="edu-nav-link next">
+                    <span class="nav-direction">Back to</span>
+                    <span class="nav-title">Education Hub</span>
+                </a>
+            </nav>
+        </article>
+
+        <div class="site-cta">
+            <h3>Ready to trade smarter?</h3>
+            <p>IntelliTrade automates options and futures trading with GEX analysis, AI insights, and risk management.</p>
+            <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
+        </div>
+        <footer class="site-footer">
+            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+        </footer>
+    </main>
+</div>
+</body>
+</html>

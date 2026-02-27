@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GEX Explained: How Gamma Exposure Drives the Market - IntelliTrade Learn</title>
+<meta name="description" content="Understand Gamma Exposure (GEX), how market makers hedge, and how GEX levels create support and resistance. Learn how IntelliTrade uses GEX for smarter trading.">
+<meta name="keywords" content="gamma exposure, GEX, market makers, hedging, put wall, call wall, max pain, gamma flip, options flow, IntelliTrade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GEX Explained: How Gamma Exposure Drives the Market - IntelliTrade Learn">
+<meta property="og:description" content="Understand Gamma Exposure (GEX), how market makers hedge, and how GEX levels create support and resistance. Learn how IntelliTrade uses GEX for smarter trading.">
+<meta property="og:url" content="https://learn.intellitrade.app/gex/">
+<meta property="og:site_name" content="IntelliTrade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GEX Explained: How Gamma Exposure Drives the Market - IntelliTrade Learn">
+<meta name="twitter:description" content="Understand Gamma Exposure (GEX), how market makers hedge, and how GEX levels create support and resistance. Learn how IntelliTrade uses GEX for smarter trading.">
+<link rel="canonical" href="https://learn.intellitrade.app/gex/">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GEX Explained: How Gamma Exposure Drives the Market",
+    "description": "Understand Gamma Exposure (GEX), how market makers hedge, and how GEX levels create support and resistance.",
+    "author": {"@type": "Organization", "name": "IntelliTrade"},
+    "publisher": {"@type": "Organization", "name": "IntelliTrade", "url": "https://intellitrade.live"},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://learn.intellitrade.app/gex/"},
+    "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.app/"}
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<header class="learn-header">
+    <a href="/" class="lh-brand">
+        <span class="lh-gem">&#9889;</span>
+        <span class="lh-wordmark">Intelli<span>Trade</span></span>
+    </a>
+    <span class="lh-sep"></span>
+    <span class="lh-title">Education</span>
+    <span class="lh-spacer"></span>
+    <a href="https://intellitrade.app" class="lh-back">&larr; Dashboard</a>
+    <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
+</header>
+<div class="learn-layout">
+    <nav class="learn-sidebar" aria-label="Education topics">
+        <a href="/">Overview</a>
+        <a href="/trading-basics/">Trading Basics</a>
+        <a href="/options/">Options 101</a>
+        <a href="/futures/">Futures</a>
+        <a href="/gex/" class="active">GEX</a>
+        <a href="/auto-trading/">Auto Trading</a>
+        <a href="/ai-assistant/">AI Assistant</a>
+        <a href="/zero-dte/">0DTE</a>
+    </nav>
+    <main class="learn-main">
+        <article class="edu-page">
+            <nav class="edu-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Learn</a>
+                <span class="sep">/</span>
+                <span>GEX Explained</span>
+            </nav>
+
+            <header class="edu-header">
+                <h1>GEX Explained: How Gamma Exposure Drives the Market</h1>
+                <p class="edu-subtitle">Gamma Exposure (GEX) reveals how options market makers are positioned and where they need to hedge &mdash; creating invisible walls of support and resistance that move the market.</p>
+                <div class="edu-meta">
+                    <span class="difficulty-badge intermediate">Intermediate</span>
+                    <span>15 min read</span>
+                </div>
+            </header>
+
+            <nav class="edu-toc" aria-label="Table of contents">
+                <h3>In This Article</h3>
+                <ol>
+                    <li><a href="#what-is-gex">What Is Gamma Exposure (GEX)?</a></li>
+                    <li><a href="#market-makers">How Market Makers Hedge</a></li>
+                    <li><a href="#gex-levels">Key GEX Levels</a></li>
+                    <li><a href="#gex-regimes">GEX Regimes: Positive, Negative, Neutral</a></li>
+                    <li><a href="#reading-gex">Reading the GEX Chart</a></li>
+                    <li><a href="#intellitrade-gex">How IntelliTrade Uses GEX</a></li>
+                </ol>
+            </nav>
+
+            <div class="edu-body">
+                <h2 id="what-is-gex">What Is Gamma Exposure (GEX)?</h2>
+                <p>Gamma Exposure, or GEX, measures the total gamma that options market makers hold across all strike prices for a given underlying (like SPX). In simpler terms, <strong>GEX tells you how much market makers will need to buy or sell in response to price movements</strong>.</p>
+                <p>To understand GEX, you first need to understand two things from <a href="/options/#the-greeks">the Greeks</a>:</p>
+                <ul>
+                    <li><strong>Delta</strong> &mdash; How much a market maker's position changes for each $1 move in SPX</li>
+                    <li><strong>Gamma</strong> &mdash; How much that delta changes &mdash; the acceleration of their exposure</li>
+                </ul>
+                <p>Market makers don't want directional risk. When they sell you an option, they immediately hedge by buying or selling the underlying. As prices move, their delta changes (because of gamma), forcing them to adjust their hedges continuously. <strong>This constant hedging is what makes GEX so powerful</strong> &mdash; it creates predictable buying and selling pressure at specific price levels.</p>
+
+                <div class="edu-callout">
+                    <strong>Why Does This Matter?</strong> Options volume on SPX is massive. On any given day, billions of dollars in gamma exposure force market makers to trade. When you know where their hedging pressure concentrates, you can anticipate where price is likely to stall, reverse, or accelerate.
+                </div>
+
+                <h2 id="market-makers">How Market Makers Hedge</h2>
+                <p>Market makers are in the business of providing liquidity &mdash; they take the other side of your trade. When you buy a call, a market maker sells it to you. But they don't want to bet on direction, so they <strong>delta-hedge</strong>: buying or selling shares/futures of the underlying to offset their risk.</p>
+
+                <h3>Positive Gamma (Long Gamma)</h3>
+                <p>When market makers are <strong>long gamma</strong> (positive GEX), their hedging activity <strong>dampens</strong> price movement:</p>
+                <ul>
+                    <li><strong>Price goes up</strong> &rarr; Their delta increases &rarr; They need to <strong>sell</strong> to rebalance &rarr; Selling pressure slows the rally</li>
+                    <li><strong>Price goes down</strong> &rarr; Their delta decreases &rarr; They need to <strong>buy</strong> to rebalance &rarr; Buying pressure cushions the drop</li>
+                </ul>
+                <p>The result: <strong>price tends to pin or stay range-bound</strong>. This is the "pinning" effect you see near major GEX levels.</p>
+
+                <h3>Negative Gamma (Short Gamma)</h3>
+                <p>When market makers are <strong>short gamma</strong> (negative GEX), their hedging activity <strong>amplifies</strong> price movement:</p>
+                <ul>
+                    <li><strong>Price goes up</strong> &rarr; They need to <strong>buy more</strong> to hedge &rarr; Their buying fuels the rally further</li>
+                    <li><strong>Price goes down</strong> &rarr; They need to <strong>sell more</strong> to hedge &rarr; Their selling accelerates the decline</li>
+                </ul>
+                <p>The result: <strong>price trends more aggressively</strong>. Negative GEX environments are characterized by larger, more volatile moves.</p>
+
+                <div class="edu-callout warning">
+                    <strong>Real-World Example:</strong> On February 6, SPX surged past the call wall (6,900) reaching 6,930+. GEX spiked from 4.4B to 14.6B as market makers scrambled to hedge. An Iron Condor placed at the call wall level was destroyed (-65.4% loss). This is why IntelliTrade now detects breakout conditions and avoids range-bound strategies during directional moves.
+                </div>
+
+                <h2 id="gex-levels">Key GEX Levels</h2>
+                <p>IntelliTrade calculates several critical price levels from options data. These levels act as magnets, walls, and pivot points for price action.</p>
+
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>Put Wall</h4>
+                        <p>The strike with the highest put gamma. Acts as <strong>support</strong> &mdash; when price approaches from above, market maker hedging creates buying pressure that tends to hold price up.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Call Wall</h4>
+                        <p>The strike with the highest call gamma. Acts as <strong>resistance</strong> &mdash; when price approaches from below, market maker hedging creates selling pressure that tends to cap rallies.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>GEX PIN (Zero Gamma)</h4>
+                        <p>The price level where positive and negative gamma cancel out. Price tends to <strong>gravitate toward this level</strong> during positive GEX environments. The most likely "magnet" for price.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Gamma Flip</h4>
+                        <p>The price where net GEX transitions from positive to negative (or vice versa). <strong>Below this level, volatility increases</strong>. Above it, price is more likely to be contained. A critical inflection point.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Max Pain</h4>
+                        <p>The strike price where the maximum number of options expire worthless, causing the least payout by market makers. Price often drifts toward max pain as expiration approaches.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Max GEX Strike</h4>
+                        <p>The strike with the absolute highest gamma concentration. When close to the current price (&lt;15 points), it can act as a mild magnet. When far away, it represents a resistance ceiling.</p>
+                    </div>
+                </div>
+
+                <h2 id="gex-regimes">GEX Regimes: Positive, Negative, Neutral</h2>
+                <p>IntelliTrade classifies the current GEX environment into three regimes, each with different trading implications:</p>
+
+                <h3>Positive GEX Regime</h3>
+                <p>Net GEX is above +0.02 billion. Market makers are long gamma.</p>
+                <ul>
+                    <li><strong>Market behavior:</strong> Range-bound, mean-reverting, lower volatility</li>
+                    <li><strong>Price tendency:</strong> Pins near GEX PIN level, contained between Put Wall and Call Wall</li>
+                    <li><strong>Best strategies:</strong> Iron Fly (if pinning), Iron Condor (range-bound), Put Spreads (bullish bias)</li>
+                    <li><strong>Avoid:</strong> Bearish directional trades (Call Spreads) &mdash; the market is structurally supported</li>
+                </ul>
+
+                <h3>Negative GEX Regime</h3>
+                <p>Net GEX is below -0.02 billion. Market makers are short gamma.</p>
+                <ul>
+                    <li><strong>Market behavior:</strong> Trending, volatile, larger moves in both directions</li>
+                    <li><strong>Price tendency:</strong> Moves away from levels quickly, overshoots support/resistance</li>
+                    <li><strong>Best strategies:</strong> Call Spreads (bearish bias), directional trades aligned with the trend</li>
+                    <li><strong>Avoid:</strong> Bullish directional trades (Put Spreads) &mdash; the market lacks structural support</li>
+                </ul>
+
+                <h3>Neutral GEX Regime</h3>
+                <p>Net GEX is between -0.02 and +0.02 billion. Transitional zone.</p>
+                <ul>
+                    <li><strong>Market behavior:</strong> Mixed signals, can transition either way</li>
+                    <li><strong>Best strategies:</strong> Both directional types allowed, but with extra caution</li>
+                    <li><strong>Key watch:</strong> Monitor for GEX flips &mdash; a shift from positive to negative can trigger rapid selling</li>
+                </ul>
+
+                <div class="edu-callout danger">
+                    <strong>Critical Rule:</strong> IntelliTrade enforces strict regime alignment. The system will <strong>never</strong> enter a bullish trade (Put Spread) when GEX is negative, and <strong>never</strong> enter a bearish trade (Call Spread) when GEX is positive. This rule was implemented after a real loss on Feb 23 where a bullish Put Spread was entered during negative GEX &mdash; SPX dropped and the trade lost 129%.
+                </div>
+
+                <h2 id="reading-gex">Reading the GEX Chart</h2>
+                <p>IntelliTrade's <a href="https://intellitrade.app">Gamma Exposure dashboard</a> displays the live GEX profile as a chart. Here is how to read it:</p>
+
+                <h3>The GEX Bar Chart</h3>
+                <ul>
+                    <li><strong>X-axis:</strong> Strike prices</li>
+                    <li><strong>Y-axis:</strong> Gamma exposure in billions of dollars</li>
+                    <li><strong>Green bars:</strong> Positive gamma (calls dominate)</li>
+                    <li><strong>Red bars:</strong> Negative gamma (puts dominate)</li>
+                    <li><strong>Vertical line:</strong> Current SPX price</li>
+                </ul>
+
+                <h3>What to Look For</h3>
+                <ol>
+                    <li><strong>Tall bars near price</strong> &mdash; Strong support/resistance at those strikes. Price is likely to stall there.</li>
+                    <li><strong>Asymmetry</strong> &mdash; If call gamma far exceeds put gamma, the market has a stronger ceiling than floor (and vice versa).</li>
+                    <li><strong>GEX PIN proximity</strong> &mdash; If SPX is within 5-10 points of the GEX PIN, expect pinning behavior.</li>
+                    <li><strong>Net GEX sign</strong> &mdash; Positive = dampening, negative = amplifying. This is the single most important data point.</li>
+                </ol>
+
+                <h3>GEX History</h3>
+                <p>The dashboard also shows a historical chart of net GEX over time. Look for:</p>
+                <ul>
+                    <li><strong>GEX regime transitions</strong> &mdash; When net GEX flips from positive to negative, expect increased volatility</li>
+                    <li><strong>GEX extremes</strong> &mdash; Very high positive GEX often precedes a quiet, range-bound day</li>
+                    <li><strong>GEX divergences</strong> &mdash; If price is making new highs but GEX is declining, the support structure is weakening</li>
+                </ul>
+
+                <h2 id="intellitrade-gex">How IntelliTrade Uses GEX</h2>
+                <p>GEX is the backbone of IntelliTrade's options trading system. Here is how it is integrated across the platform:</p>
+
+                <h3>Trade Generation</h3>
+                <p>The system uses GEX data to select which strategies to deploy:</p>
+                <ul>
+                    <li><strong>Positive GEX + price near PIN</strong> &rarr; Iron Fly (profit from pinning)</li>
+                    <li><strong>Positive GEX + price between walls</strong> &rarr; Iron Condor (profit from range)</li>
+                    <li><strong>Positive GEX + directional bias</strong> &rarr; Put Spread (bullish)</li>
+                    <li><strong>Negative GEX + trending</strong> &rarr; Call Spread (bearish) or skip if too volatile</li>
+                </ul>
+
+                <h3>Quality Gates</h3>
+                <p>Before any trade is placed, multiple <a href="/auto-trading/">quality gates</a> check GEX-related conditions:</p>
+                <ul>
+                    <li><strong>PIN proximity tiers</strong> &mdash; Iron Fly requires price to be within 15 points of the GEX PIN</li>
+                    <li><strong>Regime alignment</strong> &mdash; Directional spreads must match the GEX regime direction</li>
+                    <li><strong>Breakout detection</strong> &mdash; If price breaks through the Call/Put Wall, range strategies are skipped</li>
+                </ul>
+
+                <h3>Exit Management</h3>
+                <p>GEX also drives exit decisions for open positions:</p>
+                <ul>
+                    <li><strong>GEX Flip exit</strong> &mdash; If GEX flips from positive to negative while you hold an Iron Fly or Iron Condor, the position is closed immediately</li>
+                    <li><strong>Gamma Flip price cross</strong> &mdash; If SPX drops below the Gamma Flip level, positions are closed as a safety measure</li>
+                    <li><strong>Breakeven breach</strong> &mdash; If SPX moves past the breakeven of your position, it triggers a market close</li>
+                </ul>
+
+                <h3>AI Brain Integration</h3>
+                <p>The <a href="/ai-assistant/">AI Brain</a> receives real-time GEX data as part of its analysis. It combines GEX regime, levels, and historical patterns to provide context-aware suggestions that factor in the current gamma environment.</p>
+            </div>
+
+            <nav class="edu-nav-bottom" aria-label="Education navigation">
+                <a href="/futures/" class="edu-nav-link prev">
+                    <span class="nav-direction">Previous</span>
+                    <span class="nav-title">Futures Trading</span>
+                </a>
+                <a href="/auto-trading/" class="edu-nav-link next">
+                    <span class="nav-direction">Next</span>
+                    <span class="nav-title">Auto Trading</span>
+                </a>
+            </nav>
+        </article>
+
+        <div class="site-cta">
+            <h3>Ready to trade smarter?</h3>
+            <p>IntelliTrade automates options and futures trading with GEX analysis, AI insights, and risk management.</p>
+            <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
+        </div>
+        <footer class="site-footer">
+            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+        </footer>
+    </main>
+</div>
+</body>
+</html>

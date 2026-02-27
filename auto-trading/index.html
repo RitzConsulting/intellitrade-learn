@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Automated Trading with IntelliTrade: Agents &amp; Strategies - IntelliTrade Learn</title>
+<meta name="description" content="Learn how IntelliTrade automates options and futures trading with intelligent agents, quality gates, and dynamic exit management. Understand the complete auto-trading system.">
+<meta name="keywords" content="automated trading, algorithmic trading, trading agents, auto trading, risk management, exit management, IntelliTrade, options automation">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Automated Trading with IntelliTrade: Agents &amp; Strategies - IntelliTrade Learn">
+<meta property="og:description" content="Learn how IntelliTrade automates options and futures trading with intelligent agents, quality gates, and dynamic exit management. Understand the complete auto-trading system.">
+<meta property="og:url" content="https://learn.intellitrade.app/auto-trading/">
+<meta property="og:site_name" content="IntelliTrade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automated Trading with IntelliTrade: Agents &amp; Strategies - IntelliTrade Learn">
+<meta name="twitter:description" content="Learn how IntelliTrade automates options and futures trading with intelligent agents, quality gates, and dynamic exit management. Understand the complete auto-trading system.">
+<link rel="canonical" href="https://learn.intellitrade.app/auto-trading/">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Automated Trading with IntelliTrade: Agents and Strategies",
+    "description": "Learn how IntelliTrade automates options and futures trading with intelligent agents, quality gates, and dynamic exit management.",
+    "author": {"@type": "Organization", "name": "IntelliTrade"},
+    "publisher": {"@type": "Organization", "name": "IntelliTrade", "url": "https://intellitrade.live"},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://learn.intellitrade.app/auto-trading/"},
+    "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.app/"}
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<header class="learn-header">
+    <a href="/" class="lh-brand">
+        <span class="lh-gem">&#9889;</span>
+        <span class="lh-wordmark">Intelli<span>Trade</span></span>
+    </a>
+    <span class="lh-sep"></span>
+    <span class="lh-title">Education</span>
+    <span class="lh-spacer"></span>
+    <a href="https://intellitrade.app" class="lh-back">&larr; Dashboard</a>
+    <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
+</header>
+<div class="learn-layout">
+    <nav class="learn-sidebar" aria-label="Education topics">
+        <a href="/">Overview</a>
+        <a href="/trading-basics/">Trading Basics</a>
+        <a href="/options/">Options 101</a>
+        <a href="/futures/">Futures</a>
+        <a href="/gex/">GEX</a>
+        <a href="/auto-trading/" class="active">Auto Trading</a>
+        <a href="/ai-assistant/">AI Assistant</a>
+        <a href="/zero-dte/">0DTE</a>
+    </nav>
+    <main class="learn-main">
+        <article class="edu-page">
+            <nav class="edu-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Learn</a>
+                <span class="sep">/</span>
+                <span>Auto Trading</span>
+            </nav>
+
+            <header class="edu-header">
+                <h1>Automated Trading with IntelliTrade</h1>
+                <p class="edu-subtitle">How IntelliTrade's trading agents analyze the market, select strategies, execute trades, and manage risk &mdash; all without manual intervention.</p>
+                <div class="edu-meta">
+                    <span class="difficulty-badge intermediate">Intermediate</span>
+                    <span>15 min read</span>
+                </div>
+            </header>
+
+            <nav class="edu-toc" aria-label="Table of contents">
+                <h3>In This Article</h3>
+                <ol>
+                    <li><a href="#why-automate">Why Automate Your Trading?</a></li>
+                    <li><a href="#how-it-works">How the System Works</a></li>
+                    <li><a href="#agents">Trading Agents</a></li>
+                    <li><a href="#strategies">Strategy Selection</a></li>
+                    <li><a href="#quality-gates">Quality Gates</a></li>
+                    <li><a href="#exit-management">Exit Management</a></li>
+                    <li><a href="#risk-controls">Risk Controls</a></li>
+                </ol>
+            </nav>
+
+            <div class="edu-body">
+                <h2 id="why-automate">Why Automate Your Trading?</h2>
+                <p>Even the most disciplined traders struggle with the psychological pressures of real-time trading: fear of missing out, reluctance to cut losses, and the temptation to override their own rules. Automated trading removes these emotional pitfalls by executing a predefined strategy with machine precision.</p>
+                <p>The goals of automated trading are simple:</p>
+                <ul>
+                    <li><strong>Consistency</strong> &mdash; Execute the same strategy the same way every time, regardless of mood or market anxiety</li>
+                    <li><strong>Speed</strong> &mdash; React to market conditions in milliseconds, not minutes</li>
+                    <li><strong>Discipline</strong> &mdash; Enforce risk rules without exception &mdash; the system cannot "cheat" on stop losses or position limits</li>
+                    <li><strong>Scalability</strong> &mdash; Monitor multiple strategies and conditions simultaneously, something no human can do effectively</li>
+                    <li><strong>Passive income</strong> &mdash; Generate returns while you sleep, travel, or focus on other things</li>
+                </ul>
+
+                <div class="edu-callout">
+                    <strong>The IntelliTrade Philosophy:</strong> The system is built around proven <a href="/options/#common-strategies">credit strategies</a> that benefit from time decay. Combined with <a href="/gex/">GEX analysis</a> for market context and strict risk management, the goal is steady, consistent returns with managed downside &mdash; not home-run trades.
+                </div>
+
+                <h2 id="how-it-works">How the System Works</h2>
+                <p>IntelliTrade's automated trading runs as a continuous loop during market hours. Here is the high-level flow:</p>
+
+                <pre>
+Market Opens (9:30 AM ET)
+  &darr;
+Agent Scheduler activates trading agents
+  &darr;
+Every 5 minutes: Scan for trade opportunities
+  &darr;  Fetch live GEX data, VIX, SPX price
+  &darr;  Run quality gates (VIX, ATR, consolidation, momentum)
+  &darr;  Generate trade ideas matching current conditions
+  &darr;  Execute qualifying trades via broker API
+  &darr;
+Every 30 seconds: Monitor open positions
+  &darr;  Check breakeven breaches, GEX flips
+  &darr;  Update trailing stop high-water marks
+  &darr;  Apply time-based profit targets
+  &darr;
+3:45 PM: Begin end-of-day position management
+  &darr;
+4:00 PM: Market close, final reconciliation
+  &darr;
+4:15 PM: Sweep expired 0DTE positions, generate daily summary
+                </pre>
+
+                <h3>Key Components</h3>
+                <ul>
+                    <li><strong>Option data feed</strong> &mdash; Real-time options chain data from Tradier, with CBOE for GEX calculations</li>
+                    <li><strong>Trade generation engine</strong> &mdash; Scans market conditions and generates trade ideas based on <a href="/gex/#gex-regimes">GEX regime</a>, price levels, and volatility</li>
+                    <li><strong>Broker integration</strong> &mdash; Connects to Tradier API for options, IBKR for futures &mdash; built as a plug-in architecture for flexibility</li>
+                    <li><strong>Position monitor</strong> &mdash; Tracks every open position with real-time P&amp;L from live option mid-prices</li>
+                    <li><strong>Database tracking</strong> &mdash; Every trade idea, execution, and outcome is recorded for analysis and backtesting</li>
+                </ul>
+
+                <h2 id="agents">Trading Agents</h2>
+                <p>IntelliTrade uses specialized <strong>trading agents</strong> &mdash; each configured for a specific trading style, window, and strategy set.</p>
+
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>0DTE SPX Agent</h4>
+                        <p>The primary options agent. Trades SPX 0DTE options from 10:15 AM to 2:15 PM ET. Handles Iron Fly, Iron Condor, and directional spreads based on GEX regime. Maximum 5 trades per day with 5-minute intervals.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>IntelliAgent (AI)</h4>
+                        <p>The <a href="/ai-assistant/">AI-powered agent</a> that runs all day. Uses Claude AI to analyze market conditions and suggest trades. Provides a second perspective alongside the rule-based 0DTE agent.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>ORB v11 (Futures)</h4>
+                        <p>Runs on TradingView via Pine Script. Detects <a href="/futures/#orb">Opening Range Breakouts</a> on ES/MES/NQ 5-minute charts and sends webhook signals to the IBKR Bridge for execution.</p>
+                    </div>
+                </div>
+
+                <h3>How Agents Prevent Conflicts</h3>
+                <p>Each agent has its own scope and limits:</p>
+                <ul>
+                    <li><strong>Daily trade limits</strong> are per-agent &mdash; the 0DTE agent's 5-trade limit doesn't affect IntelliAgent</li>
+                    <li><strong>Duplicate prevention</strong> is agent-scoped &mdash; agents don't block each other's trades</li>
+                    <li><strong>A global ceiling</strong> caps total daily trades across all agents</li>
+                    <li><strong>Trade limits are database-backed</strong> &mdash; they survive server restarts</li>
+                </ul>
+
+                <h2 id="strategies">Strategy Selection</h2>
+                <p>The system selects strategies in phases based on the time of day and market conditions:</p>
+
+                <h3>Morning Phase (10:15 AM &ndash; 11:30 AM)</h3>
+                <p>Focus on directional spreads. The market establishes its tone in the morning, and GEX regime data helps determine direction:</p>
+                <ul>
+                    <li>Positive GEX &rarr; Bullish bias &rarr; Put Spread</li>
+                    <li>Negative GEX &rarr; Bearish bias &rarr; Call Spread</li>
+                </ul>
+
+                <h3>Midday Phase (11:30 AM &ndash; 1:30 PM)</h3>
+                <p>The market often settles into a range during midday. The system looks for:</p>
+                <ol>
+                    <li><strong>Breakout detection</strong> &mdash; If SPX has broken through a major GEX wall, skip range-bound strategies</li>
+                    <li><strong>Iron Fly</strong> &mdash; If price is pinning near the GEX PIN level</li>
+                    <li><strong>Iron Condor</strong> &mdash; If price is range-bound between the Put Wall and Call Wall</li>
+                </ol>
+
+                <h3>Reversal Phase (1:30 PM &ndash; 2:15 PM)</h3>
+                <p>Late-day reversals are common. The system re-evaluates directional trades with fresh GEX data and tighter risk parameters.</p>
+
+                <div class="edu-callout success">
+                    <strong>Why Credit Strategies?</strong> IntelliTrade primarily uses credit strategies (selling options) because they benefit from theta decay. With <a href="/zero-dte/">0DTE options</a>, time decay is extreme &mdash; options lose value rapidly as the trading day progresses. By selling these options, IntelliTrade collects premium that erodes quickly if the market stays within the expected range.
+                </div>
+
+                <h2 id="quality-gates">Quality Gates</h2>
+                <p>Before any trade is executed, it must pass through a series of <strong>quality gates</strong> &mdash; market condition checks that filter out trades with unfavorable risk profiles.</p>
+
+                <table>
+                    <tr>
+                        <th>Gate</th>
+                        <th>What It Checks</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><strong>VIX Level</strong></td>
+                        <td>Current VIX (fear index) level</td>
+                        <td>VIX &gt;30: skip ALL trades. VIX &gt;25: skip Iron Condors. VIX &gt;20: skip Iron Fly.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ATR (Volatility)</strong></td>
+                        <td>Average True Range as a % of price</td>
+                        <td>ATR% &gt;0.20: skip Iron Fly. ATR% &gt;0.35: skip Iron Condor.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Consolidation</strong></td>
+                        <td>30-minute price range</td>
+                        <td>Range must be &le;15 points for Iron Fly (ensures pinning behavior)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Momentum</strong></td>
+                        <td>Consecutive same-direction candles</td>
+                        <td>3+ trending candles: skip Iron Fly (market is trending, not pinning)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PIN Proximity</strong></td>
+                        <td>Distance from GEX PIN level</td>
+                        <td>&le;5pts: need 65% prob. 5-10pts: 75%. 10-15pts: 85%. &gt;15pts: SKIP</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GEX Regime</strong></td>
+                        <td>Positive/Negative/Neutral GEX</td>
+                        <td>Directional spreads must align with regime direction</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Min ROR</strong></td>
+                        <td>Return on Risk ratio</td>
+                        <td>Trade must offer at least 30% return on risk to qualify</td>
+                    </tr>
+                </table>
+
+                <p>Each gate check is logged to a <strong>gate log</strong> database table, providing full transparency into why trades were taken or skipped. You can view gate activity in the <a href="https://intellitrade.app/trade-history">Performance Analytics</a> dashboard.</p>
+
+                <h2 id="exit-management">Exit Management</h2>
+                <p>Getting into a trade is only half the battle. The <strong>Dynamic Exit Manager</strong> monitors every open position every 30 seconds and applies a priority-ordered set of exit rules:</p>
+
+                <h3>Exit Rules (Priority Order)</h3>
+                <ol>
+                    <li>
+                        <strong>Breakeven Breach</strong>
+                        <p>If SPX moves past the breakeven of your spread by more than 3 points, the position is closed immediately via market order. This catches fast moves that threaten the position.</p>
+                    </li>
+                    <li>
+                        <strong>GEX Flip</strong>
+                        <p>If the <a href="/gex/#gex-regimes">GEX regime</a> flips (positive to negative) while you hold an Iron Fly, Iron Condor, or misaligned directional spread, the position is closed. Checked every 5 minutes.</p>
+                    </li>
+                    <li>
+                        <strong>Trailing Hard Stop</strong>
+                        <p>Once profit reaches 20% of entry credit, a trailing stop activates. If profit drops to the greater of 10% or (high-water mark &minus; 8%), the position is closed. This locks in meaningful gains.</p>
+                    </li>
+                    <li>
+                        <strong>Trailing Soft Stop</strong>
+                        <p>Once profit reaches 12%, a softer trailing stop activates. If profit drops to the greater of 5% or (high-water mark &minus; 12%), the position is closed. Catches smaller gains on the way up.</p>
+                    </li>
+                    <li>
+                        <strong>Loss Cut (Time-Scaled)</strong>
+                        <p>Maximum loss tolerance decreases as the day progresses: -25% before 1 PM, -20% from 1-2:30 PM, -15% after 2:30 PM. Earlier exits allow less time for recovery.</p>
+                    </li>
+                    <li>
+                        <strong>Late Day</strong>
+                        <p>After 3:30 PM, any position losing more than 10% is closed. At this point, there isn't enough time for recovery, and approaching expiration increases risk.</p>
+                    </li>
+                </ol>
+
+                <div class="edu-callout">
+                    <strong>Time-Decay Profit Targets:</strong> The system also uses time-based profit thresholds: after 12 PM, if profit exceeds 25%, close. After 2 PM, threshold drops to 20%. After 3 PM, it drops to 15%. This captures the accelerating theta decay in 0DTE options.
+                </div>
+
+                <h2 id="risk-controls">Risk Controls</h2>
+                <p>Multiple layers of protection prevent catastrophic losses:</p>
+
+                <h3>Position-Level Controls</h3>
+                <ul>
+                    <li><strong>Minimum 30% Return on Risk</strong> &mdash; Every trade must offer favorable risk-reward before entry</li>
+                    <li><strong>Defined-risk spreads</strong> &mdash; Maximum loss is always known upfront (wing width minus credit received)</li>
+                    <li><strong>Dynamic wing widths</strong> &mdash; Spread width adjusts based on ATR and VIX (15/20/25 points)</li>
+                </ul>
+
+                <h3>Agent-Level Controls</h3>
+                <ul>
+                    <li><strong>Daily trade limit</strong> &mdash; Maximum 5 trades per agent per day</li>
+                    <li><strong>Duplicate prevention</strong> &mdash; Cannot enter the same strategy type within the minimum interval</li>
+                    <li><strong>Trading window</strong> &mdash; Agents only operate during their designated hours</li>
+                </ul>
+
+                <h3>System-Level Controls</h3>
+                <ul>
+                    <li><strong>Global daily limit</strong> &mdash; Caps total trades across all agents</li>
+                    <li><strong>Daily loss limit</strong> (futures) &mdash; Automatically stops all futures trading when threshold is reached</li>
+                    <li><strong>Kill switch</strong> (futures) &mdash; Instantly flattens all positions and blocks new orders</li>
+                    <li><strong>Simulation mode</strong> &mdash; Paper trade with full system functionality before going live</li>
+                </ul>
+
+                <div class="edu-callout warning">
+                    <strong>Start with Paper Trading:</strong> IntelliTrade defaults to simulation mode for futures and supports paper trading accounts for options. Always test strategies in paper mode before risking real capital. The system tracks paper trades with the same rigor as live trades, so you can analyze performance before committing.
+                </div>
+            </div>
+
+            <nav class="edu-nav-bottom" aria-label="Education navigation">
+                <a href="/gex/" class="edu-nav-link prev">
+                    <span class="nav-direction">Previous</span>
+                    <span class="nav-title">GEX Explained</span>
+                </a>
+                <a href="/ai-assistant/" class="edu-nav-link next">
+                    <span class="nav-direction">Next</span>
+                    <span class="nav-title">AI Trading Assistant</span>
+                </a>
+            </nav>
+        </article>
+
+        <div class="site-cta">
+            <h3>Ready to trade smarter?</h3>
+            <p>IntelliTrade automates options and futures trading with GEX analysis, AI insights, and risk management.</p>
+            <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
+        </div>
+        <footer class="site-footer">
+            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+        </footer>
+    </main>
+</div>
+</body>
+</html>
