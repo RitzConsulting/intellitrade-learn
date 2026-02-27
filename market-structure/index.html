@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Market Structure: Support, Resistance &amp; Price Action - IntelliTrade Learn</title>
+<meta name="description" content="Understand market structure: support and resistance levels, trend analysis, volume confirmation, candlestick patterns, order flow, and how GEX levels enhance traditional price action.">
+<meta name="keywords" content="market structure, support and resistance, price action, trend analysis, volume profile, candlestick patterns, order flow, VWAP, GEX levels, IntelliTrade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Market Structure: Support, Resistance &amp; Price Action - IntelliTrade Learn">
+<meta property="og:description" content="Understand market structure: support and resistance levels, trend analysis, volume confirmation, candlestick patterns, order flow, and how GEX levels enhance traditional price action.">
+<meta property="og:url" content="https://learn.intellitrade.live/market-structure/">
+<meta property="og:site_name" content="IntelliTrade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Market Structure: Support, Resistance &amp; Price Action - IntelliTrade Learn">
+<meta name="twitter:description" content="Understand market structure: support and resistance levels, trend analysis, volume confirmation, candlestick patterns, order flow, and how GEX levels enhance traditional price action.">
+<link rel="canonical" href="https://learn.intellitrade.live/market-structure/">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Market Structure: Support, Resistance and Price Action",
+    "description": "Understand market structure: support and resistance levels, trend analysis, volume confirmation, candlestick patterns, order flow, and how GEX levels enhance traditional price action.",
+    "author": {"@type": "Organization", "name": "IntelliTrade"},
+    "publisher": {"@type": "Organization", "name": "IntelliTrade", "url": "https://intellitrade.live"},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://learn.intellitrade.live/market-structure/"},
+    "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.live/"}
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<header class="learn-header">
+    <a href="/" class="lh-brand">
+        <span class="lh-gem">&#9889;</span>
+        <span class="lh-wordmark">Intelli<span>Trade</span></span>
+    </a>
+    <span class="lh-sep"></span>
+    <span class="lh-title">Education</span>
+    <span class="lh-spacer"></span>
+    <a href="https://intellitrade.live" class="lh-back">&larr; Dashboard</a>
+    <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
+</header>
+<div class="learn-layout">
+    <nav class="learn-sidebar" aria-label="Education topics">
+        <a href="/">Overview</a>
+        <a href="/trading-basics/">Trading Basics</a>
+        <a href="/options/">Options 101</a>
+        <a href="/futures/">Futures</a>
+        <a href="/gex/">GEX</a>
+        <a href="/auto-trading/">Auto Trading</a>
+        <a href="/ai-assistant/">AI Assistant</a>
+        <a href="/zero-dte/">0DTE</a>
+        <a href="/ira-collars/">IRA Collars</a>
+        <a href="/tradingview/">TradingView</a>
+        <a href="/beyond-stocks/">Beyond Stocks</a>
+        <a href="/prop-firms/">Prop Firms</a>
+        <a href="/risk-management/">Risk Management</a>
+        <a href="/market-structure/" class="active">Market Structure</a>
+        <a href="/trading-plan/">Trading Plan</a>
+        <a href="/paper-trading/">Paper Trading</a>
+        <a href="/trading-taxes/">Trading Taxes</a>
+    </nav>
+    <main class="learn-main">
+        <article class="edu-page">
+            <nav class="edu-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Learn</a>
+                <span class="sep">/</span>
+                <span>Market Structure</span>
+            </nav>
+
+            <header class="edu-header">
+                <h1>Market Structure: Support, Resistance &amp; Price Action</h1>
+                <p class="edu-subtitle">Understanding the framework of highs, lows, trends, and ranges that price creates &mdash; and how to use it to identify where the market is likely to go next.</p>
+                <div class="edu-meta">
+                    <span class="difficulty-badge beginner">Beginner</span>
+                    <span>14 min read</span>
+                </div>
+            </header>
+
+            <nav class="edu-toc" aria-label="Table of contents">
+                <h3>In This Article</h3>
+                <ol>
+                    <li><a href="#what-is-market-structure">What Is Market Structure?</a></li>
+                    <li><a href="#support-resistance">Support and Resistance</a></li>
+                    <li><a href="#trend-structure">Trend Structure</a></li>
+                    <li><a href="#volume-confirmation">Volume Confirmation</a></li>
+                    <li><a href="#key-price-levels">Key Price Levels</a></li>
+                    <li><a href="#candlestick-patterns">Candlestick Patterns That Matter</a></li>
+                    <li><a href="#order-flow">Reading Order Flow</a></li>
+                    <li><a href="#gex-market-structure">How GEX Adds to Market Structure</a></li>
+                    <li><a href="#practical-tips">Practical Tips</a></li>
+                </ol>
+            </nav>
+
+            <div class="edu-body">
+                <h2 id="what-is-market-structure">What Is Market Structure?</h2>
+                <p>Market structure is the <strong>framework of highs, lows, trends, and ranges</strong> that price creates as it moves through time. It is the map of where buyers and sellers have clashed, where one side has won, and where the battle is likely to happen next.</p>
+                <p>Every price chart tells a story. Market structure is the language that story is written in. When you learn to read it, you can see:</p>
+                <ul>
+                    <li><strong>Where demand is strong</strong> &mdash; Levels where buyers step in and push price higher</li>
+                    <li><strong>Where supply overwhelms</strong> &mdash; Levels where sellers push price lower</li>
+                    <li><strong>The current trend</strong> &mdash; Whether the market is moving up, down, or sideways</li>
+                    <li><strong>Potential turning points</strong> &mdash; Where the trend might reverse or accelerate</li>
+                </ul>
+
+                <div class="edu-callout">
+                    <strong>Why This Matters:</strong> Market structure is the foundation of technical analysis. Whether you trade <a href="/options/">options</a>, <a href="/futures/">futures</a>, or stocks, every strategy performs differently depending on the structure. Range-bound strategies like <a href="/zero-dte/">Iron Condors</a> need consolidation. Directional strategies need trends. Knowing the structure tells you which tool to use.
+                </div>
+
+                <h2 id="support-resistance">Support and Resistance</h2>
+                <p>Support and resistance are the most fundamental concepts in market structure. They are the price levels where the balance between buyers and sellers shifts.</p>
+
+                <h3>Support: The Floor</h3>
+                <p><strong>Support</strong> is a price level where buying pressure exceeds selling pressure, causing the price to bounce upward. Think of it as a floor &mdash; price falls to this level and finds buyers willing to step in.</p>
+                <p>Support forms when:</p>
+                <ul>
+                    <li>Price has bounced from this level before (historical memory)</li>
+                    <li>A large number of buyers have placed orders at this level</li>
+                    <li>It aligns with a technical indicator (moving average, VWAP, etc.)</li>
+                    <li>It coincides with options market maker positioning (such as a <a href="/gex/">GEX put wall</a>)</li>
+                </ul>
+
+                <h3>Resistance: The Ceiling</h3>
+                <p><strong>Resistance</strong> is a price level where selling pressure exceeds buying pressure, causing the price to reverse downward. It acts as a ceiling &mdash; price rises to this level and finds sellers waiting.</p>
+                <p>Resistance forms for the mirror reasons: prior rejections at the level, concentrated sell orders, technical indicators, and options positioning like <a href="/gex/">GEX call walls</a>.</p>
+
+                <h3>The Role Reversal Principle</h3>
+                <p>One of the most powerful concepts in market structure: <strong>when support is broken, it becomes resistance. When resistance is broken, it becomes support.</strong></p>
+                <pre>
+    Resistance --------- 6,100 -------- (sellers here)
+                           |
+                   Price breaks above
+                           |
+    Former Resistance -- 6,100 -------- (now acts as support)
+                           |
+                     Price holds here
+                     on the retest
+                </pre>
+                <p>This happens because traders who missed the initial breakout use the pullback to the old level as an entry point, creating buying pressure where selling pressure used to be.</p>
+
+                <h3>Identifying Strong Levels</h3>
+                <ul>
+                    <li><strong>Number of touches:</strong> The more times a level has been tested and held, the stronger it is</li>
+                    <li><strong>Timeframe:</strong> Levels on daily and weekly charts are stronger than those on 5-minute charts</li>
+                    <li><strong>Volume:</strong> Levels with high trading volume are more significant</li>
+                    <li><strong>Reaction speed:</strong> Sharp bounces indicate stronger levels than slow, grinding reactions</li>
+                </ul>
+
+                <div class="edu-callout warning">
+                    <strong>Levels Are Zones, Not Lines:</strong> Support and resistance are not exact prices. They are zones, typically 3-5 points wide on SPX. Do not expect price to bounce at exactly 6,050.00 &mdash; a bounce anywhere between 6,047 and 6,053 is the same level being respected.
+                </div>
+
+                <h2 id="trend-structure">Trend Structure</h2>
+                <p>Trends are the directional moves that price makes between support and resistance levels. Understanding the trend tells you whether to look for buying opportunities, selling opportunities, or range-bound strategies.</p>
+
+                <h3>The Three Trend Types</h3>
+
+                <h3>Uptrend: Higher Highs and Higher Lows</h3>
+                <pre>
+                                        HH
+                                       / \
+                              HH      /   \
+                             / \     /
+                    HH      /   \   /
+                   / \     /     HL
+                  /   \   /
+         HH     /     HL
+        / \    /
+       /   \  /
+      /     HL
+     /
+    HL
+
+    HH = Higher High    HL = Higher Low
+    Each swing high and swing low is ABOVE the previous one.
+                </pre>
+                <p>In an uptrend, buyers are in control. Each pullback (higher low) finds buyers at a higher price than the last pullback. This signals that demand is increasing.</p>
+
+                <h3>Downtrend: Lower Highs and Lower Lows</h3>
+                <pre>
+    LH
+     \
+      \     LH
+       \   / \
+        \ /   \     LH
+         LL    \   / \
+                \ /   \     LH
+                 LL    \   / \
+                        \ /   \
+                         LL    \
+                                \
+                                 LL
+
+    LH = Lower High    LL = Lower Low
+    Each swing high and swing low is BELOW the previous one.
+                </pre>
+                <p>In a downtrend, sellers are in control. Each rally (lower high) finds sellers at a lower price than the last rally. This signals that supply is increasing.</p>
+
+                <h3>Sideways/Range: Equal Highs and Lows</h3>
+                <pre>
+    Resistance ----+------+------+------
+                   |      |      |
+                   |      |      |
+                   |      |      |
+    Support    ----+------+------+------
+
+    Price bounces between support and resistance.
+    No trend direction &mdash; buyers and sellers are balanced.
+                </pre>
+                <p>In a range, neither buyers nor sellers have control. Price oscillates between defined support and resistance levels. This is the environment where <a href="/zero-dte/">Iron Condors and Iron Flies</a> thrive.</p>
+
+                <h3>Break of Structure</h3>
+                <p>A <strong>break of structure (BOS)</strong> is when price violates the pattern of the current trend, signaling a potential reversal. In an uptrend, a BOS occurs when price makes a <strong>lower low</strong> &mdash; breaking below the previous swing low. In a downtrend, a BOS occurs when price makes a <strong>higher high</strong>.</p>
+
+                <div class="edu-callout">
+                    <strong>Trend Following Rule:</strong> "The trend is your friend until it ends." Always trade in the direction of the trend until you see a confirmed break of structure. Fighting the trend is one of the most common mistakes new traders make.
+                </div>
+
+                <h2 id="volume-confirmation">Volume Confirmation</h2>
+                <p>Price tells you what is happening. Volume tells you <strong>how real it is</strong>. Volume is the number of shares or contracts traded during a given period, and it serves as a truth detector for price movements.</p>
+
+                <h3>Volume Validates Moves</h3>
+                <ul>
+                    <li><strong>High volume breakout</strong> &mdash; Price breaks through resistance on heavy volume. This is a <strong>real breakout</strong> with conviction behind it. Traders and institutions are participating.</li>
+                    <li><strong>Low volume breakout</strong> &mdash; Price breaks through resistance on thin volume. This is likely a <strong>false breakout</strong> or "fakeout." Without volume behind it, the move often reverses.</li>
+                    <li><strong>Increasing volume on a trend</strong> &mdash; Confirms the trend is healthy and likely to continue.</li>
+                    <li><strong>Decreasing volume on a trend</strong> &mdash; Warns that the trend may be losing steam. A reversal could be near.</li>
+                </ul>
+
+                <h3>Volume Profile</h3>
+                <p>Volume profile shows the amount of trading that occurred at each price level over a specified period. It creates a horizontal histogram on the chart.</p>
+                <ul>
+                    <li><strong>High-volume nodes (HVN)</strong> &mdash; Price levels where a lot of trading occurred. These act as magnets &mdash; price tends to spend time here. They also serve as strong support/resistance.</li>
+                    <li><strong>Low-volume nodes (LVN)</strong> &mdash; Price levels with little trading. Price tends to move through these quickly. They represent areas of price rejection.</li>
+                    <li><strong>Point of Control (POC)</strong> &mdash; The single price level with the most volume. It is the "fair value" for that time period.</li>
+                </ul>
+
+                <div class="edu-callout">
+                    <strong>Chart Setup:</strong> <a href="/tradingview/">TradingView</a> offers excellent volume profile tools, including the built-in Volume Profile indicator and the VWAP (Volume Weighted Average Price) overlay. These are essential for understanding where the real trading is happening.
+                </div>
+
+                <h2 id="key-price-levels">Key Price Levels</h2>
+                <p>Beyond basic support and resistance, several specific price levels carry extra significance for intraday traders.</p>
+
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>VWAP</h4>
+                        <p><strong>Volume Weighted Average Price</strong> &mdash; the average price weighted by volume for the day. It represents intraday fair value. Institutional traders use VWAP as a benchmark: price above VWAP is considered bullish, below is bearish.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Previous Day High/Low</h4>
+                        <p>The high and low of the previous trading session. These are key reference points that many traders watch. A break above the prior day's high signals strength; a break below the prior low signals weakness.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Opening Range</h4>
+                        <p>The high and low established during the first 5-30 minutes of the session. The <a href="/tradingview/#orb-strategy">Opening Range Breakout (ORB)</a> strategy uses these levels to determine direction for the rest of the day.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Round Numbers</h4>
+                        <p>Psychological price levels like SPX 6,000, 6,050, 6,100. Humans are drawn to round numbers, and large orders tend to cluster at these levels, creating natural support and resistance.</p>
+                    </div>
+                </div>
+
+                <h3>GEX Levels</h3>
+                <p><a href="/gex/">GEX (Gamma Exposure) levels</a> are a unique addition to the price level toolkit. They represent where options market makers have concentrated positioning, creating invisible forces that influence price behavior:</p>
+                <ul>
+                    <li><strong>Put Wall</strong> &mdash; The strike with the highest put gamma exposure. Acts as a support level where market maker hedging creates buying pressure.</li>
+                    <li><strong>Call Wall</strong> &mdash; The strike with the highest call gamma exposure. Acts as a resistance level where market maker hedging creates selling pressure.</li>
+                    <li><strong>GEX PIN</strong> &mdash; The price where market maker hedging activity is at equilibrium. Price tends to gravitate toward this level, especially in positive GEX environments.</li>
+                </ul>
+
+                <h2 id="candlestick-patterns">Candlestick Patterns That Matter</h2>
+                <p>There are hundreds of named candlestick patterns. The truth is, you only need to understand a handful of them to get 90% of the useful information candles provide. Focus on these four.</p>
+
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>Engulfing Pattern (Reversal)</h4>
+                        <p>A large candle that completely engulfs the body of the previous candle. A <strong>bullish engulfing</strong> (green engulfs red) at support signals buyers taking over. A <strong>bearish engulfing</strong> (red engulfs green) at resistance signals sellers taking over. Most powerful at key levels.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Pin Bar / Hammer (Rejection)</h4>
+                        <p>A candle with a long wick (shadow) and a small body. The long wick shows that price tried to move in one direction but was <strong>rejected</strong>. A hammer at support (long lower wick) is bullish. A shooting star at resistance (long upper wick) is bearish.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Inside Bar (Consolidation)</h4>
+                        <p>A candle whose entire range fits within the previous candle's range. This indicates <strong>consolidation</strong> &mdash; a pause before the next move. The breakout direction from the inside bar often signals the next move. Commonly used as a setup for breakout entries.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Doji (Indecision)</h4>
+                        <p>A candle where the open and close are nearly identical, creating a cross shape. Represents <strong>indecision</strong> &mdash; neither buyers nor sellers won the period. At a key level, a doji followed by a directional candle can signal a reversal.</p>
+                    </div>
+                </div>
+
+                <div class="edu-callout warning">
+                    <strong>Context Is Everything:</strong> A hammer candle in the middle of nowhere means nothing. A hammer candle at a key support level, with high volume, in an uptrend, after a pullback &mdash; that is a high-probability signal. Always read candle patterns in the context of market structure, volume, and key levels.
+                </div>
+
+                <h2 id="order-flow">Reading Order Flow</h2>
+                <p>Order flow analysis goes one level deeper than price charts. Instead of looking at the result of trading (the candles), you are looking at the trading itself &mdash; the individual buy and sell orders as they happen.</p>
+
+                <h3>The Basics</h3>
+                <dl>
+                    <dt>Bid vs. Ask</dt>
+                    <dd>The <strong>bid</strong> is the highest price buyers are willing to pay. The <strong>ask</strong> is the lowest price sellers will accept. The difference is the <strong>spread</strong>. When someone buys at the ask, it is an aggressive buy. When someone sells at the bid, it is an aggressive sell.</dd>
+
+                    <dt>Time &amp; Sales (The Tape)</dt>
+                    <dd>A real-time feed of every trade that executes, showing the price, size, and whether it hit the bid or the ask. A stream of large trades hitting the ask signals aggressive buying. Large trades hitting the bid signal aggressive selling.</dd>
+
+                    <dt>Order Book Depth</dt>
+                    <dd>Shows the queue of limit orders waiting at each price level. A thick stack of buy orders below the current price suggests strong support. A wall of sell orders above suggests resistance. But beware &mdash; orders can be cancelled or spoofed.</dd>
+
+                    <dt>Iceberg Orders</dt>
+                    <dd>Large orders that are split into smaller visible chunks. An institution wanting to buy 10,000 contracts might show only 50 at a time, hiding the true size. Repeated fills at the same price level can indicate a hidden iceberg order providing support or resistance.</dd>
+                </dl>
+
+                <h3>How Institutions Move Markets</h3>
+                <p>Institutional traders (banks, hedge funds, pensions) move much larger size than retail traders. They cannot simply hit the market order button for 50,000 shares because that would move the price against them. Instead, they use sophisticated execution algorithms to:</p>
+                <ul>
+                    <li><strong>Accumulate</strong> &mdash; Slowly build a large position over time, often during ranges</li>
+                    <li><strong>Distribute</strong> &mdash; Slowly sell a large position into strength, often near resistance</li>
+                    <li><strong>Sweep</strong> &mdash; Aggressively take liquidity when speed matters more than price</li>
+                </ul>
+                <p>Understanding institutional behavior helps explain why certain levels hold and why breakouts sometimes fail &mdash; the "smart money" may be doing the opposite of what the chart appears to show.</p>
+
+                <h2 id="gex-market-structure">How GEX Adds to Market Structure</h2>
+                <p><a href="/gex/">Gamma Exposure (GEX)</a> analysis adds a powerful layer to traditional market structure by revealing where options market makers are forced to hedge. These hedging flows create <strong>invisible support and resistance</strong> that does not appear on a standard price chart.</p>
+
+                <h3>GEX as Support and Resistance</h3>
+                <ul>
+                    <li><strong>Put Wall = Support</strong> &mdash; At the strike with the highest put gamma, market makers who sold those puts need to buy the underlying as price drops toward this level. Their buying creates a floor.</li>
+                    <li><strong>Call Wall = Resistance</strong> &mdash; At the strike with the highest call gamma, market makers who sold those calls need to sell the underlying as price rises toward this level. Their selling creates a ceiling.</li>
+                    <li><strong>GEX PIN = Magnet</strong> &mdash; The equilibrium point where hedging flows are balanced. In positive GEX regimes, price tends to gravitate toward the PIN, especially during the afternoon session.</li>
+                </ul>
+
+                <h3>Combining GEX with Traditional Levels</h3>
+                <p>The real edge comes from combining GEX levels with traditional support and resistance. When a GEX level aligns with a traditional level, the combined support or resistance is significantly stronger.</p>
+                <pre>
+    Scenario: Strong Support Confluence
+
+    Traditional Support:  6,020 (prior day low, bounced 3x this week)
+    GEX Put Wall:         6,025 (highest put gamma concentration)
+    VWAP:                 6,022 (intraday fair value)
+
+    = Triple confluence zone at 6,020-6,025
+    = High probability support for Iron Condor short put placement
+                </pre>
+
+                <div class="edu-callout success">
+                    <strong>IntelliTrade's Approach:</strong> IntelliTrade automatically combines GEX levels with price action data to select optimal strike prices for <a href="/zero-dte/">0DTE strategies</a>. The system identifies where GEX walls align with traditional S/R to find the highest-probability zones for placing trades.
+                </div>
+
+                <h3>GEX Regime and Structure</h3>
+                <p>The <a href="/gex/">GEX regime</a> (positive vs. negative) fundamentally changes how market structure behaves:</p>
+                <ul>
+                    <li><strong>Positive GEX:</strong> Market makers dampen moves. Support and resistance levels are more likely to hold. Ranges persist. This is ideal for range-bound strategies.</li>
+                    <li><strong>Negative GEX:</strong> Market makers amplify moves. Breakouts through support and resistance are more likely to follow through. Trends accelerate. This favors directional strategies.</li>
+                </ul>
+
+                <h2 id="practical-tips">Practical Tips</h2>
+                <p>Here are actionable guidelines for applying market structure to your daily trading:</p>
+
+                <h3>1. Draw Levels Top-Down</h3>
+                <p>Start with the highest timeframe and work down. Levels on a daily chart carry more weight than levels on a 5-minute chart. Begin with the daily, then the hourly, then the 5-minute. The strongest zones are where multiple timeframes agree.</p>
+
+                <h3>2. Trade at the Edges, Not the Middle</h3>
+                <p>In a range between 6,020 and 6,080, the worst place to enter is at 6,050. You have no edge &mdash; price could easily go either way. Wait for price to approach the support at 6,020 or the resistance at 6,080, then look for a reaction and confirmation before entering.</p>
+
+                <h3>3. Wait for Confirmation</h3>
+                <p>A level is just a line on a chart until price reacts to it. Do not assume a support level will hold just because it held before. Wait for a confirmation signal: a rejection candle, a volume spike, or a GEX-aligned bounce. Then enter.</p>
+
+                <h3>4. Use Multiple Confluences</h3>
+                <p>A single reason to enter a trade is not enough. Look for <strong>confluence</strong> &mdash; multiple factors agreeing. The best trades combine:</p>
+                <ul>
+                    <li>A key support/resistance level</li>
+                    <li>A GEX wall or PIN alignment</li>
+                    <li>A candlestick confirmation pattern</li>
+                    <li>Volume supporting the move</li>
+                    <li>The overall trend in your favor</li>
+                </ul>
+
+                <h3>5. Respect the Trend</h3>
+                <p>Counter-trend trades can work, but they are inherently lower probability. In an uptrend, focus on buying dips to support. In a downtrend, focus on selling rallies to resistance. Fighting the trend should be the exception, not the rule.</p>
+
+                <h3>6. Build This Into Your Plan</h3>
+                <p>Market structure analysis should be part of your daily pre-market routine. Before the bell rings, identify the key levels, determine the trend, check the <a href="/gex/">GEX regime</a>, and know where you want to trade and where you want to stay away from. Document all of this in your <a href="/trading-plan/">trading plan</a>.</p>
+
+                <div class="edu-callout">
+                    <strong>Next Steps:</strong> Now that you understand market structure, build these concepts into a complete <a href="/trading-plan/">trading plan</a> that defines your daily routine, entry rules, risk parameters, and review process.
+                </div>
+            </div>
+
+            <nav class="edu-nav-bottom" aria-label="Education navigation">
+                <a href="/risk-management/" class="edu-nav-link prev">
+                    <span class="nav-direction">Previous</span>
+                    <span class="nav-title">Risk Management</span>
+                </a>
+                <a href="/trading-plan/" class="edu-nav-link next">
+                    <span class="nav-direction">Next</span>
+                    <span class="nav-title">Trading Plan</span>
+                </a>
+            </nav>
+        </article>
+
+        <div class="site-cta">
+            <h3>Ready to trade smarter?</h3>
+            <p>IntelliTrade automates options and futures trading with GEX analysis, AI insights, and risk management.</p>
+            <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
+        </div>
+        <footer class="site-footer">
+            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+        </footer>
+    </main>
+</div>
+</body>
+</html>

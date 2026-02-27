@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Risk Management &amp; Position Sizing for Traders - IntelliTrade Learn</title>
+<meta name="description" content="Master risk management and position sizing to protect your trading capital. Learn the 1-2% rule, stop losses, risk-reward ratios, and how IntelliTrade automates risk controls.">
+<meta name="keywords" content="risk management, position sizing, stop loss, risk reward ratio, trading risk, 1 percent rule, loss limits, trading journal, portfolio risk, IntelliTrade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Risk Management &amp; Position Sizing for Traders - IntelliTrade Learn">
+<meta property="og:description" content="Master risk management and position sizing to protect your trading capital. Learn the 1-2% rule, stop losses, risk-reward ratios, and how IntelliTrade automates risk controls.">
+<meta property="og:url" content="https://learn.intellitrade.live/risk-management/">
+<meta property="og:site_name" content="IntelliTrade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Risk Management &amp; Position Sizing for Traders - IntelliTrade Learn">
+<meta name="twitter:description" content="Master risk management and position sizing to protect your trading capital. Learn the 1-2% rule, stop losses, risk-reward ratios, and how IntelliTrade automates risk controls.">
+<link rel="canonical" href="https://learn.intellitrade.live/risk-management/">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Risk Management and Position Sizing for Traders",
+    "description": "Master risk management and position sizing to protect your trading capital. Learn the 1-2% rule, stop losses, risk-reward ratios, and how IntelliTrade automates risk controls.",
+    "author": {"@type": "Organization", "name": "IntelliTrade"},
+    "publisher": {"@type": "Organization", "name": "IntelliTrade", "url": "https://intellitrade.live"},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://learn.intellitrade.live/risk-management/"},
+    "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.live/"}
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<header class="learn-header">
+    <a href="/" class="lh-brand">
+        <span class="lh-gem">&#9889;</span>
+        <span class="lh-wordmark">Intelli<span>Trade</span></span>
+    </a>
+    <span class="lh-sep"></span>
+    <span class="lh-title">Education</span>
+    <span class="lh-spacer"></span>
+    <a href="https://intellitrade.live" class="lh-back">&larr; Dashboard</a>
+    <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
+</header>
+<div class="learn-layout">
+    <nav class="learn-sidebar" aria-label="Education topics">
+        <a href="/">Overview</a>
+        <a href="/trading-basics/">Trading Basics</a>
+        <a href="/options/">Options 101</a>
+        <a href="/futures/">Futures</a>
+        <a href="/gex/">GEX</a>
+        <a href="/auto-trading/">Auto Trading</a>
+        <a href="/ai-assistant/">AI Assistant</a>
+        <a href="/zero-dte/">0DTE</a>
+        <a href="/ira-collars/">IRA Collars</a>
+        <a href="/tradingview/">TradingView</a>
+        <a href="/beyond-stocks/">Beyond Stocks</a>
+        <a href="/prop-firms/">Prop Firms</a>
+        <a href="/risk-management/" class="active">Risk Management</a>
+        <a href="/market-structure/">Market Structure</a>
+        <a href="/trading-plan/">Trading Plan</a>
+        <a href="/paper-trading/">Paper Trading</a>
+        <a href="/trading-taxes/">Trading Taxes</a>
+    </nav>
+    <main class="learn-main">
+        <article class="edu-page">
+            <nav class="edu-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Learn</a>
+                <span class="sep">/</span>
+                <span>Risk Management</span>
+            </nav>
+
+            <header class="edu-header">
+                <h1>Risk Management &amp; Position Sizing for Traders</h1>
+                <p class="edu-subtitle">The single most important skill in trading is not finding entries &mdash; it is managing risk. Learn how to size positions, set stop losses, and build a framework that keeps you in the game long enough to win.</p>
+                <div class="edu-meta">
+                    <span class="difficulty-badge beginner">Beginner</span>
+                    <span>13 min read</span>
+                </div>
+            </header>
+
+            <nav class="edu-toc" aria-label="Table of contents">
+                <h3>In This Article</h3>
+                <ol>
+                    <li><a href="#why-risk-management">Why Risk Management Is Everything</a></li>
+                    <li><a href="#one-two-percent-rule">The 1-2% Rule</a></li>
+                    <li><a href="#position-sizing">Position Sizing</a></li>
+                    <li><a href="#stop-losses">Stop Losses: Your Insurance Policy</a></li>
+                    <li><a href="#risk-reward">Risk-Reward Ratio</a></li>
+                    <li><a href="#loss-limits">Daily and Weekly Loss Limits</a></li>
+                    <li><a href="#correlation-risk">Correlation Risk</a></li>
+                    <li><a href="#trading-journal">The Trading Journal</a></li>
+                    <li><a href="#intellitrade-risk">IntelliTrade's Risk Framework</a></li>
+                </ol>
+            </nav>
+
+            <div class="edu-body">
+                <h2 id="why-risk-management">Why Risk Management Is Everything</h2>
+                <p>Most traders spend their time searching for the perfect entry signal, the best indicator, or a secret pattern that will make them money. But the professionals know a different truth: <strong>how you manage risk matters far more than how you pick trades</strong>.</p>
+                <p>Here is a fact that surprises many beginners: you can have a <strong>40% win rate</strong> and still be consistently profitable. If your winners are twice the size of your losers, the math works in your favor over time. Conversely, you can be right 70% of the time and still blow up your account if you let one bad trade wipe out months of gains.</p>
+
+                <div class="edu-callout danger">
+                    <strong>The #1 reason traders blow up:</strong> They have no risk plan. They size positions based on emotion, hold losers hoping for a reversal, and double down after losses. Without a risk management framework, even the best strategy will eventually fail.
+                </div>
+
+                <p>Risk management is not the exciting part of trading. It will not make for interesting stories at dinner. But it is the foundation that every other skill is built on. Master this first, and everything else becomes easier.</p>
+
+                <h3>The Math of Ruin</h3>
+                <p>Losses are not symmetric. If you lose 10% of your account, you need an 11.1% gain to recover. Lose 25%, and you need a 33.3% gain. Lose 50%, and you need to <strong>double your remaining money</strong> just to get back to where you started. This is why preserving capital is paramount.</p>
+                <table>
+                    <tr>
+                        <th>Account Loss</th>
+                        <th>Gain Needed to Recover</th>
+                    </tr>
+                    <tr>
+                        <td>10%</td>
+                        <td>11.1%</td>
+                    </tr>
+                    <tr>
+                        <td>20%</td>
+                        <td>25.0%</td>
+                    </tr>
+                    <tr>
+                        <td>30%</td>
+                        <td>42.9%</td>
+                    </tr>
+                    <tr>
+                        <td>40%</td>
+                        <td>66.7%</td>
+                    </tr>
+                    <tr>
+                        <td>50%</td>
+                        <td>100.0%</td>
+                    </tr>
+                    <tr>
+                        <td>75%</td>
+                        <td>300.0%</td>
+                    </tr>
+                </table>
+
+                <h2 id="one-two-percent-rule">The 1-2% Rule</h2>
+                <p>The 1-2% rule is the foundation of professional risk management: <strong>never risk more than 1-2% of your total account on a single trade</strong>. This simple principle is what separates traders who survive from those who don't.</p>
+
+                <h3>How It Works</h3>
+                <p>On a $50,000 account with a 1% risk limit, your maximum risk per trade is $500. With a 2% limit, it is $1,000. This means if the trade goes completely wrong and hits your stop loss, you lose no more than that amount.</p>
+                <ul>
+                    <li><strong>$25,000 account at 1%</strong> &mdash; Max risk $250 per trade</li>
+                    <li><strong>$50,000 account at 1%</strong> &mdash; Max risk $500 per trade</li>
+                    <li><strong>$50,000 account at 2%</strong> &mdash; Max risk $1,000 per trade</li>
+                    <li><strong>$100,000 account at 1%</strong> &mdash; Max risk $1,000 per trade</li>
+                </ul>
+
+                <h3>Why It Works</h3>
+                <p>At 1% risk per trade, you would need <strong>50 consecutive losing trades</strong> to lose half your account. Even the worst traders in history have never hit 50 losses in a row. The 1-2% rule ensures you can survive any losing streak the market throws at you while keeping enough capital to recover.</p>
+
+                <div class="edu-callout">
+                    <strong>Pro Tip:</strong> If you are just starting out, consider using 0.5% risk per trade. It will slow down your profit growth, but it gives you more room to learn and make mistakes without significant damage to your account.
+                </div>
+
+                <h2 id="position-sizing">Position Sizing</h2>
+                <p>Position sizing answers the question: <strong>how many contracts or shares should I trade?</strong> The answer is not a fixed number &mdash; it is calculated based on your account risk and the stop loss distance of each individual trade.</p>
+
+                <h3>The Formula</h3>
+                <pre>
+Position Size = Account Risk ($) / Stop Loss Distance
+
+Where:
+  Account Risk = Account Value x Risk Percentage
+  Stop Loss Distance = Entry Price - Stop Price (per unit)
+                </pre>
+
+                <h3>Example: Futures (ES)</h3>
+                <p>Account: $50,000. Risk: 1% = $500. Stop loss: 10 points on ES. ES moves $50 per point per contract.</p>
+                <pre>
+Stop Loss Cost per Contract = 10 points x $50/point = $500
+Position Size = $500 / $500 = 1 contract
+                </pre>
+
+                <h3>Example: Options Spread (SPX)</h3>
+                <p>Account: $50,000. Risk: 2% = $1,000. Selling an Iron Condor with $20 wing width and $6.00 credit. Max loss per spread = $20 - $6 = $14 per share = $1,400 per contract.</p>
+                <pre>
+Position Size = $1,000 / $1,400 = 0.71 &rarr; Round down to 0 contracts
+
+With 1 contract, risk = $1,400 = 2.8% of account (exceeds 2% limit)
+Solution: Use narrower wings ($15 width) or increase account size
+                </pre>
+
+                <h3>Position Sizing Reference Table</h3>
+                <table>
+                    <tr>
+                        <th>Account Size</th>
+                        <th>1% Risk</th>
+                        <th>ES Contracts (10pt stop)</th>
+                        <th>MES Contracts (10pt stop)</th>
+                        <th>SPX Spreads ($1,400 max loss)</th>
+                    </tr>
+                    <tr>
+                        <td>$10,000</td>
+                        <td>$100</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>$25,000</td>
+                        <td>$250</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>$50,000</td>
+                        <td>$500</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>$100,000</td>
+                        <td>$1,000</td>
+                        <td>2</td>
+                        <td>20</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>$200,000</td>
+                        <td>$2,000</td>
+                        <td>4</td>
+                        <td>40</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+                <p><strong>Note:</strong> MES (Micro E-mini S&amp;P 500) is $5/point &mdash; one-tenth the size of ES. It is an excellent starting point for smaller accounts. SPX option spreads require larger accounts due to their defined max loss per contract.</p>
+
+                <div class="edu-callout warning">
+                    <strong>Never Round Up:</strong> If the math says 1.7 contracts, trade 1 &mdash; not 2. Rounding up means accepting more risk than your plan allows. Always round down to stay within your risk budget.
+                </div>
+
+                <h2 id="stop-losses">Stop Losses: Your Insurance Policy</h2>
+                <p>A stop loss is a predetermined price level at which you will exit a losing trade. Think of it as insurance: you pay a small premium (the potential loss up to the stop) to protect against catastrophic damage.</p>
+
+                <h3>Types of Stop Losses</h3>
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>Fixed Dollar Stop</h4>
+                        <p>Exit when the loss reaches a specific dollar amount (e.g., $500). Simple and easy to calculate, but does not adapt to market conditions.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>ATR-Based Stop</h4>
+                        <p>Set the stop at a multiple of the Average True Range. If the 14-bar ATR is 8 points, a 2x ATR stop would be 16 points from entry. Adapts to current volatility.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Support/Resistance Stop</h4>
+                        <p>Place the stop just below a key support level (for longs) or above resistance (for shorts). Uses <a href="/market-structure/">market structure</a> to define logical exit points.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Time-Based Stop</h4>
+                        <p>Exit if the trade has not moved in your favor within a set time. Especially relevant for <a href="/zero-dte/">0DTE options</a> where time decay accelerates.</p>
+                    </div>
+                </div>
+
+                <h3>Why Mental Stops Don't Work</h3>
+                <p>A "mental stop" is telling yourself you will exit at a certain price without actually placing the order. In practice, this almost never works. When a trade is losing money, your brain invents reasons to hold: "It will come back," "I'll give it a little more room," "The next candle will reverse." Before you know it, a small manageable loss becomes a devastating one.</p>
+
+                <div class="edu-callout danger">
+                    <strong>Rule:</strong> Always define your exit BEFORE you enter. Know your stop loss level, place the order, and do not move it further away once the trade is live. Moving stops is how small losses become account-destroying losses.
+                </div>
+
+                <h2 id="risk-reward">Risk-Reward Ratio</h2>
+                <p>The risk-reward ratio (R:R) compares how much you stand to lose versus how much you could gain on a trade. A <strong>2:1 R:R</strong> means for every $1 you risk, you expect to make $2 in profit.</p>
+
+                <h3>Why R:R Matters</h3>
+                <p>Your win rate and risk-reward ratio are mathematically linked. A higher R:R means you can be profitable with a lower win rate. Here is the relationship:</p>
+
+                <table>
+                    <tr>
+                        <th>Risk:Reward</th>
+                        <th>Breakeven Win Rate</th>
+                        <th>Assessment</th>
+                    </tr>
+                    <tr>
+                        <td>1:1</td>
+                        <td>50.0%</td>
+                        <td>Need to be right more than half the time</td>
+                    </tr>
+                    <tr>
+                        <td>1:1.5</td>
+                        <td>40.0%</td>
+                        <td>More forgiving &mdash; decent for most strategies</td>
+                    </tr>
+                    <tr>
+                        <td>1:2</td>
+                        <td>33.3%</td>
+                        <td>Strong &mdash; you can be wrong 2 out of 3 times</td>
+                    </tr>
+                    <tr>
+                        <td>1:3</td>
+                        <td>25.0%</td>
+                        <td>Excellent &mdash; only need 1 in 4 to be right</td>
+                    </tr>
+                    <tr>
+                        <td>1:4</td>
+                        <td>20.0%</td>
+                        <td>Outstanding &mdash; 1 in 5 wins is enough</td>
+                    </tr>
+                </table>
+
+                <h3>Applying R:R to Credit Spreads</h3>
+                <p>For options credit spreads, the R:R is built into the trade structure. If you sell an Iron Condor and collect $4.60 credit with $15.40 max loss, your R:R is approximately 1:3.3 (risking $15.40 to make $4.60). This means you need a win rate above 77% to break even &mdash; which is achievable with proper <a href="/gex/">GEX-based</a> strike selection and <a href="/auto-trading/">quality gates</a>.</p>
+
+                <div class="edu-callout">
+                    <strong>IntelliTrade's Minimum:</strong> Every trade generated by IntelliTrade must meet a <strong>30% minimum Return on Risk (ROR)</strong>. This ensures the credit collected is at least 30% of the maximum possible loss, providing a favorable risk-reward profile for credit selling strategies.
+                </div>
+
+                <h2 id="loss-limits">Daily and Weekly Loss Limits</h2>
+                <p>Individual trade risk controls are necessary, but not sufficient. You also need <strong>circuit breakers</strong> at the daily and weekly level to prevent spiraling losses.</p>
+
+                <h3>Daily Loss Limit</h3>
+                <p>Set a maximum dollar amount you are willing to lose in a single day. A common rule is <strong>3x your per-trade risk</strong>. On a $50,000 account with 1% per-trade risk ($500), your daily max loss would be $1,500.</p>
+                <p>When you hit your daily limit: <strong>stop trading immediately</strong>. Close your charts, step away from your desk, and do not look at the market again until the next trading day. No exceptions.</p>
+
+                <h3>Weekly Loss Limit</h3>
+                <p>Similarly, set a weekly limit &mdash; typically 2-3x your daily limit. If you lose $3,000-$4,500 in a week (on the same $50,000 account), stop trading for the remainder of the week.</p>
+
+                <h3>Why This Matters</h3>
+                <p>Loss limits prevent <strong>revenge trading</strong> &mdash; the destructive pattern where a trader chases losses by taking bigger and riskier trades. After a loss, emotions run high: anger, frustration, and the urge to "get it back" override rational decision-making. Loss limits take the decision out of your hands when you are least equipped to make it.</p>
+
+                <div class="edu-callout success">
+                    <strong>How prop firms enforce discipline:</strong> <a href="/prop-firms/">Proprietary trading firms</a> mandate strict daily drawdown limits. If a funded trader exceeds their daily max loss, they are locked out of trading for the rest of the day &mdash; automatically, with no override. This is one reason prop firm traders tend to develop disciplined habits.
+                </div>
+
+                <h2 id="correlation-risk">Correlation Risk</h2>
+                <p>Correlation risk is the danger of having multiple positions that are essentially the <strong>same bet in disguise</strong>. If all your trades move together, your diversification is an illusion.</p>
+
+                <h3>Common Correlation Traps</h3>
+                <ul>
+                    <li><strong>Long SPY + Long QQQ + Long AAPL</strong> &mdash; These three move together. If the market drops, all three lose. You are not diversified; you have 3x the same directional bet.</li>
+                    <li><strong>Multiple SPX credit spreads on the same day</strong> &mdash; If SPX makes a large move, all your spreads are affected simultaneously.</li>
+                    <li><strong>Long ES futures + Short SPX puts</strong> &mdash; Both are bullish S&amp;P 500 bets. A market crash hits both positions.</li>
+                </ul>
+
+                <h3>Diversification Strategies</h3>
+                <ul>
+                    <li><strong>Across instruments:</strong> Mix SPX <a href="/options/">options</a>, <a href="/futures/">futures</a>, and individual stocks</li>
+                    <li><strong>Across timeframes:</strong> Combine intraday <a href="/zero-dte/">0DTE trades</a> with multi-day swing positions</li>
+                    <li><strong>Across strategies:</strong> Use both directional and market-neutral strategies</li>
+                    <li><strong>Across sectors:</strong> If trading individual equities, spread across technology, healthcare, energy, etc.</li>
+                </ul>
+
+                <div class="edu-callout warning">
+                    <strong>Check Your Exposure:</strong> Before adding a new position, ask yourself: "If the S&amp;P 500 drops 2% right now, how many of my open positions lose money?" If the answer is "all of them," you have a correlation problem.
+                </div>
+
+                <h2 id="trading-journal">The Trading Journal</h2>
+                <p>A trading journal is the most underrated tool in a trader's arsenal. Every professional trader keeps one. It transforms your trading from a series of random bets into a <strong>data-driven process of continuous improvement</strong>.</p>
+
+                <h3>What to Track</h3>
+                <p>For every trade, record:</p>
+                <ul>
+                    <li><strong>Date and time</strong> &mdash; Entry and exit timestamps</li>
+                    <li><strong>Instrument</strong> &mdash; What you traded (SPX, ES, AAPL, etc.)</li>
+                    <li><strong>Strategy</strong> &mdash; Iron Condor, directional spread, breakout, etc.</li>
+                    <li><strong>Direction</strong> &mdash; Long, short, or neutral</li>
+                    <li><strong>Position size</strong> &mdash; Number of contracts or shares</li>
+                    <li><strong>Entry and exit prices</strong></li>
+                    <li><strong>P/L</strong> &mdash; Dollar amount and percentage</li>
+                    <li><strong>Trade reason</strong> &mdash; Why you entered (GEX setup, technical signal, AI recommendation, etc.)</li>
+                    <li><strong>Emotional state</strong> &mdash; Were you calm, anxious, overconfident, revenge trading?</li>
+                    <li><strong>Market conditions</strong> &mdash; VIX level, GEX regime, overall trend</li>
+                    <li><strong>Lessons learned</strong> &mdash; What would you do differently?</li>
+                </ul>
+
+                <h3>Weekly Review</h3>
+                <p>Set aside 30 minutes every weekend to review your journal. Look for patterns:</p>
+                <ul>
+                    <li>Which strategies have the best win rate?</li>
+                    <li>What time of day do you trade best?</li>
+                    <li>Do you lose more when you are frustrated or overconfident?</li>
+                    <li>Are you consistently breaking any of your rules?</li>
+                    <li>Which market conditions produce your best and worst results?</li>
+                </ul>
+                <p>These patterns are invisible in real-time but become obvious when you review historical data. The journal turns your experience into actionable intelligence.</p>
+
+                <h2 id="intellitrade-risk">IntelliTrade's Risk Framework</h2>
+                <p>One of the greatest challenges in risk management is <strong>consistency</strong>. Humans are excellent at writing rules and terrible at following them under pressure. IntelliTrade addresses this by automating the risk framework so that discipline is enforced by code, not willpower.</p>
+
+                <h3>Pre-Entry Quality Gates</h3>
+                <p>Before any trade is placed, IntelliTrade runs it through a series of <a href="/auto-trading/">quality gates</a>:</p>
+                <ul>
+                    <li><strong>VIX filter</strong> &mdash; Blocks all trades when VIX exceeds 30, blocks Iron Condors above 25, blocks Iron Flies above 20</li>
+                    <li><strong>ATR filter</strong> &mdash; Measures intraday volatility; blocks Iron Flies when ATR% exceeds 0.20%, blocks Iron Condors above 0.35%</li>
+                    <li><strong>Consolidation check</strong> &mdash; Requires a 30-minute range of 15 points or less before entering Iron Flies</li>
+                    <li><strong>Momentum check</strong> &mdash; Detects trending conditions (3+ consecutive directional candles) and blocks mean-reversion strategies</li>
+                    <li><strong>GEX regime alignment</strong> &mdash; Ensures directional trades match the <a href="/gex/">GEX regime</a> (bullish only in positive GEX, bearish only in negative GEX)</li>
+                    <li><strong>Minimum 30% ROR</strong> &mdash; Rejects trades where the credit collected does not meet the risk-reward threshold</li>
+                </ul>
+
+                <h3>Dynamic Exit Management</h3>
+                <p>Once a trade is live, IntelliTrade monitors it every 30 seconds with multiple exit rules, ordered by priority:</p>
+                <ol>
+                    <li><strong>Breakeven breach</strong> &mdash; If SPX moves past the breakeven point by more than 3 points, close immediately</li>
+                    <li><strong>GEX flip</strong> &mdash; If the GEX regime flips (positive to negative), close all affected positions</li>
+                    <li><strong>Trailing hard stop</strong> &mdash; Once profit reaches 20%, lock in a floor that trails behind</li>
+                    <li><strong>Trailing soft stop</strong> &mdash; Once profit reaches 12%, a softer trailing floor kicks in</li>
+                    <li><strong>Time-scaled loss cut</strong> &mdash; Maximum loss tightens as the day progresses: -25% before 1 PM, -20% from 1-2:30 PM, -15% after 2:30 PM</li>
+                    <li><strong>Late day exit</strong> &mdash; After 3:30 PM, any position losing more than 10% is closed</li>
+                </ol>
+
+                <h3>Automated Discipline</h3>
+                <p>The system enforces daily trade limits, per-agent position caps, and duplicate trade prevention &mdash; all backed by the database so they survive server restarts. There is no way to override these limits in the heat of the moment, which is precisely the point.</p>
+
+                <div class="edu-callout success">
+                    <strong>Removing Emotion:</strong> IntelliTrade's automated risk framework handles the hardest part of trading: doing the right thing when it feels wrong. Cutting a loser, taking profit before a reversal, and staying flat when conditions are unfavorable are all decisions that humans struggle with under pressure. The system does them without hesitation, every single time.
+                </div>
+            </div>
+
+            <nav class="edu-nav-bottom" aria-label="Education navigation">
+                <a href="/prop-firms/" class="edu-nav-link prev">
+                    <span class="nav-direction">Previous</span>
+                    <span class="nav-title">Prop Firms</span>
+                </a>
+                <a href="/market-structure/" class="edu-nav-link next">
+                    <span class="nav-direction">Next</span>
+                    <span class="nav-title">Market Structure</span>
+                </a>
+            </nav>
+        </article>
+
+        <div class="site-cta">
+            <h3>Ready to trade smarter?</h3>
+            <p>IntelliTrade automates options and futures trading with GEX analysis, AI insights, and risk management.</p>
+            <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
+        </div>
+        <footer class="site-footer">
+            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+        </footer>
+    </main>
+</div>
+</body>
+</html>
