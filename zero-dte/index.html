@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ5LEW18HT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TZ5LEW18HT');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>0DTE Options Strategies: Iron Condor, Iron Fly &amp; Spreads - IntelliTrade Learn</title>
@@ -32,7 +40,82 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://learn.intellitrade.live/"},{"@type":"ListItem","position":2,"name":"0DTE Strategies","item":"https://learn.intellitrade.live/zero-dte/"}]}
 </script>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What does 0DTE mean in options trading?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "0DTE stands for 'zero days to expiration' and refers to options contracts that expire on the same day they are traded. For SPX (S&P 500 Index), 0DTE options are available on Mondays, Wednesdays, and Fridays, giving traders three opportunities per week to sell premium that decays to zero by the close of business that same day."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are 0DTE options risky?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, 0DTE options carry significant risk due to their extremely high gamma, which means small price moves can cause large swings in position value. However, when traded with defined-risk strategies like Iron Condors and Iron Flies, the maximum loss is known upfront. The key to managing risk is using proper risk management techniques, including quality gates that filter out unfavorable conditions and dynamic exit management that monitors positions continuously."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the best strategy for 0DTE options?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The best 0DTE strategy depends on market conditions. In positive GEX environments where price tends to pin, Iron Flies and Iron Condors perform well because they profit from range-bound price action and accelerated time decay. In trending or volatile markets, directional credit spreads aligned with the GEX regime are more appropriate. There is no single best strategy — the optimal approach adapts to real-time market structure."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How much money do you need to trade 0DTE options?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The capital required depends on the strategy and wing width. For a typical SPX Iron Condor with $20 wings, the maximum risk per contract is approximately $1,500-$1,800 (wing width minus credit received, times 100). Most brokers require you to maintain this amount as margin. A reasonable starting account size for 0DTE trading is $10,000-$25,000 to allow proper position sizing without risking too much on any single trade."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What time do 0DTE options expire?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SPX 0DTE options expire at 4:00 PM Eastern Time on their expiration day, which aligns with the market close. However, most 0DTE traders close positions well before expiration — typically by 3:30-3:45 PM — to avoid the unpredictable price action and widening bid-ask spreads that occur in the final minutes."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can you make consistent money with 0DTE options?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Consistency in 0DTE trading comes from a systematic approach, not from any single trade. Credit-selling strategies have a statistical edge through time decay, but individual large losses can erase multiple winning days. The path to consistency involves strict pre-entry quality gates, disciplined position sizing, dynamic exit management, and only trading when conditions favor your strategy."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is an Iron Condor in 0DTE trading?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An Iron Condor is a market-neutral options strategy that involves selling both a call spread and a put spread simultaneously. In 0DTE trading, you sell an out-of-the-money call and put while buying further out-of-the-money options to cap your risk. The trade profits when SPX stays within the range defined by your short strikes."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How does GEX affect 0DTE trading?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Gamma Exposure (GEX) is critical for 0DTE trading because it determines the type of price behavior you can expect. Positive GEX creates a pinning environment where market maker hedging dampens price movement — ideal for Iron Condors and Iron Flies. Negative GEX amplifies price swings, making range-bound strategies dangerous and favoring directional trades. Real-time GEX data helps select strategies, set strike prices, and manage exits based on the current gamma environment."
+            }
+        }
+    ]
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -70,6 +153,8 @@
         <a href="/trading-plan/">Trading Plan</a>
         <a href="/paper-trading/">Paper Trading</a>
         <a href="/trading-taxes/">Trading Taxes</a>
+        <div class="sidebar-divider"></div>
+        <a href="/blog/">Blog</a>
     </nav>
     <main class="learn-main">
         <article class="edu-page">
@@ -84,7 +169,7 @@
                 <p class="edu-subtitle">Zero days to expiration options &mdash; how to generate daily income by selling options that expire the same day, using Iron Condors, Iron Flies, and directional spreads on SPX.</p>
                 <div class="edu-meta">
                     <span class="difficulty-badge advanced">Advanced</span>
-                    <span>18 min read</span>
+                    <span>22 min read</span>
                 </div>
             </header>
 
@@ -98,6 +183,8 @@
                     <li><a href="#directional">Directional Spreads</a></li>
                     <li><a href="#risk">Managing 0DTE Risk</a></li>
                     <li><a href="#intellitrade-0dte">How IntelliTrade Trades 0DTE</a></li>
+                    <li><a href="#practical-examples">Practical Examples: A 0DTE Trade Walkthrough</a></li>
+                    <li><a href="#0dte-faq">Frequently Asked Questions</a></li>
                 </ol>
             </nav>
 
@@ -381,7 +468,7 @@
                 </div>
 
                 <div class="edu-callout danger">
-                    <strong>Regime Alignment is Non-Negotiable:</strong> IntelliTrade enforces strict <a href="/gex/#gex-regimes">GEX regime</a> alignment for directional spreads. A bullish Put Spread is <strong>only allowed in positive GEX</strong>. A bearish Call Spread is <strong>only allowed in negative GEX</strong>. This rule exists because of real losses &mdash; a bullish trade in negative GEX on Feb 23 resulted in a -129% loss.
+                    <strong>Regime Alignment is Non-Negotiable:</strong> IntelliTrade enforces strict <a href="/gex/#gex-regimes">GEX regime</a> alignment for directional spreads. A bullish Put Spread is <strong>only allowed in positive GEX</strong>. A bearish Call Spread is <strong>only allowed in negative GEX</strong>. This rule exists because of real losses &mdash; a bullish trade in negative GEX on Feb 23 resulted in a -129% loss. For more on why this rule is critical, see our <a href="/risk-management/">risk management guide</a>.
                 </div>
 
                 <h2 id="risk">Managing 0DTE Risk</h2>
@@ -406,7 +493,7 @@
                 </ol>
 
                 <div class="edu-callout success">
-                    <strong>Paper Trade First:</strong> If you are looking to try 0DTE strategies, it is highly recommended that you begin with a paper trading account. IntelliTrade supports full simulation mode where you can experience the strategy without risking real money. This lets you see how the system handles real market conditions before committing capital.
+                    <strong>Paper Trade First:</strong> If you are looking to try 0DTE strategies, it is highly recommended that you begin with a paper trading account. IntelliTrade supports full simulation mode where you can experience the strategy without risking real money. See our <a href="/paper-trading/">paper trading guide</a> to get started. This lets you see how the system handles real market conditions before committing capital.
                 </div>
 
                 <h2 id="intellitrade-0dte">How IntelliTrade Trades 0DTE</h2>
@@ -439,7 +526,7 @@
                         <div class="edu-flow-num">4</div>
                         <div class="edu-flow-content">
                             <h4>Trade Execution</h4>
-                            <p>Place limit orders through the broker API with defined risk. Minimum 30% return on risk enforced.</p>
+                            <p>Place limit orders through the broker API with defined risk. Minimum 30% return on risk enforced. You can also use <a href="/tradingview/">TradingView alerts and webhooks</a> for additional signal confirmation.</p>
                         </div>
                     </div>
                     <div class="edu-flow-step">
@@ -459,7 +546,144 @@
                 </div>
 
                 <p>The result is a systematic approach to 0DTE trading that captures the statistical edge of time decay while managing the risks that can derail undisciplined traders.</p>
+
+                <h2 id="practical-examples">Practical Examples: A 0DTE Trade Walkthrough</h2>
+                <p>Let us walk through a real-world <a href="/gex/">GEX</a>-driven 0DTE trade from start to finish, showing how all the concepts come together in practice.</p>
+
+                <h3>Morning: Check the GEX Regime</h3>
+                <p>It is 9:45 AM and the market has just opened. You check IntelliTrade's <a href="/gex/#reading-gex">GEX dashboard</a> and see the following conditions:</p>
+                <ul>
+                    <li><strong>Net GEX:</strong> +2.8 billion (positive regime)</li>
+                    <li><strong>GEX PIN:</strong> 6,050</li>
+                    <li><strong>Put Wall:</strong> 6,020</li>
+                    <li><strong>Call Wall:</strong> 6,085</li>
+                    <li><strong>Gamma Flip:</strong> 6,010</li>
+                    <li><strong>VIX:</strong> 16.2</li>
+                </ul>
+                <p>Positive GEX with moderate VIX tells you this is a <strong>pinning environment</strong>. Market makers will dampen moves, and price is likely to gravitate toward the GEX PIN at 6,050. This is an ideal setup for credit-selling strategies.</p>
+
+                <h3>10:30 AM: Identify the Setup</h3>
+                <p>SPX is trading at 6,048 &mdash; just 2 points below the GEX PIN. The <a href="/auto-trading/">quality gates</a> confirm favorable conditions: ATR% is 0.12% (low, below the 0.20% threshold), the 30-minute range is 11 points (consolidation detected), and there are no three consecutive same-direction candles (no momentum). With price pinning near the GEX PIN in positive GEX with low volatility, this is a textbook Iron Fly setup.</p>
+
+                <h3>The Trade: Iron Fly Centered at 6,050</h3>
+                <table>
+                    <tr>
+                        <th>Leg</th>
+                        <th>Strike</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>Long Call</td>
+                        <td>6075</td>
+                        <td>$3.40</td>
+                        <td>Buy (debit)</td>
+                    </tr>
+                    <tr>
+                        <td>Short Call</td>
+                        <td>6050</td>
+                        <td>$8.60</td>
+                        <td>Sell (credit)</td>
+                    </tr>
+                    <tr>
+                        <td>Short Put</td>
+                        <td>6050</td>
+                        <td>$8.30</td>
+                        <td>Sell (credit)</td>
+                    </tr>
+                    <tr>
+                        <td>Long Put</td>
+                        <td>6025</td>
+                        <td>$3.00</td>
+                        <td>Buy (debit)</td>
+                    </tr>
+                </table>
+                <div class="edu-formula">
+                    <span class="f-part green">Net Credit</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part green">($8.60 + $8.30)</span>
+                    <span class="f-op">&minus;</span>
+                    <span class="f-part red">($3.40 + $3.00)</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part green">$10.50/share = $1,050/contract</span>
+                </div>
+                <div class="edu-formula">
+                    <span class="f-part red">Max Loss</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part gold">Wing Width ($25)</span>
+                    <span class="f-op">&minus;</span>
+                    <span class="f-part green">Credit ($10.50)</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part red">$14.50/share = $1,450/contract</span>
+                </div>
+                <div class="edu-formula">
+                    <span class="f-part">Return on Risk</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part green">$1,050</span>
+                    <span class="f-op">&divide;</span>
+                    <span class="f-part red">$1,450</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part gold">72.4%</span>
+                </div>
+
+                <h3>Midday: Monitoring and Exit</h3>
+                <p>IntelliTrade's <a href="/auto-trading/#exit-management">dynamic exit manager</a> monitors the position every 30 seconds. Throughout the morning, SPX oscillates between 6,044 and 6,056 &mdash; classic pinning behavior in positive GEX. By 1:00 PM, time decay has eroded significant premium from the short strikes, and the position shows +$380 unrealized profit (36% of max).</p>
+                <p>At 2:30 PM, the time-decay profit target kicks in &mdash; after 2:00 PM the system lowers its profit threshold to 20%. The position is now showing +$475 (45% of max profit). The system triggers a <strong>TIME_DECAY</strong> exit, closing the position at market for a net gain of <strong>+$475 per contract</strong>.</p>
+
+                <div class="edu-callout success">
+                    <strong>Key Takeaways from This Example:</strong> The trade succeeded because every element aligned &mdash; positive <a href="/gex/#gex-regimes">GEX regime</a>, price near the PIN, low ATR confirming consolidation, and proper <a href="/risk-management/">risk management</a> through dynamic exits. No single indicator made the decision; the system checked all conditions before entering and monitored continuously until exit. This is the power of a systematic, <a href="/auto-trading/">automated approach</a> to 0DTE trading.
+                </div>
             </div>
+
+            <section class="edu-faq" id="0dte-faq">
+                <h2>Frequently Asked Questions About 0DTE Options</h2>
+                <style>
+                    .edu-faq details { margin-bottom: 8px; }
+                    .edu-faq details summary { cursor: pointer; font-weight: 600; padding: 10px 14px; background: rgba(255,255,255,0.04); border-radius: 8px; }
+                    .edu-faq details[open] summary { background: rgba(255,255,255,0.06); }
+                    .edu-faq details > div { padding: 10px 14px; line-height: 1.7; color: #b0b8c8; }
+                </style>
+
+                <details>
+                    <summary>What does 0DTE mean in options trading?</summary>
+                    <div>0DTE stands for "zero days to expiration" and refers to <a href="/options/">options contracts</a> that expire on the same day they are traded. For SPX (S&P 500 Index), 0DTE options are available on Mondays, Wednesdays, and Fridays, giving traders three opportunities per week to sell premium that decays to zero by the close of business that same day.</div>
+                </details>
+
+                <details>
+                    <summary>Are 0DTE options risky?</summary>
+                    <div>Yes, 0DTE options carry significant risk due to their extremely high gamma, which means small price moves can cause large swings in position value. However, when traded with defined-risk strategies like Iron Condors and Iron Flies, the maximum loss is known upfront. The key to managing risk is using proper <a href="/risk-management/">risk management</a> techniques, including quality gates that filter out unfavorable conditions and dynamic exit management that monitors positions continuously.</div>
+                </details>
+
+                <details>
+                    <summary>What is the best strategy for 0DTE options?</summary>
+                    <div>The best 0DTE strategy depends on market conditions. In positive <a href="/gex/#gex-regimes">GEX environments</a> where price tends to pin, Iron Flies and Iron Condors perform well because they profit from range-bound price action and accelerated time decay. In trending or volatile markets, directional credit spreads aligned with the GEX regime are more appropriate. There is no single "best" strategy &mdash; the optimal approach adapts to real-time market structure.</div>
+                </details>
+
+                <details>
+                    <summary>How much money do you need to trade 0DTE options?</summary>
+                    <div>The capital required depends on the strategy and wing width. For a typical SPX Iron Condor with $20 wings, the maximum risk per contract is approximately $1,500-$1,800 (wing width minus credit received, times 100). Most brokers require you to maintain this amount as margin. A reasonable starting account size for 0DTE trading is $10,000-$25,000 to allow proper position sizing without risking too much on any single trade.</div>
+                </details>
+
+                <details>
+                    <summary>What time do 0DTE options expire?</summary>
+                    <div>SPX 0DTE options expire at 4:00 PM Eastern Time on their expiration day, which aligns with the market close. However, most 0DTE traders close positions well before expiration &mdash; typically by 3:30-3:45 PM &mdash; to avoid the unpredictable price action and widening bid-ask spreads that occur in the final minutes. IntelliTrade's <a href="/auto-trading/#exit-management">exit management system</a> includes a late-day exit rule that closes losing positions after 3:30 PM.</div>
+                </details>
+
+                <details>
+                    <summary>Can you make consistent money with 0DTE options?</summary>
+                    <div>Consistency in 0DTE trading comes from a systematic approach, not from any single trade. Credit-selling strategies have a statistical edge through time decay, but individual large losses can erase multiple winning days. The path to consistency involves strict pre-entry quality gates, disciplined position sizing, dynamic exit management, and only trading when conditions favor your strategy. Many successful 0DTE traders focus on small, repeatable gains rather than trying to maximize profit on each trade.</div>
+                </details>
+
+                <details>
+                    <summary>What is an Iron Condor in 0DTE trading?</summary>
+                    <div>An Iron Condor is a market-neutral <a href="/options/#common-strategies">options strategy</a> that involves selling both a call spread and a put spread simultaneously. In 0DTE trading, you sell an out-of-the-money call and put while buying further out-of-the-money options to cap your risk. The trade profits when SPX stays within the range defined by your short strikes. It is the most common 0DTE strategy because it benefits from time decay without requiring a directional prediction.</div>
+                </details>
+
+                <details>
+                    <summary>How does GEX affect 0DTE trading?</summary>
+                    <div><a href="/gex/">Gamma Exposure (GEX)</a> is critical for 0DTE trading because it determines the type of price behavior you can expect. Positive GEX creates a pinning environment where market maker hedging dampens price movement &mdash; ideal for Iron Condors and Iron Flies. Negative GEX amplifies price swings, making range-bound strategies dangerous and favoring directional trades. IntelliTrade uses real-time GEX data to select strategies, set strike prices, and manage exits based on the current gamma environment.</div>
+                </details>
+            </section>
 
             <nav class="edu-nav-bottom" aria-label="Education navigation">
                 <a href="/ai-assistant/" class="edu-nav-link prev">
@@ -479,7 +703,60 @@
             <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
         </div>
         <footer class="site-footer">
-            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+          <div class="sf-grid">
+            <nav class="sf-col" aria-label="IntelliTrade">
+              <h4>IntelliTrade</h4>
+              <ul>
+                <li><a href="https://intellitrade.live">Dashboard</a></li>
+                <li><a href="https://intellitrade.live">Live Signals</a></li>
+                <li><a href="https://intellitrade.live">Analytics</a></li>
+                <li><a href="https://intellitrade.live/calendar">Calendar</a></li>
+                <li><a href="https://intellitrade.live">Partner Referrals</a></li>
+              </ul>
+            </nav>
+            <nav class="sf-col" aria-label="Beginner Guides">
+              <h4>Beginner Guides</h4>
+              <ul>
+                <li><a href="/trading-basics/">Trading Basics</a></li>
+                <li><a href="/options/">Options 101</a></li>
+                <li><a href="/futures/">Futures Trading</a></li>
+                <li><a href="/beyond-stocks/">Beyond Stocks</a></li>
+                <li><a href="/paper-trading/">Paper Trading</a></li>
+                <li><a href="/risk-management/">Risk Management</a></li>
+              </ul>
+            </nav>
+            <nav class="sf-col" aria-label="Intermediate">
+              <h4>Intermediate</h4>
+              <ul>
+                <li><a href="/gex/">GEX Explained</a></li>
+                <li><a href="/auto-trading/">Auto Trading</a></li>
+                <li><a href="/ai-assistant/">AI Assistant</a></li>
+                <li><a href="/ira-collars/">IRA Collars</a></li>
+                <li><a href="/tradingview/">TradingView &amp; Webhooks</a></li>
+                <li><a href="/trading-taxes/">Trading Taxes</a></li>
+              </ul>
+            </nav>
+            <nav class="sf-col" aria-label="Advanced">
+              <h4>Advanced</h4>
+              <ul>
+                <li><a href="/zero-dte/">0DTE Strategies</a></li>
+                <li><a href="/market-structure/">Market Structure</a></li>
+                <li><a href="/trading-plan/">Trading Plan</a></li>
+                <li><a href="/prop-firms/">Prop Firms</a></li>
+              </ul>
+            </nav>
+            <nav class="sf-col" aria-label="Legal">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="/terms">Terms of Service</a></li>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/risk-disclosure">Risk Disclosure</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="sf-bottom">
+            &copy; 2026 <a href="https://intellitrade.live">IntelliTrade</a>. Free trading education for everyone.
+          </div>
         </footer>
     </main>
 </div>

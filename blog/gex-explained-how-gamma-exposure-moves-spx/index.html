@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TZ5LEW18HT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-TZ5LEW18HT');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>GEX Explained: How Gamma Exposure Moves SPX - IntelliTrade Blog</title>
+<meta name="description" content="Learn how Gamma Exposure (GEX) creates invisible support and resistance levels in SPX through dealer hedging. Understand positive vs negative GEX regimes and how to use them.">
+<meta name="keywords" content="gamma exposure, GEX, SPX, dealer hedging, options market, support resistance, positive GEX, negative GEX, market makers">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GEX Explained: How Gamma Exposure Moves SPX - IntelliTrade Blog">
+<meta property="og:description" content="Learn how Gamma Exposure creates invisible support and resistance levels in SPX through dealer hedging.">
+<meta property="og:url" content="https://learn.intellitrade.live/blog/gex-explained-how-gamma-exposure-moves-spx/">
+<meta property="og:site_name" content="IntelliTrade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GEX Explained: How Gamma Exposure Moves SPX - IntelliTrade Blog">
+<meta name="twitter:description" content="Learn how Gamma Exposure creates invisible support and resistance levels in SPX through dealer hedging.">
+<link rel="canonical" href="https://learn.intellitrade.live/blog/gex-explained-how-gamma-exposure-moves-spx/">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GEX Explained: How Gamma Exposure Moves SPX",
+    "description": "Learn how Gamma Exposure (GEX) creates invisible support and resistance levels in SPX through dealer hedging. Understand positive vs negative GEX regimes.",
+    "author": {"@type": "Organization", "name": "IntelliTrade"},
+    "publisher": {"@type": "Organization", "name": "IntelliTrade", "url": "https://intellitrade.live"},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://learn.intellitrade.live/blog/gex-explained-how-gamma-exposure-moves-spx/"},
+    "isPartOf": {"@type": "Blog", "name": "IntelliTrade Blog", "url": "https://learn.intellitrade.live/blog/"}
+}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://learn.intellitrade.live/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://learn.intellitrade.live/blog/"},{"@type":"ListItem","position":3,"name":"GEX Explained: How Gamma Exposure Moves SPX","item":"https://learn.intellitrade.live/blog/gex-explained-how-gamma-exposure-moves-spx/"}]}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<header class="learn-header">
+    <a href="/" class="lh-brand">
+        <span class="lh-gem">&#9889;</span>
+        <span class="lh-wordmark">Intelli<span>Trade</span></span>
+    </a>
+    <span class="lh-sep"></span>
+    <span class="lh-title">Blog</span>
+    <span class="lh-spacer"></span>
+    <a href="https://intellitrade.live" class="lh-back">&larr; Dashboard</a>
+    <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
+</header>
+<div class="learn-layout">
+    <nav class="learn-sidebar" aria-label="Education topics">
+        <a href="/">Overview</a>
+        <a href="/trading-basics/">Trading Basics</a>
+        <a href="/options/">Options 101</a>
+        <a href="/futures/">Futures</a>
+        <a href="/gex/">GEX</a>
+        <a href="/auto-trading/">Auto Trading</a>
+        <a href="/ai-assistant/">AI Assistant</a>
+        <a href="/zero-dte/">0DTE</a>
+        <a href="/ira-collars/">IRA Collars</a>
+        <a href="/tradingview/">TradingView</a>
+        <a href="/beyond-stocks/">Beyond Stocks</a>
+        <a href="/prop-firms/">Prop Firms</a>
+        <a href="/risk-management/">Risk Management</a>
+        <a href="/market-structure/">Market Structure</a>
+        <a href="/trading-plan/">Trading Plan</a>
+        <a href="/paper-trading/">Paper Trading</a>
+        <a href="/trading-taxes/">Trading Taxes</a>
+        <div class="sidebar-divider"></div>
+        <a href="/blog/" class="active">Blog</a>
+    </nav>
+    <main class="learn-main">
+        <article class="edu-page">
+            <a href="/blog/" class="blog-back">&larr; Back to Blog</a>
+
+            <div class="edu-header">
+                <h1>GEX Explained: How Gamma Exposure Moves SPX</h1>
+                <div class="blog-article-meta">
+                    <time datetime="2026-02-27">February 27, 2026</time>
+                    <span>&middot;</span>
+                    <span class="blog-author">By IntelliTrade</span>
+                    <span>&middot;</span>
+                    <span class="edu-pill purple">GEX</span>
+                </div>
+            </div>
+
+            <div class="edu-body">
+                <p>If you have ever watched SPX bounce off the same price level multiple times in a single day, seemingly for no reason, there is a good chance Gamma Exposure was the invisible hand behind it. GEX, short for Gamma Exposure, measures the total gamma held by options market makers at each strike price. It is one of the most powerful, yet least understood, forces in the modern equity market.</p>
+
+                <h2>What Is GEX in Simple Terms?</h2>
+
+                <p>When someone buys an option, a market maker takes the other side of that trade. To stay market-neutral, the market maker has to hedge their position by buying or selling shares of the underlying asset (in this case, SPX futures). Gamma tells the market maker how much their hedge needs to change as the price moves. The aggregate of all these hedging obligations across every open options contract is what we call Gamma Exposure.</p>
+
+                <p>Think of it this way: GEX is a map of where market makers are forced to buy or sell. These are not discretionary trades based on an opinion about the market. They are mechanical, rule-based hedging flows that happen regardless of what any individual trader thinks.</p>
+
+                <h2>How Dealer Hedging Creates Support and Resistance</h2>
+
+                <p>When there is a large concentration of open call options at a specific strike, market makers who sold those calls are long gamma at that level. As SPX approaches that strike, dealers need to sell futures to maintain their hedge, which creates selling pressure and acts as resistance. The reverse happens at put-heavy strikes: dealers buy futures as price drops toward those levels, creating support.</p>
+
+                <p>This is why you will often see SPX "pin" to a major strike price on expiration day. It is not manipulation; it is the natural consequence of thousands of hedging adjustments happening simultaneously. The key levels to watch are the <strong>call wall</strong> (highest call gamma strike), the <strong>put wall</strong> (highest put gamma strike), and the <strong>GEX PIN</strong> (the strike where gamma is most concentrated).</p>
+
+                <h2>Positive vs. Negative GEX Regimes</h2>
+
+                <p>The sign of net GEX is the single most important data point for intraday traders:</p>
+
+                <ul>
+                    <li><strong>Positive GEX</strong> means dealers are long gamma. They sell rallies and buy dips, which dampens volatility and creates a range-bound, mean-reverting environment. This is the ideal regime for strategies like Iron Flies and Iron Condors that profit from pinning behavior.</li>
+                    <li><strong>Negative GEX</strong> means dealers are short gamma. They are forced to sell into weakness and buy into strength, which amplifies moves and creates trending, volatile conditions. This is where directional strategies work best, but range-bound strategies get destroyed.</li>
+                </ul>
+
+                <div class="edu-callout danger">
+                    <strong>Critical rule:</strong> Never enter a bullish trade during negative GEX, and never enter a bearish trade during positive GEX. Dealer hedging flows will work against you. This is the single most important GEX-based rule for options traders.
+                </div>
+
+                <h2>How Traders Can Use GEX Data</h2>
+
+                <p>GEX data gives you an edge in several ways. First, it tells you the likely range for the day. In positive GEX, price tends to stay between the put wall and call wall. Second, it identifies the highest-probability magnet for price. When GEX is positive and price is near the PIN, expect pinning. Third, it warns you when conditions are about to get dangerous. A GEX flip from positive to negative often precedes a sharp selloff as dealer hedging shifts from dampening to amplifying.</p>
+
+                <p>Platforms like <a href="https://intellitrade.live">IntelliTrade</a> automate this analysis, using real-time GEX data to select strategies, set quality gates, and manage exits. But even if you trade manually, understanding whether you are in a positive or negative GEX environment should be the first thing you check every morning.</p>
+
+                <p>For the complete deep dive into GEX mechanics, dealer hedging math, and how IntelliTrade integrates GEX into every trading decision, visit our full <a href="/gex/">GEX education page</a>.</p>
+            </div>
+
+            <div class="blog-related">
+                <h3>Related Posts</h3>
+                <div class="blog-related-grid">
+                    <a href="/blog/best-prop-firms-futures-2026/" class="blog-related-card">
+                        <h4>Best Prop Firms for Futures Traders in 2026</h4>
+                        <span class="blog-related-date">February 27, 2026</span>
+                    </a>
+                    <a href="/blog/0dte-options-beginners-guide/" class="blog-related-card">
+                        <h4>0DTE Options: The Complete Beginner's Guide</h4>
+                        <span class="blog-related-date">February 27, 2026</span>
+                    </a>
+                </div>
+            </div>
+
+            <nav class="edu-nav-bottom" aria-label="Blog navigation">
+                <a href="/blog/best-prop-firms-futures-2026/" class="edu-nav-link prev">
+                    <span class="nav-direction">Previous Post</span>
+                    <span class="nav-title">Best Prop Firms for Futures Traders in 2026</span>
+                </a>
+                <a href="/blog/0dte-options-beginners-guide/" class="edu-nav-link next">
+                    <span class="nav-direction">Next Post</span>
+                    <span class="nav-title">0DTE Options: The Complete Beginner's Guide</span>
+                </a>
+            </nav>
+        </article>
+
+        <div class="site-cta">
+            <h3>Ready to trade smarter?</h3>
+            <p>IntelliTrade automates options and futures trading with GEX analysis, AI insights, and risk management.</p>
+            <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
+        </div>
+        <footer class="site-footer">
+            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+        </footer>
+    </main>
+</div>
+</body>
+</html>
