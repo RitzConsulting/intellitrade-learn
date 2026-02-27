@@ -102,6 +102,24 @@
                 <h2 id="what-is-0dte">What Are 0DTE Options?</h2>
                 <p>0DTE (zero days to expiration) options are <a href="/options/">options contracts</a> that expire on the same day they are traded. For SPX (S&amp;P 500 Index), weekly options expire on Mondays, Wednesdays, and Fridays, providing three trading opportunities per week.</p>
                 <p>What makes 0DTE options unique:</p>
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card gold">
+                        <div class="stat-value">~6.5 hrs</div>
+                        <div class="stat-label">Time to Expiration</div>
+                    </div>
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">$3&ndash;$8</div>
+                        <div class="stat-label">Typical Credit (per share)</div>
+                    </div>
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">3x/week</div>
+                        <div class="stat-label">SPX Expiration Days (M/W/F)</div>
+                    </div>
+                    <div class="edu-stat-card red">
+                        <div class="stat-value">30%+</div>
+                        <div class="stat-label">Min Return on Risk</div>
+                    </div>
+                </div>
                 <ul>
                     <li><strong>Extreme time decay</strong> &mdash; <a href="/options/#the-greeks">Theta</a> is at its maximum on expiration day. A $5.00 option at 10 AM might be worth $0.50 by 3:30 PM even with no price change.</li>
                     <li><strong>High gamma</strong> &mdash; Small price changes cause large delta swings, which is what drives <a href="/gex/">GEX-based market maker hedging</a>.</li>
@@ -145,19 +163,45 @@
                     <li><strong>Buy a further OTM put</strong> &mdash; To cap your downside risk (e.g., buy the 6000 put)</li>
                 </ol>
 
-                <pre>
-    Buy 6100C ─────── Wing (protection)
-    Sell 6080C ────── Short call (resistance)
-
-    ──── SPX: 6050 ─── Current price (profit zone)
-
-    Sell 6020P ────── Short put (support)
-    Buy 6000P ─────── Wing (protection)
-
-    Max Profit: Net credit received
-    Max Loss:   Wing width - credit received
-    Profit Zone: 6020 to 6080 (60 points wide)
-                </pre>
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Iron Condor payoff diagram">
+                        <!-- Grid lines -->
+                        <line x1="60" y1="140" x2="540" y2="140" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+                        <!-- Axes -->
+                        <line x1="60" y1="240" x2="540" y2="240" stroke="#555" stroke-width="1.5"/>
+                        <line x1="60" y1="40" x2="60" y2="240" stroke="#555" stroke-width="1.5"/>
+                        <!-- Axis labels -->
+                        <text x="300" y="270" fill="#aaa" font-size="12" text-anchor="middle" font-family="Nunito, sans-serif">SPX Price at Expiration</text>
+                        <text x="20" y="145" fill="#aaa" font-size="12" text-anchor="middle" font-family="Nunito, sans-serif" transform="rotate(-90,20,145)">Profit / Loss</text>
+                        <!-- Payoff line -->
+                        <polyline points="80,220 160,220 220,140 380,140 440,220 520,220" fill="none" stroke="#0A84FF" stroke-width="2.5" stroke-linejoin="round"/>
+                        <!-- Profit zone fill -->
+                        <polygon points="220,140 380,140 380,240 220,240" fill="rgba(47,208,104,0.10)"/>
+                        <!-- Zero line label -->
+                        <text x="548" y="137" fill="#888" font-size="10" font-family="JetBrains Mono, monospace">$0</text>
+                        <!-- Strike labels -->
+                        <text x="160" y="255" fill="#FF453A" font-size="11" text-anchor="middle" font-family="JetBrains Mono, monospace">6000</text>
+                        <text x="220" y="255" fill="#2FD068" font-size="11" text-anchor="middle" font-family="JetBrains Mono, monospace">6020</text>
+                        <text x="300" y="255" fill="#FFD60A" font-size="11" text-anchor="middle" font-family="JetBrains Mono, monospace">6050</text>
+                        <text x="380" y="255" fill="#2FD068" font-size="11" text-anchor="middle" font-family="JetBrains Mono, monospace">6080</text>
+                        <text x="440" y="255" fill="#FF453A" font-size="11" text-anchor="middle" font-family="JetBrains Mono, monospace">6100</text>
+                        <!-- Annotations -->
+                        <line x1="160" y1="218" x2="160" y2="245" stroke="#FF453A" stroke-width="1" stroke-dasharray="3,3"/>
+                        <line x1="220" y1="140" x2="220" y2="245" stroke="#2FD068" stroke-width="1" stroke-dasharray="3,3"/>
+                        <line x1="300" y1="140" x2="300" y2="245" stroke="#FFD60A" stroke-width="1" stroke-dasharray="3,3"/>
+                        <line x1="380" y1="140" x2="380" y2="245" stroke="#2FD068" stroke-width="1" stroke-dasharray="3,3"/>
+                        <line x1="440" y1="218" x2="440" y2="245" stroke="#FF453A" stroke-width="1" stroke-dasharray="3,3"/>
+                        <!-- Profit / Loss labels -->
+                        <text x="300" y="130" fill="#2FD068" font-size="12" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700">Max Profit: Credit Received</text>
+                        <text x="120" y="215" fill="#FF453A" font-size="11" text-anchor="middle" font-family="Nunito, sans-serif">Max Loss</text>
+                        <text x="480" y="215" fill="#FF453A" font-size="11" text-anchor="middle" font-family="Nunito, sans-serif">Max Loss</text>
+                        <!-- Profit zone bracket -->
+                        <text x="300" y="170" fill="#2FD068" font-size="11" text-anchor="middle" font-family="Nunito, sans-serif">Profit Zone (60 pts)</text>
+                        <!-- Title -->
+                        <text x="300" y="25" fill="#fff" font-size="14" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700">Iron Condor Payoff at Expiration</text>
+                    </svg>
+                    <div class="diagram-caption">Iron Condor payoff: maximum profit when SPX stays between the short strikes (6020&ndash;6080). Maximum loss is capped at wing width minus credit.</div>
+                </div>
 
                 <h3>Example Trade</h3>
                 <p>Suppose SPX is trading at 6,050. You expect it to trade within a 60-point range today:</p>
@@ -193,9 +237,33 @@
                         <td>Buy (debit)</td>
                     </tr>
                 </table>
-                <p><strong>Net credit:</strong> ($3.50 + $3.80) - ($1.20 + $1.50) = $4.60 per share = $460 per contract</p>
-                <p><strong>Max loss:</strong> $20 (wing width) - $4.60 = $15.40 per share = $1,540 per contract</p>
-                <p><strong>Return on risk:</strong> $460 / $1,540 = 29.9%</p>
+                <div class="edu-formula">
+                    <span class="f-part green">Credit Received</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part green">($3.50 + $3.80)</span>
+                    <span class="f-op">&minus;</span>
+                    <span class="f-part red">($1.20 + $1.50)</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part green">$4.60 / share</span>
+                </div>
+                <div class="edu-formula">
+                    <span class="f-part red">Max Loss</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part gold">Wing Width ($20)</span>
+                    <span class="f-op">&minus;</span>
+                    <span class="f-part green">Credit ($4.60)</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part red">$15.40 / share</span>
+                </div>
+                <div class="edu-formula">
+                    <span class="f-part">Return on Risk</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part green">$460</span>
+                    <span class="f-op">&divide;</span>
+                    <span class="f-part red">$1,540</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part gold">29.9%</span>
+                </div>
 
                 <h3>When to Use</h3>
                 <ul>
@@ -208,16 +276,43 @@
                 <p>The Iron Fly is a more aggressive version of the Iron Condor where <strong>both short strikes are at-the-money</strong>. This collects more premium but has a narrower profit zone.</p>
 
                 <h3>How It Works</h3>
-                <pre>
-    Buy 6075C ────── Wing (protection)
-    Sell 6050C ───── Short call (ATM)
-    Sell 6050P ───── Short put  (ATM)   &larr; Same strike!
-    Buy 6025P ────── Wing (protection)
-
-    Max Profit: Net credit received (larger than IC)
-    Max Loss:   Wing width - credit received
-    Profit Zone: Narrow (centered on 6050)
-                </pre>
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Iron Fly payoff diagram">
+                        <!-- Grid lines -->
+                        <line x1="60" y1="120" x2="540" y2="120" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+                        <!-- Axes -->
+                        <line x1="60" y1="240" x2="540" y2="240" stroke="#555" stroke-width="1.5"/>
+                        <line x1="60" y1="40" x2="60" y2="240" stroke="#555" stroke-width="1.5"/>
+                        <!-- Axis labels -->
+                        <text x="300" y="270" fill="#aaa" font-size="12" text-anchor="middle" font-family="Nunito, sans-serif">SPX Price at Expiration</text>
+                        <text x="20" y="145" fill="#aaa" font-size="12" text-anchor="middle" font-family="Nunito, sans-serif" transform="rotate(-90,20,145)">Profit / Loss</text>
+                        <!-- Payoff line - V shape (both short strikes ATM) -->
+                        <polyline points="80,220 160,220 300,120 440,220 520,220" fill="none" stroke="#BF5AF2" stroke-width="2.5" stroke-linejoin="round"/>
+                        <!-- Profit zone fill (narrow triangle) -->
+                        <polygon points="260,160 300,120 340,160 340,240 260,240" fill="rgba(191,90,242,0.08)"/>
+                        <!-- Zero line -->
+                        <text x="548" y="157" fill="#888" font-size="10" font-family="JetBrains Mono, monospace">$0</text>
+                        <line x1="60" y1="160" x2="540" y2="160" stroke="#444" stroke-width="0.5" stroke-dasharray="2,4"/>
+                        <!-- Strike labels -->
+                        <text x="160" y="255" fill="#FF453A" font-size="11" text-anchor="middle" font-family="JetBrains Mono, monospace">6025</text>
+                        <text x="300" y="255" fill="#BF5AF2" font-size="11" text-anchor="middle" font-family="JetBrains Mono, monospace">6050</text>
+                        <text x="440" y="255" fill="#FF453A" font-size="11" text-anchor="middle" font-family="JetBrains Mono, monospace">6075</text>
+                        <!-- Dashed lines to strikes -->
+                        <line x1="160" y1="218" x2="160" y2="245" stroke="#FF453A" stroke-width="1" stroke-dasharray="3,3"/>
+                        <line x1="300" y1="120" x2="300" y2="245" stroke="#BF5AF2" stroke-width="1" stroke-dasharray="3,3"/>
+                        <line x1="440" y1="218" x2="440" y2="245" stroke="#FF453A" stroke-width="1" stroke-dasharray="3,3"/>
+                        <!-- Labels -->
+                        <text x="300" y="110" fill="#BF5AF2" font-size="12" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700">Max Profit: Higher Credit (ATM)</text>
+                        <text x="120" y="215" fill="#FF453A" font-size="11" text-anchor="middle" font-family="Nunito, sans-serif">Max Loss</text>
+                        <text x="480" y="215" fill="#FF453A" font-size="11" text-anchor="middle" font-family="Nunito, sans-serif">Max Loss</text>
+                        <text x="300" y="185" fill="#BF5AF2" font-size="11" text-anchor="middle" font-family="Nunito, sans-serif">Narrow Profit Zone</text>
+                        <!-- ATM marker -->
+                        <circle cx="300" cy="120" r="4" fill="#BF5AF2"/>
+                        <!-- Title -->
+                        <text x="300" y="25" fill="#fff" font-size="14" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700">Iron Fly Payoff at Expiration</text>
+                    </svg>
+                    <div class="diagram-caption">Iron Fly payoff: both short strikes at-the-money (6050) collect maximum premium but require tight pinning. Narrower profit zone than the Iron Condor.</div>
+                </div>
 
                 <h3>When to Use</h3>
                 <p>The Iron Fly is specifically designed for <strong>pinning</strong> scenarios:</p>
@@ -229,12 +324,47 @@
                     <li><strong>No momentum</strong> &mdash; No three consecutive same-direction candles (not trending)</li>
                 </ul>
 
-                <div class="edu-callout">
-                    <strong>Iron Fly vs. Iron Condor:</strong> The Iron Fly collects more premium (higher max profit) but requires tighter price pinning to succeed. The Iron Condor gives you more room for error with a wider profit zone but collects less premium. IntelliTrade chooses between them based on real-time <a href="/gex/">GEX conditions</a>.
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg"><h4>Iron Condor</h4></div>
+                        <div class="compare-body">
+                            <p><span class="val">Wide</span> profit zone (40&ndash;60 pts)</p>
+                            <p><span class="val">Lower</span> credit collected</p>
+                            <p><span class="val">Higher</span> win probability</p>
+                            <p>Best in: <span class="edu-pill blue">Positive GEX</span> range-bound days</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header purple-bg"><h4>Iron Fly</h4></div>
+                        <div class="compare-body">
+                            <p><span class="val">Narrow</span> profit zone (at-the-money)</p>
+                            <p><span class="val">Higher</span> credit collected</p>
+                            <p><span class="val">Requires</span> tight pinning</p>
+                            <p>Best in: <span class="edu-pill purple">GEX PIN</span> + low ATR% + consolidation</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg"><h4>Bull Put Spread</h4></div>
+                        <div class="compare-body">
+                            <p><span class="val">Bullish</span> directional bet</p>
+                            <p>Sell put + buy lower put</p>
+                            <p>Profits when SPX stays above short strike</p>
+                            <p>Only in: <span class="edu-pill green">Positive GEX</span></p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header red-bg"><h4>Bear Call Spread</h4></div>
+                        <div class="compare-body">
+                            <p><span class="val">Bearish</span> directional bet</p>
+                            <p>Sell call + buy higher call</p>
+                            <p>Profits when SPX stays below short strike</p>
+                            <p>Only in: <span class="edu-pill red">Negative GEX</span></p>
+                        </div>
+                    </div>
                 </div>
 
                 <h2 id="directional">Directional Spreads</h2>
-                <p>When the market has a clear directional bias (not range-bound), IntelliTrade uses single-side credit spreads:</p>
+                <p>When the market has a clear directional bias (not range-bound), IntelliTrade uses single-side credit spreads. The <a href="/gex/#gex-regimes">GEX regime</a> determines which direction is allowed:</p>
 
                 <div class="edu-concept-grid">
                     <div class="edu-concept-card">
@@ -280,15 +410,50 @@
                 <p>IntelliTrade's 0DTE SPX agent combines all the concepts from this education series into a unified system:</p>
 
                 <h3>The Complete Flow</h3>
-                <ol>
-                    <li><strong><a href="/gex/">GEX analysis</a></strong> determines the market regime and identifies key levels</li>
-                    <li><strong><a href="/auto-trading/#quality-gates">Quality gates</a></strong> verify conditions are favorable for the selected strategy</li>
-                    <li><strong><a href="#iron-condor">Strategy selection</a></strong> picks Iron Fly, Iron Condor, or directional spread based on conditions</li>
-                    <li><strong>Trade execution</strong> places limit orders through the broker API</li>
-                    <li><strong><a href="/auto-trading/#exit-management">Exit management</a></strong> monitors positions every 30 seconds with dynamic rules</li>
-                    <li><strong><a href="/ai-assistant/">AI Brain</a></strong> provides real-time analysis and context</li>
-                    <li><strong>Daily summary</strong> captures lessons learned for continuous improvement</li>
-                </ol>
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">1</div>
+                        <div class="edu-flow-content">
+                            <h4><a href="/gex/">GEX Analysis</a></h4>
+                            <p>Determine the market regime (positive/negative GEX) and identify key levels: PIN, call wall, put wall, gamma flip.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">2</div>
+                        <div class="edu-flow-content">
+                            <h4><a href="/auto-trading/#quality-gates">Quality Gates</a></h4>
+                            <p>Check VIX, ATR%, consolidation, momentum, and PIN proximity. Skip trades when conditions are unfavorable.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num purple">3</div>
+                        <div class="edu-flow-content">
+                            <h4><a href="#iron-condor">Strategy Selection</a></h4>
+                            <p>Pick Iron Fly (pinning), Iron Condor (range-bound), or directional spread (trending) based on real-time conditions.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num">4</div>
+                        <div class="edu-flow-content">
+                            <h4>Trade Execution</h4>
+                            <p>Place limit orders through the broker API with defined risk. Minimum 30% return on risk enforced.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num red">5</div>
+                        <div class="edu-flow-content">
+                            <h4><a href="/auto-trading/#exit-management">Exit Management</a></h4>
+                            <p>Monitor positions every 30 seconds. Breakeven breach, GEX flip, trailing stops, and time-scaled loss cuts.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">6</div>
+                        <div class="edu-flow-content">
+                            <h4><a href="/ai-assistant/">AI Brain</a> + Daily Summary</h4>
+                            <p>Real-time AI analysis provides context. End-of-day summary captures lessons for continuous improvement.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <p>The result is a systematic approach to 0DTE trading that captures the statistical edge of time decay while managing the risks that can derail undisciplined traders.</p>
             </div>

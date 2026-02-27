@@ -100,6 +100,26 @@
             <div class="edu-body">
                 <h2 id="what-are-futures">What Are Futures Contracts?</h2>
                 <p>A futures contract is a standardized agreement to buy or sell an asset at a predetermined price on a specific future date. Unlike stocks (where you own shares of a company), futures are <strong>derivative contracts</strong> &mdash; their value is derived from an underlying asset like an index, commodity, or currency.</p>
+
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">$12.50</div>
+                        <div class="stat-label">ES Tick Value (0.25 pt)</div>
+                    </div>
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">$50</div>
+                        <div class="stat-label">ES Dollar Per Point</div>
+                    </div>
+                    <div class="edu-stat-card gold">
+                        <div class="stat-value">~23 hrs</div>
+                        <div class="stat-label">Daily Trading Hours</div>
+                    </div>
+                    <div class="edu-stat-card red">
+                        <div class="stat-value">~$12K</div>
+                        <div class="stat-label">ES Initial Margin</div>
+                    </div>
+                </div>
+
                 <p>Key characteristics of futures:</p>
                 <ul>
                     <li><strong>Standardized</strong> &mdash; Exchange-defined contract sizes, tick sizes, and expiration dates</li>
@@ -113,39 +133,64 @@
                     <strong>Futures vs. Options:</strong> Options give you the <em>right</em> to trade; futures give you the <em>obligation</em>. With options, your max loss is the premium paid. With futures, gains and losses are calculated dollar-for-dollar with price movement, making risk management critical.
                 </div>
 
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg"><h4>Stocks</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Leverage:</strong> <span class="val">None (1:1)</span></p>
+                            <p><strong>Hours:</strong> <span class="val">6.5 hrs/day</span></p>
+                            <p><strong>Short Selling:</strong> Requires borrowing shares</p>
+                            <p><strong>Settlement:</strong> T+1 (next business day)</p>
+                            <p><strong>Best For:</strong> Long-term investing, building wealth</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg"><h4>Futures</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Leverage:</strong> <span class="val">Up to 25:1</span></p>
+                            <p><strong>Hours:</strong> <span class="val">~23 hrs/day</span></p>
+                            <p><strong>Short Selling:</strong> Just as easy as going long</p>
+                            <p><strong>Settlement:</strong> Cash-settled daily (mark-to-market)</p>
+                            <p><strong>Best For:</strong> Intraday trading, hedging, leverage</p>
+                        </div>
+                    </div>
+                </div>
+
                 <h2 id="key-contracts">Key Contracts: ES, MES, NQ</h2>
                 <p>IntelliTrade focuses on index futures that track major U.S. stock indices:</p>
 
-                <table>
-                    <tr>
-                        <th>Contract</th>
-                        <th>Full Name</th>
-                        <th>$/Point</th>
-                        <th>10pt Move</th>
-                        <th>Exchange</th>
-                    </tr>
-                    <tr>
-                        <td><strong>ES</strong></td>
-                        <td>E-mini S&amp;P 500</td>
-                        <td>$50</td>
-                        <td style="color: var(--accent-green);">$500</td>
-                        <td>CME</td>
-                    </tr>
-                    <tr>
-                        <td><strong>MES</strong></td>
-                        <td>Micro E-mini S&amp;P 500</td>
-                        <td>$5</td>
-                        <td style="color: var(--accent-green);">$50</td>
-                        <td>CME</td>
-                    </tr>
-                    <tr>
-                        <td><strong>NQ</strong></td>
-                        <td>E-mini Nasdaq 100</td>
-                        <td>$20</td>
-                        <td style="color: var(--accent-green);">$200</td>
-                        <td>CME</td>
-                    </tr>
-                </table>
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg"><h4>ES &mdash; E-mini S&amp;P 500</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Point Value:</strong> <span class="val">$50 / point</span></p>
+                            <p><strong>Tick Size:</strong> <span class="val">0.25 ($12.50)</span></p>
+                            <p><strong>10pt Move:</strong> <span class="val">$500</span></p>
+                            <p><strong>Exchange:</strong> CME</p>
+                            <p>The standard for experienced traders. Extremely liquid with tight spreads.</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg"><h4>MES &mdash; Micro E-mini S&amp;P 500</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Point Value:</strong> <span class="val">$5 / point</span></p>
+                            <p><strong>Tick Size:</strong> <span class="val">0.25 ($1.25)</span></p>
+                            <p><strong>10pt Move:</strong> <span class="val">$50</span></p>
+                            <p><strong>Exchange:</strong> CME</p>
+                            <p>1/10th the size of ES. Perfect for beginners and smaller accounts.</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header purple-bg"><h4>NQ &mdash; E-mini Nasdaq 100</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Point Value:</strong> <span class="val">$20 / point</span></p>
+                            <p><strong>Tick Size:</strong> <span class="val">0.25 ($5.00)</span></p>
+                            <p><strong>10pt Move:</strong> <span class="val">$200</span></p>
+                            <p><strong>Exchange:</strong> CME</p>
+                            <p>Tech-heavy Nasdaq 100. More volatile, bigger moves in both directions.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Which Contract Should You Trade?</h3>
                 <div class="edu-concept-grid">
@@ -192,28 +237,29 @@
                 <h2 id="trading-sessions">Trading Sessions</h2>
                 <p>Futures markets trade in defined sessions (all times Eastern):</p>
 
-                <table>
-                    <tr>
-                        <th>Session</th>
-                        <th>Hours (ET)</th>
-                        <th>Notes</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Globex (Overnight)</strong></td>
-                        <td>6:00 PM &ndash; 9:30 AM</td>
-                        <td>Lower volume, wider spreads. Reacts to international news.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>RTH (Regular)</strong></td>
-                        <td>9:30 AM &ndash; 4:00 PM</td>
-                        <td>Highest volume and tightest spreads. Most institutional activity.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>ETH (Extended)</strong></td>
-                        <td>4:00 PM &ndash; 6:00 PM</td>
-                        <td>Post-market session. Volume drops off after stock market close.</td>
-                    </tr>
-                </table>
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header purple-bg"><h4>Globex (Overnight)</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Hours:</strong> <span class="val">6:00 PM &ndash; 9:30 AM ET</span></p>
+                            <p>Lower volume, wider spreads. Reacts to international news and overnight developments.</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg"><h4>RTH (Regular)</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Hours:</strong> <span class="val">9:30 AM &ndash; 4:00 PM ET</span></p>
+                            <p>Highest volume and tightest spreads. Most institutional activity happens here.</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg"><h4>ETH (Extended)</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Hours:</strong> <span class="val">4:00 PM &ndash; 6:00 PM ET</span></p>
+                            <p>Post-market session. Volume drops off after the stock market close.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <p>IntelliTrade's futures strategies primarily focus on <strong>RTH (Regular Trading Hours)</strong> when volume and liquidity are highest, particularly the first 30 minutes after the open when the Opening Range is established.</p>
 
@@ -221,12 +267,36 @@
                 <p>The <strong>Opening Range Breakout</strong> is one of the most popular intraday futures strategies. Here is how it works:</p>
 
                 <h3>The Concept</h3>
-                <ol>
-                    <li><strong>Identify the Opening Range</strong> &mdash; During the first 15-25 minutes of RTH (9:30-9:55 AM), the market establishes a high and low. This range captures the initial battle between buyers and sellers.</li>
-                    <li><strong>Wait for a Breakout</strong> &mdash; When price breaks above the range high, it signals potential upward momentum. When it breaks below the range low, it signals potential downward momentum.</li>
-                    <li><strong>Enter the Trade</strong> &mdash; Enter in the direction of the breakout with a stop loss on the other side of the range.</li>
-                    <li><strong>Manage the Trade</strong> &mdash; Use trailing stops to lock in profits as the move extends.</li>
-                </ol>
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">1</div>
+                        <div class="edu-flow-content">
+                            <h4>Identify the Opening Range</h4>
+                            <p>During the first 15&ndash;25 minutes of RTH (9:30&ndash;9:55 AM), the market establishes a high and low. This range captures the initial battle between buyers and sellers.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">2</div>
+                        <div class="edu-flow-content">
+                            <h4>Wait for a Breakout</h4>
+                            <p>Price breaking above the range high signals upward momentum. Breaking below the range low signals downward momentum.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num purple">3</div>
+                        <div class="edu-flow-content">
+                            <h4>Enter the Trade</h4>
+                            <p>Enter in the direction of the breakout with a stop loss on the other side of the range.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num red">4</div>
+                        <div class="edu-flow-content">
+                            <h4>Manage the Trade</h4>
+                            <p>Use trailing stops to lock in profits as the move extends. IntelliTrade's ORB v11 automates this entire flow.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="edu-callout success">
                     <strong>IntelliTrade's ORB v11:</strong> IntelliTrade uses a refined version of this strategy (ORB v11) that runs as a Pine Script on TradingView. It detects the opening range on 5-minute charts, identifies breakout/breakdown signals, and sends automated webhooks to the <a href="https://intellitrade.live/futures">IBKR Bridge</a> for execution.
@@ -244,15 +314,36 @@
                 <p>IntelliTrade's futures system connects TradingView charting to Interactive Brokers execution through a webhook bridge:</p>
 
                 <h3>Signal Flow</h3>
-                <pre>
-TradingView Chart (Pine Script ORB v11)
-  &darr;  webhook POST with JSON payload
-IBKR Webhook Bridge (localhost:5001)
-  &darr;  validates &rarr; maps symbol &rarr; routes to account
-IBKR Gateway / TWS
-  &darr;  order submitted
-CME Exchange (fills)
-                </pre>
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">1</div>
+                        <div class="edu-flow-content">
+                            <h4>TradingView Chart</h4>
+                            <p>Pine Script ORB v11 detects breakout/breakdown on 5-min chart and fires a webhook POST with JSON payload.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">2</div>
+                        <div class="edu-flow-content">
+                            <h4>IBKR Webhook Bridge</h4>
+                            <p>Validates the signal, maps symbol to contract, and routes to the correct account.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num purple">3</div>
+                        <div class="edu-flow-content">
+                            <h4>IBKR Gateway / TWS</h4>
+                            <p>Order submitted to Interactive Brokers for execution.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num red">4</div>
+                        <div class="edu-flow-content">
+                            <h4>CME Exchange</h4>
+                            <p>Order fills on the CME. Position is live and monitored for exit management.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Safety Features</h3>
                 <ul>

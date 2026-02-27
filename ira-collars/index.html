@@ -111,20 +111,72 @@
                     <li><strong>Sell a covered call</strong> &mdash; The premium you receive pays for the put, making it "zero cost"</li>
                 </ol>
 
-                <pre>
-    Covered Call Strike ($130) ─── Upside cap (you sell here)
-          |
-          |   &uarr; You keep gains up to here (~20%)
-          |
-    Current Price ($110) ──────── Your shares
-          |
-          |   &darr; Put protects below here
-          |
-    Protective Put Strike ($100) ── Downside floor (you're protected)
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="max-width:500px;">
+                        <!-- Background grid -->
+                        <line x1="60" y1="180" x2="460" y2="180" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+                        <line x1="60" y1="110" x2="460" y2="110" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4"/>
+                        <line x1="60" y1="40" x2="460" y2="40" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="4"/>
 
-    Net cost: $0 (call premium pays for put)
-    Your range: $100 to $130 (protected + upside)
-                </pre>
+                        <!-- P/L area fill -->
+                        <defs>
+                            <linearGradient id="collar-grad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#2FD068" stop-opacity="0.4"/>
+                                <stop offset="100%" stop-color="#2FD068" stop-opacity="0.05"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M60,110 L160,110 L260,40 L380,40 L380,110 L460,110 L460,180 L60,180 Z" fill="url(#collar-grad)"/>
+
+                        <!-- P/L line -->
+                        <path d="M60,110 L160,110 L260,40 L380,40" fill="none" stroke="#2FD068" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M380,40 L380,110 L460,110" fill="none" stroke="#FF453A" stroke-width="2" stroke-dasharray="6" stroke-linecap="round"/>
+
+                        <!-- Zero line -->
+                        <line x1="60" y1="110" x2="460" y2="110" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+                        <text x="48" y="114" fill="rgba(255,255,255,0.3)" font-size="10" font-family="JetBrains Mono" text-anchor="end">$0</text>
+
+                        <!-- Strike markers -->
+                        <line x1="160" y1="105" x2="160" y2="190" stroke="#FF453A" stroke-width="1" stroke-dasharray="3"/>
+                        <line x1="260" y1="35" x2="260" y2="190" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="3"/>
+                        <line x1="380" y1="35" x2="380" y2="190" stroke="#0A84FF" stroke-width="1" stroke-dasharray="3"/>
+
+                        <!-- Labels -->
+                        <text x="160" y="205" fill="#FF453A" font-size="11" font-weight="700" text-anchor="middle" font-family="JetBrains Mono">$100 PUT</text>
+                        <text x="260" y="205" fill="rgba(255,255,255,0.5)" font-size="11" font-weight="600" text-anchor="middle" font-family="JetBrains Mono">$110 Stock</text>
+                        <text x="380" y="205" fill="#0A84FF" font-size="11" font-weight="700" text-anchor="middle" font-family="JetBrains Mono">$130 CALL</text>
+
+                        <!-- Profit annotation -->
+                        <text x="320" y="30" fill="#2FD068" font-size="13" font-weight="800" text-anchor="middle" font-family="JetBrains Mono">+$20 MAX</text>
+                        <text x="100" y="100" fill="rgba(255,255,255,0.4)" font-size="10" text-anchor="middle">Protected zone</text>
+
+                        <!-- Upside arrow -->
+                        <text x="440" y="100" fill="#FF453A" font-size="10" text-anchor="middle">Capped</text>
+
+                        <!-- Range bracket -->
+                        <rect x="155" y="65" width="230" height="20" rx="4" fill="rgba(47,208,104,0.12)" stroke="rgba(47,208,104,0.3)" stroke-width="1"/>
+                        <text x="270" y="79" fill="#2FD068" font-size="10" font-weight="700" text-anchor="middle">YOUR PROFIT ZONE</text>
+                    </svg>
+                    <div class="diagram-caption">Collar P/L at expiration &mdash; protected downside, capped upside, zero net cost</div>
+                </div>
+
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">$0</div>
+                        <div class="stat-label">Net Cost</div>
+                    </div>
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">~20%</div>
+                        <div class="stat-label">Max Upside</div>
+                    </div>
+                    <div class="edu-stat-card gold">
+                        <div class="stat-value">~9%</div>
+                        <div class="stat-label">Max Downside</div>
+                    </div>
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">2:1</div>
+                        <div class="stat-label">Reward : Risk</div>
+                    </div>
+                </div>
 
                 <div class="edu-callout success">
                     <strong>Why "Zero Cost"?</strong> The premium you collect from selling the call is used to buy the protective put. The two premiums offset each other, so you don't pay anything out of pocket to get downside protection. You give up some upside in exchange for a safety net.
@@ -133,44 +185,60 @@
                 <h2 id="how-it-works">How the Collar Works</h2>
                 <p>The collar combines two well-known options strategies into one:</p>
 
-                <div class="edu-concept-grid">
-                    <div class="edu-concept-card">
-                        <h4>Covered Call (Sell)</h4>
-                        <p>You sell a call option above the current price. This obligates you to sell your shares at the strike price if the stock rises that far. In return, you collect premium. This caps your upside but generates income.</p>
+                <div class="edu-formula">
+                    <span class="f-part green">Own 100 Shares</span>
+                    <span class="f-op">+</span>
+                    <span class="f-part red">Buy Put (floor)</span>
+                    <span class="f-op">+</span>
+                    <span class="f-part">Sell Call (cap)</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part gold">Zero-Cost Collar</span>
+                </div>
+
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header red-bg">Covered Call (Sell)</div>
+                        <div class="compare-body">
+                            <p>You sell a call option <strong>above</strong> the current price. This obligates you to sell your shares at the strike price if the stock rises that far. In return, you collect premium.</p>
+                            <p><span class="edu-pill green">+$8.50 premium</span> caps your upside but generates income.</p>
+                        </div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>Protective Put (Buy)</h4>
-                        <p>You buy a put option below the current price. This gives you the right to sell your shares at the put strike, no matter how far the stock drops. This is your insurance policy &mdash; it sets a floor on your losses.</p>
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg">Protective Put (Buy)</div>
+                        <div class="compare-body">
+                            <p>You buy a put option <strong>below</strong> the current price. This gives you the right to sell your shares at the put strike, no matter how far the stock drops.</p>
+                            <p><span class="edu-pill red">-$8.20 cost</span> is your insurance policy &mdash; it sets a floor on your losses.</p>
+                        </div>
                     </div>
                 </div>
 
                 <h3>The Three Scenarios at Expiration</h3>
-                <table>
-                    <tr>
-                        <th>Scenario</th>
-                        <th>Stock Price</th>
-                        <th>What Happens</th>
-                        <th>Your Outcome</th>
-                    </tr>
-                    <tr>
-                        <td>Stock rises above call strike</td>
-                        <td>Above $130</td>
-                        <td>Shares called away at $130</td>
-                        <td>You profit ~18% (capped)</td>
-                    </tr>
-                    <tr>
-                        <td>Stock stays in range</td>
-                        <td>$100&ndash;$130</td>
-                        <td>Both options expire worthless</td>
-                        <td>You keep shares + any gains</td>
-                    </tr>
-                    <tr>
-                        <td>Stock drops below put strike</td>
-                        <td>Below $100</td>
-                        <td>Put protects you at $100</td>
-                        <td>Max loss capped at ~9%</td>
-                    </tr>
-                </table>
+                <div class="edu-compare-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg">Stock Rises Above $130</div>
+                        <div class="compare-body">
+                            <p>Shares called away at $130</p>
+                            <p><span class="val" style="color:#2FD068;">+18% profit</span> (capped)</p>
+                            <p>Best case: you sell at the cap and reinvest</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg">Stock Stays $100&ndash;$130</div>
+                        <div class="compare-body">
+                            <p>Both options expire worthless</p>
+                            <p><span class="val" style="color:#0A84FF;">Keep shares + gains</span></p>
+                            <p>Most common outcome: you collect dividends and stay invested</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header red-bg">Stock Drops Below $100</div>
+                        <div class="compare-body">
+                            <p>Put protects you at $100</p>
+                            <p><span class="val" style="color:#FF453A;">-9% max loss</span></p>
+                            <p>Without the collar, losses would be unlimited</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h2 id="why-ira">Why This Strategy Fits IRA Accounts</h2>
                 <p>The zero-cost collar is one of the best strategies for retirement accounts. Here's why:</p>
@@ -299,11 +367,29 @@
                 <p>Unlike active trading strategies like <a href="/zero-dte/">0DTE options</a> that require daily monitoring, the IRA collar is designed to be hands-off:</p>
 
                 <h3>The Set-and-Forget Timeline</h3>
-                <ol>
-                    <li><strong>Day 1:</strong> Buy 100 shares of SPY (or already own them). Sell a 6-month covered call 15% above current price. Buy a 6-month protective put 8% below current price.</li>
-                    <li><strong>Months 1-5:</strong> Do nothing. Collect dividends. Your position is protected regardless of market conditions.</li>
-                    <li><strong>Month 6:</strong> At expiration, evaluate and roll to a new collar if desired.</li>
-                </ol>
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num">1</div>
+                        <div class="edu-flow-content">
+                            <h4>Day 1 &mdash; Set Up the Collar</h4>
+                            <p>Buy 100 shares of SPY (or already own them). Sell a 6-month covered call 15% above current price. Buy a 6-month protective put 8% below. Net cost: $0.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">2</div>
+                        <div class="edu-flow-content">
+                            <h4>Months 1&ndash;5 &mdash; Do Nothing</h4>
+                            <p>Collect quarterly dividends. Your position is protected regardless of market conditions. No monitoring, no stress, no stop losses to babysit.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">3</div>
+                        <div class="edu-flow-content">
+                            <h4>Month 6 &mdash; Roll or Close</h4>
+                            <p>At expiration, evaluate and roll to a new collar at updated strikes. This is the only time you need to take action &mdash; about 30 minutes every 6 months.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Why It Works for Busy People</h3>
                 <ul>
@@ -350,20 +436,87 @@
                     </tr>
                 </table>
 
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;">
+                        <defs>
+                            <linearGradient id="spy-grad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#2FD068" stop-opacity="0.35"/>
+                                <stop offset="100%" stop-color="#2FD068" stop-opacity="0.05"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Grid -->
+                        <line x1="50" y1="100" x2="490" y2="100" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                        <text x="38" y="104" fill="rgba(255,255,255,0.3)" font-size="9" text-anchor="end" font-family="JetBrains Mono">$0</text>
+
+                        <!-- Profit area -->
+                        <path d="M50,100 L170,100 L330,30 L420,30 L420,100 L490,100 L490,160 L50,160 Z" fill="url(#spy-grad)"/>
+
+                        <!-- P/L line: flat loss, then rising, then flat profit, then capped -->
+                        <path d="M50,100 L170,100 L330,30 L420,30" fill="none" stroke="#2FD068" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M420,30 L420,100 L490,100" fill="none" stroke="#FF453A" stroke-width="2" stroke-dasharray="5"/>
+
+                        <!-- Strike labels -->
+                        <line x1="170" y1="95" x2="170" y2="175" stroke="#FF453A" stroke-width="1" stroke-dasharray="3"/>
+                        <text x="170" y="188" fill="#FF453A" font-size="10" font-weight="700" text-anchor="middle" font-family="JetBrains Mono">$545 PUT</text>
+
+                        <line x1="260" y1="60" x2="260" y2="175" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="3"/>
+                        <text x="260" y="188" fill="rgba(255,255,255,0.4)" font-size="10" font-weight="600" text-anchor="middle" font-family="JetBrains Mono">$590 Entry</text>
+
+                        <line x1="420" y1="25" x2="420" y2="175" stroke="#0A84FF" stroke-width="1" stroke-dasharray="3"/>
+                        <text x="420" y="188" fill="#0A84FF" font-size="10" font-weight="700" text-anchor="middle" font-family="JetBrains Mono">$680 CALL</text>
+
+                        <!-- Max profit label -->
+                        <text x="370" y="22" fill="#2FD068" font-size="12" font-weight="800" text-anchor="middle" font-family="JetBrains Mono">+$9,030</text>
+                        <text x="370" y="55" fill="#FFD60A" font-size="9" text-anchor="middle">+ ~$500 dividends</text>
+
+                        <!-- Max loss label -->
+                        <text x="100" y="94" fill="#FF453A" font-size="10" font-weight="600" text-anchor="middle" font-family="JetBrains Mono">-$4,500 max</text>
+                    </svg>
+                    <div class="diagram-caption">SPY Roth IRA Collar: Jan&ndash;Jul 2026 &mdash; $590 entry, $545 put, $680 call</div>
+                </div>
+
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">+$9,030</div>
+                        <div class="stat-label">Max Profit</div>
+                    </div>
+                    <div class="edu-stat-card red">
+                        <div class="stat-value">-$4,500</div>
+                        <div class="stat-label">Max Loss</div>
+                    </div>
+                    <div class="edu-stat-card gold">
+                        <div class="stat-value">+$500</div>
+                        <div class="stat-label">~Dividends (6mo)</div>
+                    </div>
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">+$30</div>
+                        <div class="stat-label">Net Credit</div>
+                    </div>
+                </div>
+
                 <h3>Outcome Scenarios (July 2026 Expiration)</h3>
 
-                <div class="edu-concept-grid">
-                    <div class="edu-concept-card">
-                        <h4>Bull Case: SPY at $700</h4>
-                        <p><strong>Gain: +$9,000 (15.3%)</strong><br>Shares called away at $680. You keep the $90/share gain ($680 - $590). Plus ~$5 in dividends over 6 months. Put expires worthless.</p>
+                <div class="edu-compare-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg">Bull: SPY at $700</div>
+                        <div class="compare-body">
+                            <p><span class="val" style="color:#2FD068;font-size:1.1rem;">+$9,000</span> <span class="edu-pill green">+15.3%</span></p>
+                            <p>Shares called away at $680. You keep $90/share gain plus ~$500 in dividends. Put expires worthless.</p>
+                        </div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>Moderate Case: SPY at $640</h4>
-                        <p><strong>Gain: +$5,000 (8.5%)</strong><br>Both options expire worthless. You keep your shares at $640, up $50/share. Plus dividends. No cap reached, no protection needed.</p>
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg">Moderate: SPY at $640</div>
+                        <div class="compare-body">
+                            <p><span class="val" style="color:#0A84FF;font-size:1.1rem;">+$5,000</span> <span class="edu-pill blue">+8.5%</span></p>
+                            <p>Both options expire worthless. You keep shares at $640, up $50/share. Plus dividends. Best of both worlds.</p>
+                        </div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>Bear Case: SPY at $500</h4>
-                        <p><strong>Loss: -$4,500 (7.6%)</strong><br>Put protects you at $545. Even though SPY dropped $90/share, your maximum loss is $45/share ($590 - $545). Without the collar, you'd be down $9,000 (15.3%).</p>
+                    <div class="edu-compare-card">
+                        <div class="compare-header red-bg">Bear: SPY at $500</div>
+                        <div class="compare-body">
+                            <p><span class="val" style="color:#FF453A;font-size:1.1rem;">-$4,500</span> <span class="edu-pill red">-7.6%</span></p>
+                            <p>Put protects at $545. Without the collar, you'd be down $9,000 (-15.3%). The collar <strong>saved you $4,500</strong>.</p>
+                        </div>
                     </div>
                 </div>
 

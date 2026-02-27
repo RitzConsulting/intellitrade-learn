@@ -117,28 +117,62 @@
                 <h2 id="how-it-works">How the System Works</h2>
                 <p>IntelliTrade's automated trading runs as a continuous loop during market hours. Here is the high-level flow:</p>
 
-                <pre>
-Market Opens (9:30 AM ET)
-  &darr;
-Agent Scheduler activates trading agents
-  &darr;
-Every 5 minutes: Scan for trade opportunities
-  &darr;  Fetch live GEX data, VIX, SPX price
-  &darr;  Run quality gates (VIX, ATR, consolidation, momentum)
-  &darr;  Generate trade ideas matching current conditions
-  &darr;  Execute qualifying trades via broker API
-  &darr;
-Every 30 seconds: Monitor open positions
-  &darr;  Check breakeven breaches, GEX flips
-  &darr;  Update trailing stop high-water marks
-  &darr;  Apply time-based profit targets
-  &darr;
-3:45 PM: Begin end-of-day position management
-  &darr;
-4:00 PM: Market close, final reconciliation
-  &darr;
-4:15 PM: Sweep expired 0DTE positions, generate daily summary
-                </pre>
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num">1</div>
+                        <div class="edu-flow-content">
+                            <h4>Signal</h4>
+                            <p>Every 5 minutes, the scheduler fetches live GEX data, VIX, and SPX price. It classifies the current regime and identifies trade opportunities matching the time-of-day phase.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">2</div>
+                        <div class="edu-flow-content">
+                            <h4>Validate</h4>
+                            <p>Each trade idea passes through quality gates: VIX level, ATR volatility, consolidation check, momentum filter, PIN proximity, and GEX regime alignment. Only qualifying ideas proceed.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">3</div>
+                        <div class="edu-flow-content">
+                            <h4>Execute</h4>
+                            <p>Qualifying trades are sent to the broker API (Tradier for options, IBKR for futures) with limit orders. Entry credit must meet the 30% minimum return-on-risk threshold.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num purple">4</div>
+                        <div class="edu-flow-content">
+                            <h4>Monitor</h4>
+                            <p>Every 30 seconds, the exit manager checks open positions: breakeven breaches, GEX flips, trailing stops, and time-based profit targets. High-water marks are updated continuously.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num red">5</div>
+                        <div class="edu-flow-content">
+                            <h4>Exit</h4>
+                            <p>Positions are closed via priority-ordered rules. At 3:45 PM, end-of-day management begins. At 4:15 PM, expired 0DTE positions are swept and the daily summary is generated.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">5</div>
+                        <div class="stat-label">Max Trades / Day</div>
+                    </div>
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">30s</div>
+                        <div class="stat-label">Monitor Interval</div>
+                    </div>
+                    <div class="edu-stat-card gold">
+                        <div class="stat-value">30%</div>
+                        <div class="stat-label">Min Return on Risk</div>
+                    </div>
+                    <div class="edu-stat-card purple">
+                        <div class="stat-value">7</div>
+                        <div class="stat-label">Quality Gates</div>
+                    </div>
+                </div>
 
                 <h3>Key Components</h3>
                 <ul>
@@ -152,18 +186,33 @@ Every 30 seconds: Monitor open positions
                 <h2 id="agents">Trading Agents</h2>
                 <p>IntelliTrade uses specialized <strong>trading agents</strong> &mdash; each configured for a specific trading style, window, and strategy set.</p>
 
-                <div class="edu-concept-grid">
-                    <div class="edu-concept-card">
-                        <h4>0DTE SPX Agent</h4>
-                        <p>The primary options agent. Trades SPX 0DTE options from 10:15 AM to 2:15 PM ET. Handles Iron Fly, Iron Condor, and directional spreads based on GEX regime. Maximum 5 trades per day with 5-minute intervals.</p>
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg">0DTE SPX Agent <span class="edu-pill green">Options</span></div>
+                        <div class="compare-body">
+                            <p><strong>Window:</strong> <span class="val">10:15 AM &ndash; 2:15 PM</span> ET</p>
+                            <p><strong>Strategies:</strong> Iron Fly, Iron Condor, directional spreads</p>
+                            <p><strong>Limit:</strong> <span class="val">5</span> trades/day, <span class="val">5</span>-min intervals</p>
+                            <p><strong>Basis:</strong> Rule-based, driven by GEX regime and quality gates</p>
+                        </div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>IntelliAgent (AI)</h4>
-                        <p>The <a href="/ai-assistant/">AI-powered agent</a> that runs all day. Uses Claude AI to analyze market conditions and suggest trades. Provides a second perspective alongside the rule-based 0DTE agent.</p>
+                    <div class="edu-compare-card">
+                        <div class="compare-header purple-bg">IntelliAgent <span class="edu-pill purple">AI</span></div>
+                        <div class="compare-body">
+                            <p><strong>Window:</strong> <span class="val">All Day</span></p>
+                            <p><strong>Engine:</strong> Claude AI analyzes market conditions in real time</p>
+                            <p><strong>Role:</strong> Second perspective alongside rule-based agent</p>
+                            <p><strong>Basis:</strong> AI-powered with regime-aware suggestions</p>
+                        </div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>ORB v11 (Futures)</h4>
-                        <p>Runs on TradingView via Pine Script. Detects <a href="/futures/#orb">Opening Range Breakouts</a> on ES/MES/NQ 5-minute charts and sends webhook signals to the IBKR Bridge for execution.</p>
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg">ORB v11 <span class="edu-pill blue">Futures</span></div>
+                        <div class="compare-body">
+                            <p><strong>Platform:</strong> TradingView Pine Script</p>
+                            <p><strong>Strategy:</strong> <a href="/futures/#orb">Opening Range Breakout</a> on ES/MES/NQ</p>
+                            <p><strong>Execution:</strong> Webhook signals to IBKR Bridge</p>
+                            <p><strong>Charts:</strong> <span class="val">5</span>-min timeframe</p>
+                        </div>
                     </div>
                 </div>
 
@@ -251,6 +300,73 @@ Every 30 seconds: Monitor open positions
 
                 <h2 id="exit-management">Exit Management</h2>
                 <p>Getting into a trade is only half the battle. The <strong>Dynamic Exit Manager</strong> monitors every open position every 30 seconds and applies a priority-ordered set of exit rules:</p>
+
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <!-- Title -->
+                        <text x="350" y="24" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="14" fill="rgba(255,255,255,0.90)">Exit Manager Decision Tree (Priority Order)</text>
+
+                        <!-- Entry point -->
+                        <rect x="260" y="42" width="180" height="32" rx="16" fill="rgba(10,132,255,0.15)" stroke="rgba(10,132,255,0.40)" stroke-width="1.5"/>
+                        <text x="350" y="63" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12" fill="#0A84FF">Open Position Check</text>
+                        <line x1="350" y1="74" x2="350" y2="94" stroke="rgba(255,255,255,0.20)" stroke-width="1.5"/>
+
+                        <!-- Row 1: BE Breach + GEX Flip -->
+                        <rect x="30" y="94" width="195" height="52" rx="10" fill="rgba(255,69,58,0.08)" stroke="rgba(255,69,58,0.30)" stroke-width="1"/>
+                        <text x="128" y="114" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="11" fill="#FF453A">1. BE BREACH</text>
+                        <text x="128" y="134" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.45)">SPX past breakeven +/- 3pts</text>
+
+                        <rect x="255" y="94" width="195" height="52" rx="10" fill="rgba(255,69,58,0.08)" stroke="rgba(255,69,58,0.30)" stroke-width="1"/>
+                        <text x="353" y="114" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="11" fill="#FF453A">2. GEX FLIP</text>
+                        <text x="353" y="134" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.45)">Regime changed (every 5m)</text>
+
+                        <rect x="480" y="94" width="195" height="52" rx="10" fill="rgba(255,214,10,0.08)" stroke="rgba(255,214,10,0.30)" stroke-width="1"/>
+                        <text x="578" y="114" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="11" fill="#FFD60A">3. TRAIL HARD</text>
+                        <text x="578" y="134" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.45)">HWM &ge;20%, floor 10%</text>
+
+                        <!-- Connecting lines row 1 -->
+                        <line x1="350" y1="94" x2="128" y2="94" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                        <line x1="350" y1="94" x2="578" y2="94" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+
+                        <!-- Down connector -->
+                        <line x1="350" y1="146" x2="350" y2="176" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <text x="365" y="166" font-family="Nunito, sans-serif" font-weight="600" font-size="9" fill="rgba(255,255,255,0.30)">PASS</text>
+
+                        <!-- Row 2: Trail Soft + Loss Cut + Late Day -->
+                        <rect x="30" y="176" width="195" height="52" rx="10" fill="rgba(255,214,10,0.08)" stroke="rgba(255,214,10,0.30)" stroke-width="1"/>
+                        <text x="128" y="196" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="11" fill="#FFD60A">4. TRAIL SOFT</text>
+                        <text x="128" y="216" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.45)">HWM &ge;12%, floor 5%</text>
+
+                        <rect x="255" y="176" width="195" height="52" rx="10" fill="rgba(191,90,242,0.08)" stroke="rgba(191,90,242,0.30)" stroke-width="1"/>
+                        <text x="353" y="196" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="11" fill="#BF5AF2">5. LOSS CUT</text>
+                        <text x="353" y="216" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.45)">Time-scaled: -25%/-20%/-15%</text>
+
+                        <rect x="480" y="176" width="195" height="52" rx="10" fill="rgba(191,90,242,0.08)" stroke="rgba(191,90,242,0.30)" stroke-width="1"/>
+                        <text x="578" y="196" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="11" fill="#BF5AF2">6. LATE DAY</text>
+                        <text x="578" y="216" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.45)">After 3:30PM, loss &gt;10%</text>
+
+                        <!-- Connecting lines row 2 -->
+                        <line x1="350" y1="176" x2="128" y2="176" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+                        <line x1="350" y1="176" x2="578" y2="176" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+
+                        <!-- Down connector -->
+                        <line x1="350" y1="228" x2="350" y2="258" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="4,3"/>
+                        <text x="365" y="248" font-family="Nunito, sans-serif" font-weight="600" font-size="9" fill="rgba(255,255,255,0.30)">PASS</text>
+
+                        <!-- Time decay row -->
+                        <rect x="145" y="258" width="410" height="52" rx="10" fill="rgba(47,208,104,0.08)" stroke="rgba(47,208,104,0.30)" stroke-width="1"/>
+                        <text x="350" y="278" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="700" font-size="11" fill="#2FD068">TIME-DECAY PROFIT TARGETS</text>
+                        <text x="350" y="298" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.45)">After 12PM: 25% | After 2PM: 20% | After 3PM: 15%</text>
+
+                        <!-- Down connector -->
+                        <line x1="350" y1="310" x2="350" y2="340" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+                        <!-- Hold -->
+                        <rect x="260" y="340" width="180" height="36" rx="18" fill="rgba(10,132,255,0.10)" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
+                        <text x="350" y="363" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12" fill="#0A84FF">Continue Holding</text>
+                    </svg>
+                    <div class="diagram-caption">Exit rules are evaluated every 30 seconds in priority order &mdash; first triggered rule executes</div>
+                </div>
 
                 <h3>Exit Rules (Priority Order)</h3>
                 <ol>

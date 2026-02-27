@@ -118,6 +118,36 @@
                 <h2 id="support-resistance">Support and Resistance</h2>
                 <p>Support and resistance are the most fundamental concepts in market structure. They are the price levels where the balance between buyers and sellers shifts.</p>
 
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;width:100%">
+                        <!-- Background -->
+                        <rect x="0" y="0" width="520" height="280" rx="12" fill="#1a1a2e" />
+                        <!-- Resistance zone -->
+                        <rect x="40" y="38" width="440" height="30" rx="4" fill="#FF453A" fill-opacity="0.12" />
+                        <line x1="40" y1="53" x2="480" y2="53" stroke="#FF453A" stroke-width="2" stroke-dasharray="8,4" />
+                        <text x="490" y="57" fill="#FF453A" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="start">6,100</text>
+                        <text x="46" y="48" fill="#FF453A" font-family="Nunito, sans-serif" font-size="10" font-weight="700">RESISTANCE</text>
+                        <!-- Support zone -->
+                        <rect x="40" y="208" width="440" height="30" rx="4" fill="#2FD068" fill-opacity="0.12" />
+                        <line x1="40" y1="223" x2="480" y2="223" stroke="#2FD068" stroke-width="2" stroke-dasharray="8,4" />
+                        <text x="490" y="227" fill="#2FD068" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="start">6,020</text>
+                        <text x="46" y="218" fill="#2FD068" font-family="Nunito, sans-serif" font-size="10" font-weight="700">SUPPORT</text>
+                        <!-- Price line bouncing between levels -->
+                        <polyline points="60,140 90,90 110,60 130,80 160,58 180,75 200,100 230,170 260,200 280,220 300,200 320,160 350,100 380,65 400,55 420,80 450,130 470,180" fill="none" stroke="#0A84FF" stroke-width="2.5" stroke-linejoin="round" />
+                        <!-- Bounce arrows at support -->
+                        <polygon points="280,220 274,208 286,208" fill="#2FD068" />
+                        <!-- Rejection arrows at resistance -->
+                        <polygon points="160,58 154,70 166,70" fill="#FF453A" />
+                        <polygon points="400,55 394,67 406,67" fill="#FF453A" />
+                        <!-- Labels -->
+                        <text x="290" y="252" fill="#2FD068" font-family="Nunito, sans-serif" font-size="10">Bounce</text>
+                        <text x="395" y="82" fill="#FF453A" font-family="Nunito, sans-serif" font-size="10">Rejection</text>
+                        <!-- Y-axis labels -->
+                        <text x="20" y="140" fill="#666" font-family="Nunito, sans-serif" font-size="9" text-anchor="middle" transform="rotate(-90,20,140)">Price</text>
+                    </svg>
+                    <div class="diagram-caption">Price bounces off support and gets rejected at resistance, creating a trading range</div>
+                </div>
+
                 <h3>Support: The Floor</h3>
                 <p><strong>Support</strong> is a price level where buying pressure exceeds selling pressure, causing the price to bounce upward. Think of it as a floor &mdash; price falls to this level and finds buyers willing to step in.</p>
                 <p>Support forms when:</p>
@@ -131,6 +161,29 @@
                 <h3>Resistance: The Ceiling</h3>
                 <p><strong>Resistance</strong> is a price level where selling pressure exceeds buying pressure, causing the price to reverse downward. It acts as a ceiling &mdash; price rises to this level and finds sellers waiting.</p>
                 <p>Resistance forms for the mirror reasons: prior rejections at the level, concentrated sell orders, technical indicators, and options positioning like <a href="/gex/">GEX call walls</a>.</p>
+
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg">Support (Floor)</div>
+                        <div class="compare-body">
+                            <p><strong>What:</strong> Price level where buyers step in</p>
+                            <p><strong>Action:</strong> Buy pressure exceeds sell pressure</p>
+                            <p><strong>Formed by:</strong> Prior bounces, put walls, VWAP</p>
+                            <p><strong>Trade:</strong> Go long near support with stop below</p>
+                            <p><strong>GEX:</strong> Put wall = market maker buying floor</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header red-bg">Resistance (Ceiling)</div>
+                        <div class="compare-body">
+                            <p><strong>What:</strong> Price level where sellers step in</p>
+                            <p><strong>Action:</strong> Sell pressure exceeds buy pressure</p>
+                            <p><strong>Formed by:</strong> Prior rejections, call walls, round numbers</p>
+                            <p><strong>Trade:</strong> Go short near resistance with stop above</p>
+                            <p><strong>GEX:</strong> Call wall = market maker selling ceiling</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>The Role Reversal Principle</h3>
                 <p>One of the most powerful concepts in market structure: <strong>when support is broken, it becomes resistance. When resistance is broken, it becomes support.</strong></p>
@@ -162,6 +215,20 @@
                 <p>Trends are the directional moves that price makes between support and resistance levels. Understanding the trend tells you whether to look for buying opportunities, selling opportunities, or range-bound strategies.</p>
 
                 <h3>The Three Trend Types</h3>
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">Uptrend</div>
+                        <div class="stat-label">Higher Highs + Higher Lows</div>
+                    </div>
+                    <div class="edu-stat-card red">
+                        <div class="stat-value">Downtrend</div>
+                        <div class="stat-label">Lower Highs + Lower Lows</div>
+                    </div>
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">Sideways</div>
+                        <div class="stat-label">Equal Highs + Equal Lows</div>
+                    </div>
+                </div>
 
                 <h3>Uptrend: Higher Highs and Higher Lows</h3>
                 <pre>
@@ -367,30 +434,50 @@
                 <h2 id="practical-tips">Practical Tips</h2>
                 <p>Here are actionable guidelines for applying market structure to your daily trading:</p>
 
-                <h3>1. Draw Levels Top-Down</h3>
-                <p>Start with the highest timeframe and work down. Levels on a daily chart carry more weight than levels on a 5-minute chart. Begin with the daily, then the hourly, then the 5-minute. The strongest zones are where multiple timeframes agree.</p>
-
-                <h3>2. Trade at the Edges, Not the Middle</h3>
-                <p>In a range between 6,020 and 6,080, the worst place to enter is at 6,050. You have no edge &mdash; price could easily go either way. Wait for price to approach the support at 6,020 or the resistance at 6,080, then look for a reaction and confirmation before entering.</p>
-
-                <h3>3. Wait for Confirmation</h3>
-                <p>A level is just a line on a chart until price reacts to it. Do not assume a support level will hold just because it held before. Wait for a confirmation signal: a rejection candle, a volume spike, or a GEX-aligned bounce. Then enter.</p>
-
-                <h3>4. Use Multiple Confluences</h3>
-                <p>A single reason to enter a trade is not enough. Look for <strong>confluence</strong> &mdash; multiple factors agreeing. The best trades combine:</p>
-                <ul>
-                    <li>A key support/resistance level</li>
-                    <li>A GEX wall or PIN alignment</li>
-                    <li>A candlestick confirmation pattern</li>
-                    <li>Volume supporting the move</li>
-                    <li>The overall trend in your favor</li>
-                </ul>
-
-                <h3>5. Respect the Trend</h3>
-                <p>Counter-trend trades can work, but they are inherently lower probability. In an uptrend, focus on buying dips to support. In a downtrend, focus on selling rallies to resistance. Fighting the trend should be the exception, not the rule.</p>
-
-                <h3>6. Build This Into Your Plan</h3>
-                <p>Market structure analysis should be part of your daily pre-market routine. Before the bell rings, identify the key levels, determine the trend, check the <a href="/gex/">GEX regime</a>, and know where you want to trade and where you want to stay away from. Document all of this in your <a href="/trading-plan/">trading plan</a>.</p>
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">1</div>
+                        <div class="edu-flow-content">
+                            <h4>Draw Levels Top-Down</h4>
+                            <p>Start with the highest timeframe and work down. Levels on daily charts carry more weight than 5-minute charts. The strongest zones are where multiple timeframes agree.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">2</div>
+                        <div class="edu-flow-content">
+                            <h4>Trade at the Edges, Not the Middle</h4>
+                            <p>In a range between 6,020 and 6,080, the worst entry is 6,050. Wait for price to approach support or resistance, then look for a reaction before entering.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num red">3</div>
+                        <div class="edu-flow-content">
+                            <h4>Wait for Confirmation</h4>
+                            <p>A level is just a line until price reacts. Wait for a rejection candle, volume spike, or GEX-aligned bounce before entering.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num purple">4</div>
+                        <div class="edu-flow-content">
+                            <h4>Use Multiple Confluences</h4>
+                            <p>The best trades combine: a key S/R level, GEX wall alignment, candlestick confirmation, volume support, and the overall trend in your favor.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">5</div>
+                        <div class="edu-flow-content">
+                            <h4>Respect the Trend</h4>
+                            <p>In an uptrend, buy dips to support. In a downtrend, sell rallies to resistance. Counter-trend trades are lower probability &mdash; the exception, not the rule.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num green">6</div>
+                        <div class="edu-flow-content">
+                            <h4>Build This Into Your Plan</h4>
+                            <p>Before the bell rings, identify key levels, determine the trend, check the <a href="/gex/">GEX regime</a>, and document it in your <a href="/trading-plan/">trading plan</a>.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="edu-callout">
                     <strong>Next Steps:</strong> Now that you understand market structure, build these concepts into a complete <a href="/trading-plan/">trading plan</a> that defines your daily routine, entry rules, risk parameters, and review process.

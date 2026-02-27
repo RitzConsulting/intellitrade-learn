@@ -112,8 +112,58 @@
                     <strong>Important:</strong> The AI Brain provides <strong>suggestions and analysis</strong>, not financial advice. All automated trade execution goes through the rule-based <a href="/auto-trading/#quality-gates">quality gates</a> system. The AI adds context and reasoning, but the system's risk rules always have final say.
                 </div>
 
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card purple">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">Analysis Tabs</div>
+                    </div>
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">8+</div>
+                        <div class="stat-label">Data Inputs</div>
+                    </div>
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">50</div>
+                        <div class="stat-label">Chat History Depth</div>
+                    </div>
+                    <div class="edu-stat-card gold">
+                        <div class="stat-value">4:15</div>
+                        <div class="stat-label">Daily Summary Time</div>
+                    </div>
+                </div>
+
                 <h2 id="how-it-works">How the AI Brain Works</h2>
                 <p>The AI Brain is powered by Claude AI (Anthropic) and receives a rich context window for every interaction:</p>
+
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num">1</div>
+                        <div class="edu-flow-content">
+                            <h4>Analyze</h4>
+                            <p>The AI receives live GEX profile, regime classification, SPX price, VIX level, trading phase, and recent trade history as structured context for every interaction.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">2</div>
+                        <div class="edu-flow-content">
+                            <h4>Suggest</h4>
+                            <p>Claude AI synthesizes all data sources to provide regime-aware suggestions, explaining both what to trade and why current conditions favor it.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">3</div>
+                        <div class="edu-flow-content">
+                            <h4>Execute</h4>
+                            <p>Suggestions are validated against the same quality gates as the rule-based system. Only trades that pass all gates are sent to the broker for execution.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num purple">4</div>
+                        <div class="edu-flow-content">
+                            <h4>Learn</h4>
+                            <p>Your thumbs-up/down feedback and trade outcomes are stored and fed back into future prompts, making suggestions more personalized over time.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Data Inputs</h3>
                 <ul>
@@ -127,6 +177,72 @@
                     <li><strong>Previous feedback</strong> &mdash; Your thumbs-up/down ratings on past suggestions</li>
                 </ul>
 
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <!-- Title -->
+                        <text x="350" y="22" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="14" fill="rgba(255,255,255,0.90)">AI Brain: Input / Output Flow</text>
+
+                        <!-- Input column -->
+                        <text x="110" y="52" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12" fill="rgba(255,255,255,0.60)">DATA INPUTS</text>
+
+                        <rect x="20" y="64" width="180" height="28" rx="8" fill="rgba(47,208,104,0.10)" stroke="rgba(47,208,104,0.25)" stroke-width="1"/>
+                        <text x="110" y="83" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#2FD068">GEX Profile + Regime</text>
+
+                        <rect x="20" y="98" width="180" height="28" rx="8" fill="rgba(10,132,255,0.10)" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
+                        <text x="110" y="117" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#0A84FF">SPX Price + VIX</text>
+
+                        <rect x="20" y="132" width="180" height="28" rx="8" fill="rgba(255,214,10,0.10)" stroke="rgba(255,214,10,0.25)" stroke-width="1"/>
+                        <text x="110" y="151" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#FFD60A">Trade History + P&amp;L</text>
+
+                        <rect x="20" y="166" width="180" height="28" rx="8" fill="rgba(191,90,242,0.10)" stroke="rgba(191,90,242,0.25)" stroke-width="1"/>
+                        <text x="110" y="185" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#BF5AF2">Futures + ORB Status</text>
+
+                        <rect x="20" y="200" width="180" height="28" rx="8" fill="rgba(90,200,250,0.10)" stroke="rgba(90,200,250,0.25)" stroke-width="1"/>
+                        <text x="110" y="219" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#5AC8FA">Your Feedback History</text>
+
+                        <!-- Arrows to center -->
+                        <line x1="200" y1="78" x2="260" y2="148" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                        <line x1="200" y1="112" x2="260" y2="148" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                        <line x1="200" y1="146" x2="260" y2="148" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                        <line x1="200" y1="180" x2="260" y2="148" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                        <line x1="200" y1="214" x2="260" y2="148" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+                        <!-- AI Brain center -->
+                        <rect x="260" y="100" width="180" height="96" rx="14" fill="rgba(191,90,242,0.10)" stroke="rgba(191,90,242,0.40)" stroke-width="2"/>
+                        <text x="350" y="134" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="16" fill="#BF5AF2">AI Brain</text>
+                        <text x="350" y="156" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,0.45)">Claude AI</text>
+                        <text x="350" y="184" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="500" font-size="10" fill="rgba(255,255,255,0.35)">Context + Reasoning</text>
+
+                        <!-- Arrows to output -->
+                        <line x1="440" y1="120" x2="500" y2="78" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                        <line x1="440" y1="148" x2="500" y2="146" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+                        <line x1="440" y1="176" x2="500" y2="214" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+
+                        <!-- Output column -->
+                        <text x="590" y="52" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12" fill="rgba(255,255,255,0.60)">OUTPUTS</text>
+
+                        <rect x="500" y="64" width="180" height="28" rx="8" fill="rgba(47,208,104,0.10)" stroke="rgba(47,208,104,0.25)" stroke-width="1"/>
+                        <text x="590" y="83" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#2FD068">Strategy Suggestions</text>
+
+                        <rect x="500" y="132" width="180" height="28" rx="8" fill="rgba(10,132,255,0.10)" stroke="rgba(10,132,255,0.25)" stroke-width="1"/>
+                        <text x="590" y="151" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#0A84FF">Market Explanation</text>
+
+                        <rect x="500" y="200" width="180" height="28" rx="8" fill="rgba(255,214,10,0.10)" stroke="rgba(255,214,10,0.25)" stroke-width="1"/>
+                        <text x="590" y="219" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#FFD60A">Daily Summary</text>
+
+                        <!-- Feedback loop arrow -->
+                        <path d="M590,228 L590,268 L110,268 L110,228" stroke="rgba(191,90,242,0.30)" stroke-width="1.5" stroke-dasharray="5,4" fill="none" marker-end="url(#arrowPurple)"/>
+                        <text x="350" y="284" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="10" fill="rgba(191,90,242,0.50)">Feedback Loop &mdash; outcomes improve future suggestions</text>
+
+                        <defs>
+                            <marker id="arrowPurple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <path d="M0,0 L8,3 L0,6" fill="rgba(191,90,242,0.40)"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                    <div class="diagram-caption">Data flows in from multiple sources, AI synthesizes context-aware responses, feedback improves future suggestions</div>
+                </div>
+
                 <h3>How It Responds</h3>
                 <p>When you ask the AI Brain a question or request analysis, it processes all the above data together to provide a response that considers:</p>
                 <ul>
@@ -135,6 +251,33 @@
                     <li>Historical patterns from your own trade data &mdash; what has worked in similar conditions</li>
                     <li>Risk factors like approaching VIX thresholds, time of day, or proximity to major levels</li>
                 </ul>
+
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg">Options Tab <span class="edu-pill green">SPX</span></div>
+                        <div class="compare-body">
+                            <p><strong>Focus:</strong> SPX 0DTE options, GEX regime, strategy selection</p>
+                            <p><strong>Data:</strong> Live GEX, VIX, SPX price, trade history, quality gate log</p>
+                            <p><strong>Strength:</strong> Explains why trades were taken or skipped</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg">Futures Tab <span class="edu-pill blue">ES/NQ</span></div>
+                        <div class="compare-body">
+                            <p><strong>Focus:</strong> ES, MES, NQ positions and ORB v11 signals</p>
+                            <p><strong>Data:</strong> IBKR Bridge positions, fills, P&amp;L, ORB status</p>
+                            <p><strong>Strength:</strong> GEX-informed support/resistance for futures levels</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header purple-bg">Summary Tab <span class="edu-pill purple">EOD</span></div>
+                        <div class="compare-body">
+                            <p><strong>Focus:</strong> End-of-day review and performance analysis</p>
+                            <p><strong>Data:</strong> All trades, outcomes, gate activity, regime changes</p>
+                            <p><strong>Strength:</strong> Auto-generated lessons learned at 4:15 PM</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h2 id="options-tab">Options Analysis</h2>
                 <p>The <strong>Options tab</strong> in the AI Brain sidebar (accessible from the <a href="https://intellitrade.live/auto-trades">Today's Trades</a> page) focuses on SPX options trading:</p>
@@ -193,11 +336,29 @@
                 <p>The AI Brain learns from your feedback through a simple thumbs-up/thumbs-down system:</p>
 
                 <h3>How to Give Feedback</h3>
-                <ol>
-                    <li>After receiving an AI suggestion, click the thumbs-up or thumbs-down button</li>
-                    <li>Optionally add a comment explaining why (e.g., "Good call on the GEX flip warning" or "Iron Fly would have worked better here")</li>
-                    <li>Your feedback is stored in the database and included in future AI prompts</li>
-                </ol>
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num">1</div>
+                        <div class="edu-flow-content">
+                            <h4>Rate</h4>
+                            <p>After receiving an AI suggestion, click the thumbs-up or thumbs-down button to rate its quality.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">2</div>
+                        <div class="edu-flow-content">
+                            <h4>Comment</h4>
+                            <p>Optionally add context: "Good call on the GEX flip warning" or "Iron Fly would have worked better here."</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">3</div>
+                        <div class="edu-flow-content">
+                            <h4>Improve</h4>
+                            <p>Your feedback is stored in the database and included in future AI prompts, making suggestions more personalized over time.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>How Feedback Improves the System</h3>
                 <p>When generating new suggestions, the AI Brain receives a sample of your recent feedback. This helps it understand your preferences:</p>

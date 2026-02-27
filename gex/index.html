@@ -111,6 +111,21 @@
                     <strong>Why Does This Matter?</strong> Options volume on SPX is massive. On any given day, billions of dollars in gamma exposure force market makers to trade. When you know where their hedging pressure concentrates, you can anticipate where price is likely to stall, reverse, or accelerate.
                 </div>
 
+                <h3>The GEX Formula</h3>
+                <p>Gamma Exposure for a single strike is calculated as:</p>
+                <div class="edu-formula">
+                    <span class="f-part">GEX</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part green">Gamma</span>
+                    <span class="f-op">&times;</span>
+                    <span class="f-part gold">OI</span>
+                    <span class="f-op">&times;</span>
+                    <span class="f-part">100</span>
+                    <span class="f-op">&times;</span>
+                    <span class="f-part red">Spot&sup2;</span>
+                </div>
+                <p>Where <strong>Gamma</strong> is the option's gamma, <strong>OI</strong> is open interest at that strike, <strong>100</strong> is the contract multiplier, and <strong>Spot&sup2;</strong> is the current underlying price squared. The total net GEX sums this across all strikes, with calls positive and puts negative.</p>
+
                 <h2 id="market-makers">How Market Makers Hedge</h2>
                 <p>Market makers are in the business of providing liquidity &mdash; they take the other side of your trade. When you buy a call, a market maker sells it to you. But they don't want to bet on direction, so they <strong>delta-hedge</strong>: buying or selling shares/futures of the underlying to offset their risk.</p>
 
@@ -130,12 +145,108 @@
                 </ul>
                 <p>The result: <strong>price trends more aggressively</strong>. Negative GEX environments are characterized by larger, more volatile moves.</p>
 
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <!-- Title -->
+                        <text x="350" y="24" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="15" fill="rgba(255,255,255,0.90)">Dealer Hedging Flow: Positive vs Negative GEX</text>
+
+                        <!-- Positive GEX side -->
+                        <rect x="20" y="50" width="310" height="250" rx="14" fill="rgba(47,208,104,0.06)" stroke="rgba(47,208,104,0.25)" stroke-width="1"/>
+                        <text x="175" y="76" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="13" fill="#2FD068">POSITIVE GEX (Long Gamma)</text>
+
+                        <!-- Price Up arrow -->
+                        <text x="60" y="110" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,0.70)">Price Up</text>
+                        <line x1="110" y1="107" x2="145" y2="107" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+                        <text x="150" y="110" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,0.50)">Delta rises</text>
+                        <line x1="218" y1="107" x2="248" y2="107" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+                        <text x="253" y="110" font-family="Nunito, sans-serif" font-weight="700" font-size="11" fill="#FF453A">SELL</text>
+
+                        <!-- Result: dampens rally -->
+                        <rect x="50" y="124" width="250" height="30" rx="8" fill="rgba(47,208,104,0.10)" stroke="rgba(47,208,104,0.20)" stroke-width="1"/>
+                        <text x="175" y="143" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#2FD068">Selling pressure dampens rally</text>
+
+                        <!-- Price Down arrow -->
+                        <text x="60" y="180" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,0.70)">Price Down</text>
+                        <line x1="125" y1="177" x2="145" y2="177" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+                        <text x="150" y="180" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,0.50)">Delta falls</text>
+                        <line x1="218" y1="177" x2="248" y2="177" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+                        <text x="253" y="180" font-family="Nunito, sans-serif" font-weight="700" font-size="11" fill="#2FD068">BUY</text>
+
+                        <!-- Result: cushions drop -->
+                        <rect x="50" y="194" width="250" height="30" rx="8" fill="rgba(47,208,104,0.10)" stroke="rgba(47,208,104,0.20)" stroke-width="1"/>
+                        <text x="175" y="213" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#2FD068">Buying pressure cushions drop</text>
+
+                        <!-- Net effect -->
+                        <rect x="60" y="240" width="230" height="44" rx="10" fill="rgba(47,208,104,0.12)" stroke="rgba(47,208,104,0.30)" stroke-width="1.5"/>
+                        <text x="175" y="258" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="12" fill="#2FD068">DAMPENING</text>
+                        <text x="175" y="274" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="10" fill="rgba(255,255,255,0.50)">Price pins / range-bound</text>
+
+                        <!-- Negative GEX side -->
+                        <rect x="370" y="50" width="310" height="250" rx="14" fill="rgba(255,69,58,0.06)" stroke="rgba(255,69,58,0.25)" stroke-width="1"/>
+                        <text x="525" y="76" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="13" fill="#FF453A">NEGATIVE GEX (Short Gamma)</text>
+
+                        <!-- Price Up arrow -->
+                        <text x="410" y="110" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,0.70)">Price Up</text>
+                        <line x1="460" y1="107" x2="495" y2="107" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+                        <text x="500" y="110" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,0.50)">Delta rises</text>
+                        <line x1="568" y1="107" x2="598" y2="107" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+                        <text x="603" y="110" font-family="Nunito, sans-serif" font-weight="700" font-size="11" fill="#2FD068">BUY</text>
+
+                        <!-- Result: fuels rally -->
+                        <rect x="400" y="124" width="250" height="30" rx="8" fill="rgba(255,69,58,0.10)" stroke="rgba(255,69,58,0.20)" stroke-width="1"/>
+                        <text x="525" y="143" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#FF453A">Buying pressure fuels rally further</text>
+
+                        <!-- Price Down arrow -->
+                        <text x="410" y="180" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,0.70)">Price Down</text>
+                        <line x1="475" y1="177" x2="495" y2="177" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+                        <text x="500" y="180" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="rgba(255,255,255,0.50)">Delta falls</text>
+                        <line x1="568" y1="177" x2="598" y2="177" stroke="rgba(255,255,255,0.30)" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+                        <text x="603" y="180" font-family="Nunito, sans-serif" font-weight="700" font-size="11" fill="#FF453A">SELL</text>
+
+                        <!-- Result: accelerates decline -->
+                        <rect x="400" y="194" width="250" height="30" rx="8" fill="rgba(255,69,58,0.10)" stroke="rgba(255,69,58,0.20)" stroke-width="1"/>
+                        <text x="525" y="213" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="11" fill="#FF453A">Selling accelerates decline</text>
+
+                        <!-- Net effect -->
+                        <rect x="410" y="240" width="230" height="44" rx="10" fill="rgba(255,69,58,0.12)" stroke="rgba(255,69,58,0.30)" stroke-width="1.5"/>
+                        <text x="525" y="258" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="12" fill="#FF453A">AMPLIFYING</text>
+                        <text x="525" y="274" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="600" font-size="10" fill="rgba(255,255,255,0.50)">Price trends aggressively</text>
+
+                        <!-- Arrow markers -->
+                        <defs>
+                            <marker id="arrowGrey" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <path d="M0,0 L8,3 L0,6" fill="rgba(255,255,255,0.30)"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                    <div class="diagram-caption">How market maker hedging creates opposite effects in positive vs negative GEX environments</div>
+                </div>
+
                 <div class="edu-callout warning">
                     <strong>Real-World Example:</strong> On February 6, SPX surged past the call wall (6,900) reaching 6,930+. GEX spiked from 4.4B to 14.6B as market makers scrambled to hedge. An Iron Condor placed at the call wall level was destroyed (-65.4% loss). This is why IntelliTrade now detects breakout conditions and avoids range-bound strategies during directional moves.
                 </div>
 
                 <h2 id="gex-levels">Key GEX Levels</h2>
                 <p>IntelliTrade calculates several critical price levels from options data. These levels act as magnets, walls, and pivot points for price action.</p>
+
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">+0.02B</div>
+                        <div class="stat-label">Positive Threshold</div>
+                    </div>
+                    <div class="edu-stat-card red">
+                        <div class="stat-value">-0.02B</div>
+                        <div class="stat-label">Negative Threshold</div>
+                    </div>
+                    <div class="edu-stat-card gold">
+                        <div class="stat-value">0.00</div>
+                        <div class="stat-label">Gamma Flip Line</div>
+                    </div>
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">&lt;15 pts</div>
+                        <div class="stat-label">PIN Magnet Range</div>
+                    </div>
+                </div>
 
                 <div class="edu-concept-grid">
                     <div class="edu-concept-card">
@@ -167,31 +278,34 @@
                 <h2 id="gex-regimes">GEX Regimes: Positive, Negative, Neutral</h2>
                 <p>IntelliTrade classifies the current GEX environment into three regimes, each with different trading implications:</p>
 
-                <h3>Positive GEX Regime</h3>
-                <p>Net GEX is above +0.02 billion. Market makers are long gamma.</p>
-                <ul>
-                    <li><strong>Market behavior:</strong> Range-bound, mean-reverting, lower volatility</li>
-                    <li><strong>Price tendency:</strong> Pins near GEX PIN level, contained between Put Wall and Call Wall</li>
-                    <li><strong>Best strategies:</strong> Iron Fly (if pinning), Iron Condor (range-bound), Put Spreads (bullish bias)</li>
-                    <li><strong>Avoid:</strong> Bearish directional trades (Call Spreads) &mdash; the market is structurally supported</li>
-                </ul>
-
-                <h3>Negative GEX Regime</h3>
-                <p>Net GEX is below -0.02 billion. Market makers are short gamma.</p>
-                <ul>
-                    <li><strong>Market behavior:</strong> Trending, volatile, larger moves in both directions</li>
-                    <li><strong>Price tendency:</strong> Moves away from levels quickly, overshoots support/resistance</li>
-                    <li><strong>Best strategies:</strong> Call Spreads (bearish bias), directional trades aligned with the trend</li>
-                    <li><strong>Avoid:</strong> Bullish directional trades (Put Spreads) &mdash; the market lacks structural support</li>
-                </ul>
-
-                <h3>Neutral GEX Regime</h3>
-                <p>Net GEX is between -0.02 and +0.02 billion. Transitional zone.</p>
-                <ul>
-                    <li><strong>Market behavior:</strong> Mixed signals, can transition either way</li>
-                    <li><strong>Best strategies:</strong> Both directional types allowed, but with extra caution</li>
-                    <li><strong>Key watch:</strong> Monitor for GEX flips &mdash; a shift from positive to negative can trigger rapid selling</li>
-                </ul>
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg">Positive GEX <span class="edu-pill green">&gt; +0.02B</span></div>
+                        <div class="compare-body">
+                            <p><strong>Behavior:</strong> Range-bound, mean-reverting, lower volatility</p>
+                            <p><strong>Price:</strong> Pins near GEX PIN, contained between Put Wall and Call Wall</p>
+                            <p><strong>Best:</strong> Iron Fly, Iron Condor, Put Spreads (bullish)</p>
+                            <p><strong>Avoid:</strong> Call Spreads (bearish) &mdash; market is structurally supported</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header red-bg">Negative GEX <span class="edu-pill red">&lt; -0.02B</span></div>
+                        <div class="compare-body">
+                            <p><strong>Behavior:</strong> Trending, volatile, larger moves in both directions</p>
+                            <p><strong>Price:</strong> Moves away from levels quickly, overshoots support/resistance</p>
+                            <p><strong>Best:</strong> Call Spreads (bearish), directional trades with the trend</p>
+                            <p><strong>Avoid:</strong> Put Spreads (bullish) &mdash; market lacks structural support</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header gold-bg">Neutral GEX <span class="edu-pill gold">&plusmn;0.02B</span></div>
+                        <div class="compare-body">
+                            <p><strong>Behavior:</strong> Mixed signals, can transition either way</p>
+                            <p><strong>Best:</strong> Both directional types allowed, with extra caution</p>
+                            <p><strong>Watch:</strong> Monitor for GEX flips &mdash; positive-to-negative can trigger rapid selling</p>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="edu-callout danger">
                     <strong>Critical Rule:</strong> IntelliTrade enforces strict regime alignment. The system will <strong>never</strong> enter a bullish trade (Put Spread) when GEX is negative, and <strong>never</strong> enter a bearish trade (Call Spread) when GEX is positive. This rule was implemented after a real loss on Feb 23 where a bullish Put Spread was entered during negative GEX &mdash; SPX dropped and the trade lost 129%.

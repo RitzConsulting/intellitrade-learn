@@ -113,36 +113,25 @@
 
                 <h3>The Math of Ruin</h3>
                 <p>Losses are not symmetric. If you lose 10% of your account, you need an 11.1% gain to recover. Lose 25%, and you need a 33.3% gain. Lose 50%, and you need to <strong>double your remaining money</strong> just to get back to where you started. This is why preserving capital is paramount.</p>
-                <table>
-                    <tr>
-                        <th>Account Loss</th>
-                        <th>Gain Needed to Recover</th>
-                    </tr>
-                    <tr>
-                        <td>10%</td>
-                        <td>11.1%</td>
-                    </tr>
-                    <tr>
-                        <td>20%</td>
-                        <td>25.0%</td>
-                    </tr>
-                    <tr>
-                        <td>30%</td>
-                        <td>42.9%</td>
-                    </tr>
-                    <tr>
-                        <td>40%</td>
-                        <td>66.7%</td>
-                    </tr>
-                    <tr>
-                        <td>50%</td>
-                        <td>100.0%</td>
-                    </tr>
-                    <tr>
-                        <td>75%</td>
-                        <td>300.0%</td>
-                    </tr>
-                </table>
+
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">-10%</div>
+                        <div class="stat-label">Need +11.1% to recover</div>
+                    </div>
+                    <div class="edu-stat-card gold">
+                        <div class="stat-value">-25%</div>
+                        <div class="stat-label">Need +33.3% to recover</div>
+                    </div>
+                    <div class="edu-stat-card red">
+                        <div class="stat-value">-50%</div>
+                        <div class="stat-label">Need +100% to recover</div>
+                    </div>
+                    <div class="edu-stat-card purple">
+                        <div class="stat-value">-75%</div>
+                        <div class="stat-label">Need +300% to recover</div>
+                    </div>
+                </div>
 
                 <h2 id="one-two-percent-rule">The 1-2% Rule</h2>
                 <p>The 1-2% rule is the foundation of professional risk management: <strong>never risk more than 1-2% of your total account on a single trade</strong>. This simple principle is what separates traders who survive from those who don't.</p>
@@ -167,13 +156,16 @@
                 <p>Position sizing answers the question: <strong>how many contracts or shares should I trade?</strong> The answer is not a fixed number &mdash; it is calculated based on your account risk and the stop loss distance of each individual trade.</p>
 
                 <h3>The Formula</h3>
-                <pre>
-Position Size = Account Risk ($) / Stop Loss Distance
-
-Where:
-  Account Risk = Account Value x Risk Percentage
-  Stop Loss Distance = Entry Price - Stop Price (per unit)
-                </pre>
+                <div class="edu-formula">
+                    <span class="f-part green">Account</span>
+                    <span class="f-op">&times;</span>
+                    <span class="f-part gold">Risk %</span>
+                    <span class="f-op">&divide;</span>
+                    <span class="f-part red">Stop Distance</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part">Position Size</span>
+                </div>
+                <p>Where <strong>Account</strong> is your total balance, <strong>Risk %</strong> is 1&ndash;2%, and <strong>Stop Distance</strong> is the per-unit dollar distance from entry to your stop loss.</p>
 
                 <h3>Example: Futures (ES)</h3>
                 <p>Account: $50,000. Risk: 1% = $500. Stop loss: 10 points on ES. ES moves $50 per point per contract.</p>
@@ -275,6 +267,38 @@ Solution: Use narrower wings ($15 width) or increase account size
                 <h2 id="risk-reward">Risk-Reward Ratio</h2>
                 <p>The risk-reward ratio (R:R) compares how much you stand to lose versus how much you could gain on a trade. A <strong>2:1 R:R</strong> means for every $1 you risk, you expect to make $2 in profit.</p>
 
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg" style="max-width:520px;width:100%">
+                        <!-- Background -->
+                        <rect x="0" y="0" width="520" height="220" rx="12" fill="#1a1a2e" />
+                        <!-- Entry line -->
+                        <line x1="260" y1="30" x2="260" y2="190" stroke="#555" stroke-width="2" stroke-dasharray="6,4" />
+                        <text x="260" y="22" text-anchor="middle" fill="#aaa" font-family="Nunito, sans-serif" font-size="11">Entry</text>
+                        <!-- Risk zone (left) -->
+                        <rect x="60" y="80" width="200" height="50" rx="6" fill="#FF453A" fill-opacity="0.15" stroke="#FF453A" stroke-width="1.5" />
+                        <text x="160" y="100" text-anchor="middle" fill="#FF453A" font-family="Nunito, sans-serif" font-weight="700" font-size="13">RISK</text>
+                        <text x="160" y="120" text-anchor="middle" fill="#FF453A" font-family="JetBrains Mono, monospace" font-size="16">-$500</text>
+                        <!-- Reward zone (right) -->
+                        <rect x="260" y="80" width="200" height="50" rx="6" fill="#2FD068" fill-opacity="0.15" stroke="#2FD068" stroke-width="1.5" />
+                        <text x="360" y="100" text-anchor="middle" fill="#2FD068" font-family="Nunito, sans-serif" font-weight="700" font-size="13">REWARD</text>
+                        <text x="360" y="120" text-anchor="middle" fill="#2FD068" font-family="JetBrains Mono, monospace" font-size="16">+$1,000</text>
+                        <!-- Stop loss arrow -->
+                        <line x1="60" y1="155" x2="260" y2="155" stroke="#FF453A" stroke-width="2" />
+                        <polygon points="60,155 72,149 72,161" fill="#FF453A" />
+                        <text x="160" y="175" text-anchor="middle" fill="#FF453A" font-family="JetBrains Mono, monospace" font-size="11">Stop Loss</text>
+                        <!-- Target arrow -->
+                        <line x1="260" y1="155" x2="460" y2="155" stroke="#2FD068" stroke-width="2" />
+                        <polygon points="460,155 448,149 448,161" fill="#2FD068" />
+                        <text x="360" y="175" text-anchor="middle" fill="#2FD068" font-family="JetBrains Mono, monospace" font-size="11">Profit Target</text>
+                        <!-- R:R label -->
+                        <rect x="200" y="40" width="120" height="28" rx="14" fill="#0A84FF" fill-opacity="0.2" stroke="#0A84FF" stroke-width="1" />
+                        <text x="260" y="59" text-anchor="middle" fill="#0A84FF" font-family="JetBrains Mono, monospace" font-weight="600" font-size="14">R:R = 1:2</text>
+                        <!-- Win rate note -->
+                        <text x="260" y="205" text-anchor="middle" fill="#888" font-family="Nunito, sans-serif" font-size="11">Only need 34% win rate to break even at 1:2 R:R</text>
+                    </svg>
+                    <div class="diagram-caption">Risk-reward visualization: risking $500 to make $1,000 (1:2 R:R)</div>
+                </div>
+
                 <h3>Why R:R Matters</h3>
                 <p>Your win rate and risk-reward ratio are mathematically linked. A higher R:R means you can be profitable with a lower win rate. Here is the relationship:</p>
 
@@ -333,6 +357,40 @@ Solution: Use narrower wings ($15 width) or increase account size
 
                 <div class="edu-callout success">
                     <strong>How prop firms enforce discipline:</strong> <a href="/prop-firms/">Proprietary trading firms</a> mandate strict daily drawdown limits. If a funded trader exceeds their daily max loss, they are locked out of trading for the rest of the day &mdash; automatically, with no override. This is one reason prop firm traders tend to develop disciplined habits.
+                </div>
+
+                <h3>Risk Profile Comparison</h3>
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg">Conservative</div>
+                        <div class="compare-body">
+                            <p><strong>Per-trade risk:</strong> 0.5&ndash;1%</p>
+                            <p><strong>Daily loss limit:</strong> 2% of account</p>
+                            <p><strong>Weekly limit:</strong> 4% of account</p>
+                            <p><strong>Max positions:</strong> 1&ndash;2 at a time</p>
+                            <p><strong>Best for:</strong> Beginners, prop firm evals</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg">Moderate</div>
+                        <div class="compare-body">
+                            <p><strong>Per-trade risk:</strong> 1&ndash;2%</p>
+                            <p><strong>Daily loss limit:</strong> 3&ndash;5% of account</p>
+                            <p><strong>Weekly limit:</strong> 6&ndash;8% of account</p>
+                            <p><strong>Max positions:</strong> 2&ndash;4 at a time</p>
+                            <p><strong>Best for:</strong> Experienced day traders</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header red-bg">Aggressive</div>
+                        <div class="compare-body">
+                            <p><strong>Per-trade risk:</strong> 2&ndash;5%</p>
+                            <p><strong>Daily loss limit:</strong> 5&ndash;10% of account</p>
+                            <p><strong>Weekly limit:</strong> 10&ndash;15% of account</p>
+                            <p><strong>Max positions:</strong> 3&ndash;6 at a time</p>
+                            <p><strong>Best for:</strong> Small accounts, high conviction</p>
+                        </div>
+                    </div>
                 </div>
 
                 <h2 id="correlation-risk">Correlation Risk</h2>

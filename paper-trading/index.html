@@ -128,38 +128,40 @@
                 <h2 id="platforms">Paper Trading Platforms</h2>
                 <p>Here are the best platforms for paper trading, each with different strengths:</p>
 
-                <table>
-                    <tr>
-                        <th>Platform</th>
-                        <th>Cost</th>
-                        <th>Instruments</th>
-                        <th>Key Features</th>
-                    </tr>
-                    <tr>
-                        <td><strong>ThinkorSwim</strong> (Schwab)</td>
-                        <td>Free</td>
-                        <td>Stocks, options, futures</td>
-                        <td>Excellent options analysis, full-featured paper mode, same interface as live trading</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Interactive Brokers</strong></td>
-                        <td>Free with account</td>
-                        <td>Stocks, options, futures, forex</td>
-                        <td>Paper account included, full API access for algorithmic testing, global markets</td>
-                    </tr>
-                    <tr>
-                        <td><strong>TradingView</strong></td>
-                        <td>Free tier available</td>
-                        <td>All (charting + strategy testing)</td>
-                        <td>Built-in strategy tester, Pine Script backtesting, paper trading panel. <a href="/tradingview/">See our TradingView guide &rarr;</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>IntelliTrade</strong></td>
-                        <td>Included</td>
-                        <td>SPX options, futures</td>
-                        <td>Simulation mode for 0DTE strategies, same quality gates and exit management as live</td>
-                    </tr>
-                </table>
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg">ThinkorSwim (Schwab)</div>
+                        <div class="compare-body">
+                            <p><strong>Cost:</strong> Free</p>
+                            <p><strong>Instruments:</strong> Stocks, options, futures</p>
+                            <p><strong>Strength:</strong> Excellent options analysis, full-featured paper mode, same interface as live</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg">Interactive Brokers</div>
+                        <div class="compare-body">
+                            <p><strong>Cost:</strong> Free with account</p>
+                            <p><strong>Instruments:</strong> Stocks, options, futures, forex</p>
+                            <p><strong>Strength:</strong> Full API access for algorithmic testing, global markets</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header gold-bg">TradingView</div>
+                        <div class="compare-body">
+                            <p><strong>Cost:</strong> Free tier available</p>
+                            <p><strong>Instruments:</strong> All (charting + strategy testing)</p>
+                            <p><strong>Strength:</strong> Built-in strategy tester, Pine Script backtesting. <a href="/tradingview/">See guide &rarr;</a></p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header purple-bg">IntelliTrade</div>
+                        <div class="compare-body">
+                            <p><strong>Cost:</strong> Included</p>
+                            <p><strong>Instruments:</strong> SPX options, futures</p>
+                            <p><strong>Strength:</strong> Simulation mode for 0DTE with same quality gates and exit management as live</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Which Platform Should You Start With?</h3>
                 <ul>
@@ -243,6 +245,34 @@
                 <p>Do not rush this. Transitioning to live trading too early is one of the most expensive mistakes a new trader can make. Use this checklist:</p>
 
                 <h3>Go-Live Checklist</h3>
+
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">50+</div>
+                        <div class="stat-label">Paper trades completed</div>
+                    </div>
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">2+ weeks</div>
+                        <div class="stat-label">Positive results streak</div>
+                    </div>
+                    <div class="edu-stat-card gold">
+                        <div class="stat-value">Written</div>
+                        <div class="stat-label">Trading plan documented</div>
+                    </div>
+                    <div class="edu-stat-card red">
+                        <div class="stat-value">1&ndash;2%</div>
+                        <div class="stat-label">Risk rules defined per trade</div>
+                    </div>
+                    <div class="edu-stat-card purple">
+                        <div class="stat-value">Fluent</div>
+                        <div class="stat-label">Platform proficiency</div>
+                    </div>
+                    <div class="edu-stat-card teal">
+                        <div class="stat-value">Ready</div>
+                        <div class="stat-label">Emotionally prepared for losses</div>
+                    </div>
+                </div>
+
                 <ol>
                     <li><strong>50+ paper trades completed</strong> &mdash; You need a meaningful sample size, not 5 lucky trades</li>
                     <li><strong>Positive results over 2+ weeks</strong> &mdash; One good day is luck. Two good weeks is a process starting to prove itself</li>
@@ -260,12 +290,36 @@
                 <p>When you are ready, the transition should be gradual. Do not go from paper trading 10 contracts to live trading 10 contracts on day one.</p>
 
                 <h3>The Transition Path</h3>
-                <ol>
-                    <li><strong>Start with the smallest possible size</strong> &mdash; 1 MES contract (micro E-mini, $5/point), 1 SPX option, or a single $5-wide spread. The dollar amounts are tiny, but the emotions are real.</li>
-                    <li><strong>Do not change your strategy</strong> &mdash; Trade the exact same plan you paper traded. Same entries, same exits, same risk rules. The only change is that the money is real.</li>
-                    <li><strong>Track your execution quality</strong> &mdash; Are you following the plan as well as you did on paper? Note any deviations.</li>
-                    <li><strong>Scale up slowly</strong> &mdash; After 20+ live trades with consistent plan adherence, increase size by one unit. Repeat. Never increase size after a winning streak (that is emotional, not systematic).</li>
-                </ol>
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num green">1</div>
+                        <div class="edu-flow-content">
+                            <h4>Start with Smallest Size</h4>
+                            <p>1 MES contract ($5/point), 1 SPX option, or a single $5-wide spread. The dollar amounts are tiny, but the emotions are real.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">2</div>
+                        <div class="edu-flow-content">
+                            <h4>Keep Your Strategy Identical</h4>
+                            <p>Trade the exact same plan you paper traded. Same entries, exits, and risk rules. The only change is that the money is real.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">3</div>
+                        <div class="edu-flow-content">
+                            <h4>Track Execution Quality</h4>
+                            <p>Are you following the plan as well as on paper? Note any deviations between your paper performance and live performance.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num purple">4</div>
+                        <div class="edu-flow-content">
+                            <h4>Scale Up Slowly</h4>
+                            <p>After 20+ live trades with consistent plan adherence, increase size by one unit. Never scale up after a winning streak &mdash; that is emotional, not systematic.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Consider Prop Firms</h3>
                 <p>If you are not ready to risk your own capital but want the emotional experience of live-style trading, <a href="/prop-firms/">prop firms</a> offer funded accounts where you trade the firm's capital. You keep a share of the profits while the firm absorbs the downside. This is an excellent middle step between paper and fully self-funded trading.</p>

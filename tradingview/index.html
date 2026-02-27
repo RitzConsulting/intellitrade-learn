@@ -97,6 +97,24 @@
                 <h2 id="what-is-tv">What Is TradingView?</h2>
                 <p><strong>TradingView</strong> is the world's most popular charting and social trading platform. It provides real-time charts, technical analysis tools, custom scripting (Pine Script), and a social community of millions of traders.</p>
                 <p>What makes TradingView essential for modern trading:</p>
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">200+</div>
+                        <div class="stat-label">Built-in Indicators</div>
+                    </div>
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">&lt; 2s</div>
+                        <div class="stat-label">Webhook-to-Trade Latency</div>
+                    </div>
+                    <div class="edu-stat-card gold">
+                        <div class="stat-value">100M+</div>
+                        <div class="stat-label">Active Users Worldwide</div>
+                    </div>
+                    <div class="edu-stat-card purple">
+                        <div class="stat-value">Pine v5</div>
+                        <div class="stat-label">Custom Scripting Language</div>
+                    </div>
+                </div>
                 <ul>
                     <li><strong>Browser-based</strong> &mdash; No downloads needed, works on any device with a web browser</li>
                     <li><strong>Real-time data</strong> &mdash; Stocks, futures, forex, crypto, and options data from global exchanges</li>
@@ -248,22 +266,42 @@ alertcondition(shortBreak, "ORB Short", "Price broke below ORB Low")
                 <p>Alerts are TradingView's notification system. They monitor your conditions 24/7 on TradingView's servers &mdash; your computer doesn't need to be on.</p>
 
                 <h3>Types of Alert Conditions</h3>
-                <div class="edu-concept-grid">
-                    <div class="edu-concept-card">
-                        <h4>Price Alerts</h4>
-                        <p>Trigger when price crosses a specific level. Example: "Alert me when ES crosses above 6050." Simple but powerful for key support/resistance levels.</p>
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg"><h4>Price Alerts</h4></div>
+                        <div class="compare-body">
+                            <p><span class="val">Simple</span> price level triggers</p>
+                            <p>Example: "ES crosses above 6050"</p>
+                            <p>Best for support/resistance levels</p>
+                            <p>Plan: <span class="edu-pill green">Free</span></p>
+                        </div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>Indicator Alerts</h4>
-                        <p>Trigger based on built-in indicator conditions. Example: "Alert when RSI crosses below 30." Works with any plotted indicator on your chart.</p>
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg"><h4>Indicator Alerts</h4></div>
+                        <div class="compare-body">
+                            <p><span class="val">Built-in</span> indicator conditions</p>
+                            <p>Example: "RSI crosses below 30"</p>
+                            <p>Works with any plotted indicator</p>
+                            <p>Plan: <span class="edu-pill green">Free</span></p>
+                        </div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>Custom Script Alerts</h4>
-                        <p>Trigger from <code>alertcondition()</code> in your Pine Script. Most flexible &mdash; define any logic you want. This is what powers IntelliTrade's webhook automation.</p>
+                    <div class="edu-compare-card">
+                        <div class="compare-header purple-bg"><h4>Custom Script Alerts</h4></div>
+                        <div class="compare-body">
+                            <p><span class="val">alertcondition()</span> in Pine Script</p>
+                            <p>Define any logic you want</p>
+                            <p>Powers IntelliTrade webhook automation</p>
+                            <p>Plan: <span class="edu-pill blue">Essential+</span></p>
+                        </div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>Strategy Alerts</h4>
-                        <p>Trigger from strategy entry/exit orders. Example: "Alert on every strategy.entry() call." Useful for backtested strategies you want to automate.</p>
+                    <div class="edu-compare-card">
+                        <div class="compare-header gold-bg"><h4>Strategy Alerts</h4></div>
+                        <div class="compare-body">
+                            <p><span class="val">strategy.entry()</span> triggers</p>
+                            <p>Fires on backtest entry/exit orders</p>
+                            <p>Automate backtested strategies</p>
+                            <p>Plan: <span class="edu-pill blue">Essential+</span></p>
+                        </div>
                     </div>
                 </div>
 
@@ -285,28 +323,43 @@ alertcondition(shortBreak, "ORB Short", "Price broke below ORB Low")
                 <p>A <strong>webhook</strong> is an HTTP request that TradingView sends to a URL when an alert fires. This is the bridge between your TradingView analysis and real trade execution.</p>
 
                 <h3>How Webhooks Work</h3>
-                <pre>
-  TradingView Alert Fires
-        |
-        v
-  TradingView sends HTTP POST
-  to your webhook URL
-        |
-        v
-  Your server receives the request
-  (IntelliTrade webhook bridge)
-        |
-        v
-  Parse the JSON payload
-  (ticker, action, quantity, etc.)
-        |
-        v
-  Execute the trade via broker API
-  (Interactive Brokers, Tradier, etc.)
-        |
-        v
-  Confirm and log the result
-                </pre>
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">1</div>
+                        <div class="edu-flow-content">
+                            <h4>TradingView Alert Fires</h4>
+                            <p>Your Pine Script condition is met (e.g., ORB breakout). TradingView's cloud servers detect it 24/7.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">2</div>
+                        <div class="edu-flow-content">
+                            <h4>HTTP POST to Webhook URL</h4>
+                            <p>TradingView sends a JSON payload to your configured endpoint with ticker, action, price, and parameters.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num purple">3</div>
+                        <div class="edu-flow-content">
+                            <h4>IntelliTrade Bridge Receives</h4>
+                            <p>Validates the auth token, parses trade parameters, and applies risk checks (position limits, daily loss).</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num">4</div>
+                        <div class="edu-flow-content">
+                            <h4>Broker API Execution</h4>
+                            <p>Places a bracket order on Interactive Brokers: entry + stop-loss + take-profit. All within ~2 seconds.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num green">5</div>
+                        <div class="edu-flow-content">
+                            <h4>Confirm &amp; Log</h4>
+                            <p>Fill confirmation is received, trade is logged to the database, and P/L tracking begins on the dashboard.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>Setting Up a Webhook Alert</h3>
                 <ol>
@@ -324,16 +377,33 @@ alertcondition(shortBreak, "ORB Short", "Price broke below ORB Low")
                 <p>The alert message body is sent as the webhook's HTTP POST body. You write this in the alert creation dialog using JSON format with TradingView's dynamic variables.</p>
 
                 <h3>Basic Payload Structure</h3>
-                <pre>
-{
-    "action": "buy",
-    "ticker": "{{ticker}}",
-    "price": {{close}},
-    "quantity": 1,
-    "account": "DU12345",
-    "secret": "your-auth-token"
-}
-                </pre>
+                <div class="edu-formula">
+                    <span class="f-part green">"action"</span>
+                    <span class="f-op">:</span>
+                    <span class="f-part">"buy"</span>
+                    <span class="f-op">,</span>
+                    <span class="f-part green">"ticker"</span>
+                    <span class="f-op">:</span>
+                    <span class="f-part gold">"{{ticker}}"</span>
+                    <span class="f-op">,</span>
+                    <span class="f-part green">"price"</span>
+                    <span class="f-op">:</span>
+                    <span class="f-part gold">{{close}}</span>
+                </div>
+                <div class="edu-formula">
+                    <span class="f-part green">"quantity"</span>
+                    <span class="f-op">:</span>
+                    <span class="f-part">1</span>
+                    <span class="f-op">,</span>
+                    <span class="f-part green">"account"</span>
+                    <span class="f-op">:</span>
+                    <span class="f-part">"DU12345"</span>
+                    <span class="f-op">,</span>
+                    <span class="f-part red">"secret"</span>
+                    <span class="f-op">:</span>
+                    <span class="f-part red">"your-auth-token"</span>
+                </div>
+                <p>The <span class="edu-pill gold">{{variables}}</span> are TradingView dynamic placeholders, replaced at alert time with real values. The <span class="edu-pill red">secret</span> authenticates the webhook to prevent unauthorized trades.</p>
 
                 <h3>TradingView Dynamic Variables</h3>
                 <table>
@@ -411,31 +481,46 @@ alertcondition(shortBreak, "ORB Short", "Price broke below ORB Low")
                 <p>IntelliTrade's <strong>IBKR Webhook Bridge</strong> is designed to receive TradingView webhook alerts and execute trades through Interactive Brokers. This is how the <a href="/futures/">futures trading</a> system works.</p>
 
                 <h3>Architecture</h3>
-                <pre>
-  TradingView Cloud
-  (Pine Script + Alert)
-        |
-        | HTTPS POST (JSON)
-        v
-  IntelliTrade Webhook Bridge
-  (localhost:5001 or ngrok tunnel)
-        |
-        | Validates auth token
-        | Parses trade parameters
-        | Applies risk checks
-        v
-  Interactive Brokers TWS/Gateway
-  (IB API connection)
-        |
-        | Places order
-        v
-  Exchange (CME, CBOE, etc.)
-        |
-        | Fill confirmation
-        v
-  IntelliTrade Dashboard
-  (trade logged, P/L tracked)
-                </pre>
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TradingView to IntelliTrade webhook architecture diagram">
+                        <!-- Boxes -->
+                        <rect x="190" y="10" width="220" height="48" rx="8" fill="rgba(10,132,255,0.15)" stroke="#0A84FF" stroke-width="1.5"/>
+                        <text x="300" y="30" fill="#0A84FF" font-size="13" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700">TradingView Cloud</text>
+                        <text x="300" y="48" fill="#aaa" font-size="10" text-anchor="middle" font-family="JetBrains Mono, monospace">Pine Script + Alert</text>
+                        <!-- Arrow 1 -->
+                        <line x1="300" y1="58" x2="300" y2="86" stroke="#0A84FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+                        <text x="365" y="76" fill="#666" font-size="9" font-family="JetBrains Mono, monospace">HTTPS POST (JSON)</text>
+
+                        <rect x="190" y="86" width="220" height="48" rx="8" fill="rgba(191,90,242,0.12)" stroke="#BF5AF2" stroke-width="1.5"/>
+                        <text x="300" y="106" fill="#BF5AF2" font-size="13" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700">IntelliTrade Bridge</text>
+                        <text x="300" y="124" fill="#aaa" font-size="10" text-anchor="middle" font-family="JetBrains Mono, monospace">Auth + Risk Checks</text>
+                        <!-- Arrow 2 -->
+                        <line x1="300" y1="134" x2="300" y2="162" stroke="#BF5AF2" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+
+                        <rect x="190" y="162" width="220" height="48" rx="8" fill="rgba(255,214,10,0.10)" stroke="#FFD60A" stroke-width="1.5"/>
+                        <text x="300" y="182" fill="#FFD60A" font-size="13" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700">Interactive Brokers</text>
+                        <text x="300" y="200" fill="#aaa" font-size="10" text-anchor="middle" font-family="JetBrains Mono, monospace">TWS / IB Gateway</text>
+                        <!-- Arrow 3 -->
+                        <line x1="300" y1="210" x2="300" y2="238" stroke="#FFD60A" stroke-width="1.5" marker-end="url(#arrowGold)"/>
+
+                        <rect x="190" y="238" width="220" height="48" rx="8" fill="rgba(47,208,104,0.10)" stroke="#2FD068" stroke-width="1.5"/>
+                        <text x="300" y="258" fill="#2FD068" font-size="13" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700">Exchange (CME/CBOE)</text>
+                        <text x="300" y="276" fill="#aaa" font-size="10" text-anchor="middle" font-family="JetBrains Mono, monospace">Fill Confirmation</text>
+
+                        <!-- Return arrow -->
+                        <path d="M410,262 L480,262 L480,110 L410,110" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="4,4" marker-end="url(#arrowGray)"/>
+                        <text x="490" y="188" fill="#777" font-size="9" font-family="JetBrains Mono, monospace" transform="rotate(90,490,188)">Fill + P/L logged</text>
+
+                        <!-- Arrow markers -->
+                        <defs>
+                            <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#0A84FF"/></marker>
+                            <marker id="arrowPurple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#BF5AF2"/></marker>
+                            <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#FFD60A"/></marker>
+                            <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10" fill="#555"/></marker>
+                        </defs>
+                    </svg>
+                    <div class="diagram-caption">TradingView webhook architecture: Alert fires in the cloud, IntelliTrade bridge validates and routes to IBKR, exchange fills the order, and the result is logged back to the dashboard.</div>
+                </div>
 
                 <h3>What the Bridge Handles</h3>
                 <ul>
@@ -455,15 +540,43 @@ alertcondition(shortBreak, "ORB Short", "Price broke below ORB Low")
                 <p>IntelliTrade's futures module uses a TradingView-based <strong>Opening Range Breakout (ORB)</strong> strategy. Here's how all the pieces fit together:</p>
 
                 <h3>The ORB Flow</h3>
-                <ol>
-                    <li><strong>Market opens at 9:30 AM ET</strong> &mdash; Pine Script starts tracking the first 3 minutes of price action</li>
-                    <li><strong>9:33 AM:</strong> Opening range is defined (high and low of first 3 candles)</li>
-                    <li><strong>Breakout detected:</strong> Price closes above the ORB high (bullish) or below the ORB low (bearish)</li>
-                    <li><strong>Alert fires:</strong> TradingView sends a webhook with action, price, stop, and target</li>
-                    <li><strong>Bridge receives:</strong> Validates the payload and places a bracket order on IB</li>
-                    <li><strong>Order placed:</strong> Entry + stop-loss + take-profit (e.g., 2:1 reward-to-risk)</li>
-                    <li><strong>Trailing stop:</strong> After initial profit target is partially filled, trail the remainder</li>
-                </ol>
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">1</div>
+                        <div class="edu-flow-content">
+                            <h4>Market Opens 9:30 AM ET</h4>
+                            <p>Pine Script starts tracking the first 3 minutes of price action to build the opening range.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">2</div>
+                        <div class="edu-flow-content">
+                            <h4>9:33 AM: Range Defined</h4>
+                            <p>Opening range high and low are locked in from the first 3 candles. Levels are plotted on the chart.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num green">3</div>
+                        <div class="edu-flow-content">
+                            <h4>Breakout Detected</h4>
+                            <p>Price closes above ORB high (bullish) or below ORB low (bearish). Alert condition triggers.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num purple">4</div>
+                        <div class="edu-flow-content">
+                            <h4>Webhook Fires &rarr; Bridge</h4>
+                            <p>TradingView sends JSON with action, price, stop, and target. Bridge validates and applies risk checks.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num">5</div>
+                        <div class="edu-flow-content">
+                            <h4>Bracket Order Placed</h4>
+                            <p>Entry + stop-loss + take-profit at 2:1 reward-to-risk. After partial fill, trailing stop activates.</p>
+                        </div>
+                    </div>
+                </div>
 
                 <h3>ORB Alert JSON</h3>
                 <pre>

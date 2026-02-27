@@ -136,14 +136,24 @@
                 <h2 id="calls-vs-puts">Calls vs. Puts</h2>
                 <p>There are two types of options, and each can be bought or sold:</p>
 
-                <div class="edu-concept-grid">
-                    <div class="edu-concept-card">
-                        <h4>Call Option</h4>
-                        <p>Gives the holder the right to <strong>buy</strong> the underlying asset at the strike price. Buying a call is a <strong>bullish</strong> bet &mdash; you profit when the price goes up. Selling a call is a bearish or neutral bet.</p>
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg"><h4>Call Option</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Right to:</strong> <span class="val">Buy</span></p>
+                            <p><strong>Buyer bias:</strong> <span class="edu-pill green">Bullish</span></p>
+                            <p><strong>Seller bias:</strong> Bearish / Neutral</p>
+                            <p>Profit when the price goes <strong>up</strong>. The higher above the strike, the more the call is worth.</p>
+                        </div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>Put Option</h4>
-                        <p>Gives the holder the right to <strong>sell</strong> the underlying asset at the strike price. Buying a put is a <strong>bearish</strong> bet &mdash; you profit when the price goes down. Selling a put is a bullish or neutral bet.</p>
+                    <div class="edu-compare-card">
+                        <div class="compare-header red-bg"><h4>Put Option</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Right to:</strong> <span class="val">Sell</span></p>
+                            <p><strong>Buyer bias:</strong> <span class="edu-pill red">Bearish</span></p>
+                            <p><strong>Seller bias:</strong> Bullish / Neutral</p>
+                            <p>Profit when the price goes <strong>down</strong>. The further below the strike, the more the put is worth.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -184,30 +194,84 @@
                 <h2 id="the-greeks">The Greeks</h2>
                 <p>The Greeks are measurements that describe how an option's price changes in response to various factors. Understanding them is essential for managing options positions.</p>
 
-                <div class="edu-concept-grid">
-                    <div class="edu-concept-card">
-                        <h4>Delta</h4>
-                        <p>How much the option price changes for a $1 move in the underlying. A delta of 0.30 means the option gains $0.30 for every $1 the stock moves. Calls have positive delta; puts have negative delta.</p>
+                <div class="edu-stat-grid">
+                    <div class="edu-stat-card green">
+                        <div class="stat-value">&Delta; Delta</div>
+                        <div class="stat-label">Price sensitivity per $1 move</div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>Gamma</h4>
-                        <p>How much delta changes for a $1 move in the underlying. High gamma means delta can change rapidly. <strong>Gamma is the foundation of <a href="/gex/">GEX analysis</a></strong> &mdash; it tells us how market makers need to hedge.</p>
+                    <div class="edu-stat-card blue">
+                        <div class="stat-value">&Gamma; Gamma</div>
+                        <div class="stat-label">Rate of delta change</div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>Theta</h4>
-                        <p>How much value the option loses per day from time decay. A theta of -0.50 means the option loses $0.50 per day. Theta accelerates as expiration approaches &mdash; this is why <a href="/zero-dte/">0DTE strategies</a> are powerful for sellers.</p>
+                    <div class="edu-stat-card red">
+                        <div class="stat-value">&Theta; Theta</div>
+                        <div class="stat-label">Time decay per day</div>
                     </div>
-                    <div class="edu-concept-card">
-                        <h4>Vega</h4>
-                        <p>How much the option price changes for a 1% change in implied volatility. High vega means the option is very sensitive to volatility changes. Rising VIX generally increases all option prices.</p>
+                    <div class="edu-stat-card purple">
+                        <div class="stat-value">V Vega</div>
+                        <div class="stat-label">Volatility sensitivity</div>
+                    </div>
+                </div>
+
+                <div class="edu-compare-grid">
+                    <div class="edu-compare-card">
+                        <div class="compare-header green-bg"><h4>Delta</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Measures:</strong> <span class="val">$1 price change</span></p>
+                            <p>A delta of 0.30 means the option gains $0.30 for every $1 the stock moves. Calls = positive, puts = negative.</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header blue-bg"><h4>Gamma</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Measures:</strong> <span class="val">Delta change rate</span></p>
+                            <p>High gamma = delta changes rapidly. <strong>Foundation of <a href="/gex/">GEX analysis</a></strong> &mdash; tells us how market makers hedge.</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header red-bg"><h4>Theta</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Measures:</strong> <span class="val">Daily time decay</span></p>
+                            <p>Theta of &minus;0.50 = loses $0.50/day. Accelerates near expiration &mdash; why <a href="/zero-dte/">0DTE selling</a> works.</p>
+                        </div>
+                    </div>
+                    <div class="edu-compare-card">
+                        <div class="compare-header purple-bg"><h4>Vega</h4></div>
+                        <div class="compare-body">
+                            <p><strong>Measures:</strong> <span class="val">1% IV change</span></p>
+                            <p>High vega = very sensitive to volatility swings. Rising VIX generally increases all option premiums.</p>
+                        </div>
                     </div>
                 </div>
 
                 <h2 id="options-pricing">Options Pricing</h2>
                 <p>An option's price (premium) has two components:</p>
 
+                <div class="edu-formula">
+                    <span class="f-part gold">Option Premium</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part green">Intrinsic Value</span>
+                    <span class="f-op">+</span>
+                    <span class="f-part red">Extrinsic (Time) Value</span>
+                </div>
+
                 <h3>Intrinsic Value</h3>
                 <p>The amount the option is in-the-money. A call with a strike of 6000 when SPX is at 6050 has $50 of intrinsic value. Out-of-the-money options have zero intrinsic value.</p>
+
+                <div class="edu-formula">
+                    <span class="f-part green">Call Payoff</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part">max(0, Price &minus; Strike)</span>
+                    <span class="f-op">&minus;</span>
+                    <span class="f-part red">Premium Paid</span>
+                </div>
+                <div class="edu-formula">
+                    <span class="f-part red">Put Payoff</span>
+                    <span class="f-eq">=</span>
+                    <span class="f-part">max(0, Strike &minus; Price)</span>
+                    <span class="f-op">&minus;</span>
+                    <span class="f-part red">Premium Paid</span>
+                </div>
 
                 <h3>Extrinsic (Time) Value</h3>
                 <p>Everything beyond intrinsic value. This is the "hope" premium &mdash; the chance that the option could become more valuable before expiration. Extrinsic value is influenced by:</p>
@@ -226,9 +290,50 @@
 
                 <h3>Credit Spread (Vertical Spread)</h3>
                 <p>Sell one option and buy another at a different strike, same expiration. You collect a net credit. If the underlying stays away from your sold strike, you keep the credit as profit.</p>
+
+                <div class="edu-diagram">
+                    <svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bull put credit spread payoff diagram">
+                        <!-- Grid -->
+                        <line x1="60" y1="40" x2="60" y2="230" stroke="#333" stroke-width="1.5"/>
+                        <line x1="60" y1="140" x2="480" y2="140" stroke="#333" stroke-width="1.5"/>
+                        <!-- Y-axis label -->
+                        <text x="20" y="28" fill="#888" font-family="Nunito, sans-serif" font-size="11" text-anchor="middle">P&amp;L</text>
+                        <!-- X-axis label -->
+                        <text x="480" y="158" fill="#888" font-family="Nunito, sans-serif" font-size="11" text-anchor="end">Price &rarr;</text>
+                        <!-- Zero line label -->
+                        <text x="55" y="144" fill="#666" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="end">$0</text>
+                        <!-- Dotted grid lines -->
+                        <line x1="60" y1="80" x2="480" y2="80" stroke="#222" stroke-width="0.5" stroke-dasharray="4"/>
+                        <line x1="60" y1="200" x2="480" y2="200" stroke="#222" stroke-width="0.5" stroke-dasharray="4"/>
+                        <!-- Payoff line - Bull Put Spread -->
+                        <!-- Max loss zone (flat) -->
+                        <line x1="60" y1="200" x2="180" y2="200" stroke="#FF453A" stroke-width="2.5"/>
+                        <!-- Transition zone (angled) -->
+                        <line x1="180" y1="200" x2="310" y2="80" stroke="#FFD60A" stroke-width="2.5"/>
+                        <!-- Max profit zone (flat) -->
+                        <line x1="310" y1="80" x2="480" y2="80" stroke="#2FD068" stroke-width="2.5"/>
+                        <!-- Strike markers -->
+                        <line x1="180" y1="135" x2="180" y2="230" stroke="#FF453A" stroke-width="1" stroke-dasharray="4"/>
+                        <text x="180" y="248" fill="#FF453A" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">Long Put</text>
+                        <text x="180" y="262" fill="#FF453A" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">(lower strike)</text>
+                        <line x1="310" y1="75" x2="310" y2="145" stroke="#2FD068" stroke-width="1" stroke-dasharray="4"/>
+                        <text x="310" y="248" fill="#2FD068" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">Short Put</text>
+                        <text x="310" y="262" fill="#2FD068" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle">(higher strike)</text>
+                        <!-- Profit/loss labels -->
+                        <text x="420" y="72" fill="#2FD068" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Max Profit</text>
+                        <text x="420" y="86" fill="#2FD068" font-family="JetBrains Mono, monospace" font-size="10">(credit received)</text>
+                        <text x="90" y="196" fill="#FF453A" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Max Loss</text>
+                        <text x="90" y="210" fill="#FF453A" font-family="JetBrains Mono, monospace" font-size="10">(width - credit)</text>
+                        <!-- Profit/loss zone shading -->
+                        <rect x="310" y="80" width="170" height="60" fill="#2FD068" opacity="0.06" rx="2"/>
+                        <rect x="60" y="140" width="120" height="60" fill="#FF453A" opacity="0.06" rx="2"/>
+                    </svg>
+                    <p class="diagram-caption">Bull put credit spread payoff at expiration: max profit when price stays above the short put strike, max loss when price falls below the long put strike.</p>
+                </div>
+
                 <ul>
-                    <li><strong>Bull Put Spread</strong> (bullish) &mdash; Sell a put, buy a lower-strike put. Profit if price stays above your sold strike.</li>
-                    <li><strong>Bear Call Spread</strong> (bearish) &mdash; Sell a call, buy a higher-strike call. Profit if price stays below your sold strike.</li>
+                    <li><strong>Bull Put Spread</strong> <span class="edu-pill green">bullish</span> &mdash; Sell a put, buy a lower-strike put. Profit if price stays above your sold strike.</li>
+                    <li><strong>Bear Call Spread</strong> <span class="edu-pill red">bearish</span> &mdash; Sell a call, buy a higher-strike call. Profit if price stays below your sold strike.</li>
                 </ul>
 
                 <h3>Iron Condor (IC)</h3>
@@ -257,12 +362,38 @@
 
                 <h2 id="intellitrade-options">How IntelliTrade Uses Options</h2>
                 <p>IntelliTrade combines multiple layers of analysis to select and execute options trades:</p>
-                <ol>
-                    <li><strong>GEX Analysis</strong> &mdash; Identifies support, resistance, and pinning levels from options market maker positioning (<a href="/gex/">learn more</a>)</li>
-                    <li><strong>Quality Gates</strong> &mdash; Checks VIX levels, ATR (volatility), consolidation, and momentum before allowing any trade (<a href="/auto-trading/">learn more</a>)</li>
-                    <li><strong>Strategy Selection</strong> &mdash; Chooses between Iron Fly, Iron Condor, or directional spreads based on market conditions</li>
-                    <li><strong>Dynamic Exit Management</strong> &mdash; Monitors positions every 30 seconds with trailing stops, breakeven protection, and GEX-based exits (<a href="/auto-trading/">learn more</a>)</li>
-                </ol>
+
+                <div class="edu-flow">
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num blue">1</div>
+                        <div class="edu-flow-content">
+                            <h4>GEX Analysis</h4>
+                            <p>Identifies support, resistance, and pinning levels from options market maker positioning. <a href="/gex/">Learn more</a></p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num gold">2</div>
+                        <div class="edu-flow-content">
+                            <h4>Quality Gates</h4>
+                            <p>Checks VIX, ATR (volatility), consolidation, and momentum before allowing any trade. <a href="/auto-trading/">Learn more</a></p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num purple">3</div>
+                        <div class="edu-flow-content">
+                            <h4>Strategy Selection</h4>
+                            <p>Chooses between Iron Fly, Iron Condor, or directional spreads based on current market conditions.</p>
+                        </div>
+                    </div>
+                    <div class="edu-flow-step">
+                        <div class="edu-flow-num red">4</div>
+                        <div class="edu-flow-content">
+                            <h4>Dynamic Exit Management</h4>
+                            <p>Monitors positions every 30 seconds with trailing stops, breakeven protection, and GEX-based exits. <a href="/auto-trading/">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+
                 <p>All of this happens automatically through the <a href="/auto-trading/">trading agents</a>, with the <a href="/ai-assistant/">AI Brain</a> providing additional market context and suggestions.</p>
             </div>
 
