@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>TradingView: Custom Scripts, Alerts &amp; Webhooks for Automated Trading - IntelliTrade Learn</title>
+<meta name="description" content="Learn how to use TradingView with custom Pine Script indicators, alerts, and webhooks to automate trading. Connect TradingView signals to IntelliTrade for hands-free execution.">
+<meta name="keywords" content="TradingView, Pine Script, trading alerts, webhooks, automated trading, custom indicators, trading automation, IntelliTrade, alert conditions, strategy scripts">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TradingView: Custom Scripts, Alerts &amp; Webhooks for Automated Trading - IntelliTrade Learn">
+<meta property="og:description" content="Learn how to use TradingView with custom Pine Script indicators, alerts, and webhooks to automate trading. Connect TradingView signals to IntelliTrade for hands-free execution.">
+<meta property="og:url" content="https://learn.intellitrade.live/tradingview/">
+<meta property="og:site_name" content="IntelliTrade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TradingView: Custom Scripts, Alerts &amp; Webhooks for Automated Trading - IntelliTrade Learn">
+<meta name="twitter:description" content="Learn how to use TradingView with custom Pine Script indicators, alerts, and webhooks to automate trading.">
+<link rel="canonical" href="https://learn.intellitrade.live/tradingview/">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "TradingView: Custom Scripts, Alerts and Webhooks for Automated Trading",
+    "description": "Learn how to use TradingView with custom Pine Script indicators, alerts, and webhooks to automate trading.",
+    "author": {"@type": "Organization", "name": "IntelliTrade"},
+    "publisher": {"@type": "Organization", "name": "IntelliTrade", "url": "https://intellitrade.live"},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://learn.intellitrade.live/tradingview/"},
+    "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.live/"}
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<header class="learn-header">
+    <a href="/" class="lh-brand">
+        <span class="lh-gem">&#9889;</span>
+        <span class="lh-wordmark">Intelli<span>Trade</span></span>
+    </a>
+    <span class="lh-sep"></span>
+    <span class="lh-title">Education</span>
+    <span class="lh-spacer"></span>
+    <a href="https://intellitrade.live" class="lh-back">&larr; Dashboard</a>
+    <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
+</header>
+<div class="learn-layout">
+    <nav class="learn-sidebar" aria-label="Education topics">
+        <a href="/">Overview</a>
+        <a href="/trading-basics/">Trading Basics</a>
+        <a href="/options/">Options 101</a>
+        <a href="/futures/">Futures</a>
+        <a href="/gex/">GEX</a>
+        <a href="/auto-trading/">Auto Trading</a>
+        <a href="/ai-assistant/">AI Assistant</a>
+        <a href="/zero-dte/">0DTE</a>
+        <a href="/ira-collars/">IRA Collars</a>
+        <a href="/tradingview/" class="active">TradingView</a>
+    </nav>
+    <main class="learn-main">
+        <article class="edu-page">
+            <nav class="edu-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Learn</a>
+                <span class="sep">/</span>
+                <span>TradingView &amp; Webhooks</span>
+            </nav>
+
+            <header class="edu-header">
+                <h1>TradingView: Custom Scripts, Alerts &amp; Webhooks</h1>
+                <p class="edu-subtitle">How to use TradingView's charting platform, write custom Pine Script indicators, set up alerts, and connect webhooks to automate real trades through IntelliTrade.</p>
+                <div class="edu-meta">
+                    <span class="difficulty-badge intermediate">Intermediate</span>
+                    <span>16 min read</span>
+                </div>
+            </header>
+
+            <nav class="edu-toc" aria-label="Table of contents">
+                <h3>In This Article</h3>
+                <ol>
+                    <li><a href="#what-is-tv">What Is TradingView?</a></li>
+                    <li><a href="#charting">Charting and Technical Analysis</a></li>
+                    <li><a href="#pine-script">Pine Script: Custom Indicators</a></li>
+                    <li><a href="#alerts">Setting Up Alerts</a></li>
+                    <li><a href="#webhooks">Webhooks: From Alert to Trade</a></li>
+                    <li><a href="#json-payloads">JSON Alert Payloads</a></li>
+                    <li><a href="#intellitrade-integration">IntelliTrade + TradingView Integration</a></li>
+                    <li><a href="#orb-strategy">Example: Opening Range Breakout Strategy</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                </ol>
+            </nav>
+
+            <div class="edu-body">
+                <h2 id="what-is-tv">What Is TradingView?</h2>
+                <p><strong>TradingView</strong> is the world's most popular charting and social trading platform. It provides real-time charts, technical analysis tools, custom scripting (Pine Script), and a social community of millions of traders.</p>
+                <p>What makes TradingView essential for modern trading:</p>
+                <ul>
+                    <li><strong>Browser-based</strong> &mdash; No downloads needed, works on any device with a web browser</li>
+                    <li><strong>Real-time data</strong> &mdash; Stocks, futures, forex, crypto, and options data from global exchanges</li>
+                    <li><strong>Pine Script</strong> &mdash; A purpose-built programming language for creating custom indicators and strategies</li>
+                    <li><strong>Alerts</strong> &mdash; Set conditions that trigger notifications via email, app, SMS, or webhook</li>
+                    <li><strong>Community</strong> &mdash; Thousands of free public indicators and scripts shared by other traders</li>
+                </ul>
+
+                <div class="edu-callout">
+                    <strong>Free vs. Paid:</strong> TradingView offers a free tier with basic charting and 1 alert. Paid plans (Essential, Plus, Premium) unlock more alerts, indicators per chart, and features. For webhook-based automation, you need at least the <strong>Essential plan</strong> ($12.95/month) or higher.
+                </div>
+
+                <h2 id="charting">Charting and Technical Analysis</h2>
+                <p>TradingView's charting engine is its core strength. You can analyze any instrument with dozens of chart types and hundreds of built-in indicators.</p>
+
+                <h3>Key Chart Features</h3>
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>Chart Types</h4>
+                        <p>Candlestick, Heikin Ashi, Renko, Range, Line, Area, and more. Most traders use candlestick charts for their rich price action information (open, high, low, close).</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Timeframes</h4>
+                        <p>From 1-second to monthly charts. Futures traders typically use 1-min, 5-min, and 15-min for intraday. Swing traders use daily and weekly. You can view multiple timeframes simultaneously.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Drawing Tools</h4>
+                        <p>Trend lines, Fibonacci retracements, horizontal levels, channels, rectangles, and pitchforks. These help identify support, resistance, and price patterns visually.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Built-in Indicators</h4>
+                        <p>200+ indicators: Moving Averages (SMA, EMA), RSI, MACD, Bollinger Bands, VWAP, Volume Profile, ATR, and more. Apply multiple indicators to any chart.</p>
+                    </div>
+                </div>
+
+                <h3>Popular Indicators for Futures Traders</h3>
+                <table>
+                    <tr>
+                        <th>Indicator</th>
+                        <th>Purpose</th>
+                        <th>Typical Use</th>
+                    </tr>
+                    <tr>
+                        <td>VWAP</td>
+                        <td>Volume-weighted average price</td>
+                        <td>Intraday fair value; price above VWAP = bullish bias</td>
+                    </tr>
+                    <tr>
+                        <td>EMA 9/21</td>
+                        <td>Short-term trend direction</td>
+                        <td>EMA crossover signals momentum shifts</td>
+                    </tr>
+                    <tr>
+                        <td>ATR</td>
+                        <td>Average True Range (volatility)</td>
+                        <td>Set stop-loss distances and position sizes</td>
+                    </tr>
+                    <tr>
+                        <td>Volume Profile</td>
+                        <td>Price levels with most trading volume</td>
+                        <td>Identify support/resistance at high-volume nodes</td>
+                    </tr>
+                    <tr>
+                        <td>RSI</td>
+                        <td>Relative Strength Index (momentum)</td>
+                        <td>Overbought (&gt;70) or oversold (&lt;30) conditions</td>
+                    </tr>
+                </table>
+
+                <h2 id="pine-script">Pine Script: Custom Indicators</h2>
+                <p><strong>Pine Script</strong> is TradingView's built-in scripting language. It lets you create custom indicators, strategies, and alerts that go far beyond the built-in tools.</p>
+
+                <h3>What Can You Build?</h3>
+                <ul>
+                    <li><strong>Custom indicators</strong> &mdash; Plot your own calculations, signals, and overlays on charts</li>
+                    <li><strong>Strategy scripts</strong> &mdash; Backtest trading ideas with historical data (entries, exits, P/L)</li>
+                    <li><strong>Alert conditions</strong> &mdash; Define complex conditions that trigger alerts (and webhooks)</li>
+                    <li><strong>Visual tools</strong> &mdash; Draw zones, labels, tables, and annotations on charts programmatically</li>
+                </ul>
+
+                <h3>Pine Script Basics</h3>
+                <p>Pine Script uses a simple, purpose-built syntax. Here's a basic example that plots an EMA crossover signal:</p>
+                <pre>
+//@version=5
+indicator("EMA Crossover Signal", overlay=true)
+
+// Define two EMAs
+fast = ta.ema(close, 9)
+slow = ta.ema(close, 21)
+
+// Plot the EMAs
+plot(fast, "Fast EMA", color=color.blue, linewidth=2)
+plot(slow, "Slow EMA", color=color.orange, linewidth=2)
+
+// Detect crossovers
+bullCross = ta.crossover(fast, slow)
+bearCross = ta.crossunder(fast, slow)
+
+// Plot signals on chart
+plotshape(bullCross, "Buy", shape.triangleup,
+    location.belowbar, color.green, size=size.small)
+plotshape(bearCross, "Sell", shape.triangledown,
+    location.abovebar, color.red, size=size.small)
+
+// Create alert conditions
+alertcondition(bullCross, "EMA Bull Cross",
+    "EMA 9 crossed above EMA 21")
+alertcondition(bearCross, "EMA Bear Cross",
+    "EMA 9 crossed below EMA 21")
+                </pre>
+
+                <div class="edu-callout">
+                    <strong>Learning Pine Script:</strong> TradingView provides comprehensive documentation at their Pine Script Reference. Start with simple indicators and gradually add complexity. The community forums and public script library are excellent resources for learning patterns.
+                </div>
+
+                <h3>Opening Range Breakout (ORB) in Pine Script</h3>
+                <p>IntelliTrade uses a custom Pine Script for the Opening Range Breakout strategy on <a href="/futures/">futures</a>. The script calculates the first N minutes of the trading session (the "opening range") and triggers alerts when price breaks above or below that range:</p>
+                <pre>
+//@version=5
+indicator("ORB - Opening Range Breakout", overlay=true)
+
+// Inputs
+orbMinutes = input.int(3, "ORB Minutes", minval=1, maxval=30)
+sessionStart = input.session("0930-0933", "ORB Session")
+
+// Track opening range high/low
+var float orbHigh = na
+var float orbLow = na
+
+inORB = not na(time(timeframe.period, sessionStart))
+
+if inORB
+    orbHigh := na(orbHigh) ? high : math.max(orbHigh, high)
+    orbLow  := na(orbLow)  ? low  : math.min(orbLow, low)
+
+// Plot ORB levels
+plot(orbHigh, "ORB High", color.green, style=plot.style_line)
+plot(orbLow,  "ORB Low",  color.red,   style=plot.style_line)
+
+// Breakout detection
+longBreak  = ta.crossover(close, orbHigh)
+shortBreak = ta.crossunder(close, orbLow)
+
+alertcondition(longBreak,  "ORB Long",  "Price broke above ORB High")
+alertcondition(shortBreak, "ORB Short", "Price broke below ORB Low")
+                </pre>
+
+                <h2 id="alerts">Setting Up Alerts</h2>
+                <p>Alerts are TradingView's notification system. They monitor your conditions 24/7 on TradingView's servers &mdash; your computer doesn't need to be on.</p>
+
+                <h3>Types of Alert Conditions</h3>
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>Price Alerts</h4>
+                        <p>Trigger when price crosses a specific level. Example: "Alert me when ES crosses above 6050." Simple but powerful for key support/resistance levels.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Indicator Alerts</h4>
+                        <p>Trigger based on built-in indicator conditions. Example: "Alert when RSI crosses below 30." Works with any plotted indicator on your chart.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Custom Script Alerts</h4>
+                        <p>Trigger from <code>alertcondition()</code> in your Pine Script. Most flexible &mdash; define any logic you want. This is what powers IntelliTrade's webhook automation.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Strategy Alerts</h4>
+                        <p>Trigger from strategy entry/exit orders. Example: "Alert on every strategy.entry() call." Useful for backtested strategies you want to automate.</p>
+                    </div>
+                </div>
+
+                <h3>Creating an Alert</h3>
+                <ol>
+                    <li>Right-click on the chart or click the alarm clock icon</li>
+                    <li>Select the <strong>Condition</strong> (price level, indicator, or Pine Script alert)</li>
+                    <li>Configure <strong>trigger</strong> settings (once, once per bar close, every time)</li>
+                    <li>Set <strong>expiration</strong> (alerts auto-expire on free plans; paid plans can run indefinitely)</li>
+                    <li>Choose <strong>notification method</strong>: popup, email, SMS, app notification, or <strong>webhook URL</strong></li>
+                    <li>Write the <strong>alert message</strong> (can include dynamic variables)</li>
+                </ol>
+
+                <div class="edu-callout warning">
+                    <strong>Alert Limits:</strong> Free accounts get 1 active alert. Essential: 20. Plus: 100. Premium: 400. For automated trading with multiple instruments and conditions, you'll likely need Plus or Premium.
+                </div>
+
+                <h2 id="webhooks">Webhooks: From Alert to Trade</h2>
+                <p>A <strong>webhook</strong> is an HTTP request that TradingView sends to a URL when an alert fires. This is the bridge between your TradingView analysis and real trade execution.</p>
+
+                <h3>How Webhooks Work</h3>
+                <pre>
+  TradingView Alert Fires
+        |
+        v
+  TradingView sends HTTP POST
+  to your webhook URL
+        |
+        v
+  Your server receives the request
+  (IntelliTrade webhook bridge)
+        |
+        v
+  Parse the JSON payload
+  (ticker, action, quantity, etc.)
+        |
+        v
+  Execute the trade via broker API
+  (Interactive Brokers, Tradier, etc.)
+        |
+        v
+  Confirm and log the result
+                </pre>
+
+                <h3>Setting Up a Webhook Alert</h3>
+                <ol>
+                    <li>Create your alert condition as normal</li>
+                    <li>In the alert dialog, check the <strong>"Webhook URL"</strong> checkbox</li>
+                    <li>Enter your webhook endpoint URL (e.g., <code>https://your-server.com/webhook</code>)</li>
+                    <li>Write a <strong>JSON message</strong> in the alert body (this is the payload your server receives)</li>
+                </ol>
+
+                <div class="edu-callout danger">
+                    <strong>Security:</strong> Your webhook URL receives trade instructions, so it must be secured. Use HTTPS, include a secret token in the payload, validate all incoming data, and never expose your webhook URL publicly. IntelliTrade's bridge includes authentication and IP filtering for safety.
+                </div>
+
+                <h2 id="json-payloads">JSON Alert Payloads</h2>
+                <p>The alert message body is sent as the webhook's HTTP POST body. You write this in the alert creation dialog using JSON format with TradingView's dynamic variables.</p>
+
+                <h3>Basic Payload Structure</h3>
+                <pre>
+{
+    "action": "buy",
+    "ticker": "{{ticker}}",
+    "price": {{close}},
+    "quantity": 1,
+    "account": "DU12345",
+    "secret": "your-auth-token"
+}
+                </pre>
+
+                <h3>TradingView Dynamic Variables</h3>
+                <table>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Description</th>
+                        <th>Example Output</th>
+                    </tr>
+                    <tr>
+                        <td><code>{{ticker}}</code></td>
+                        <td>Symbol of the chart</td>
+                        <td>MESM2026</td>
+                    </tr>
+                    <tr>
+                        <td><code>{{close}}</code></td>
+                        <td>Current close price</td>
+                        <td>6052.25</td>
+                    </tr>
+                    <tr>
+                        <td><code>{{open}}</code></td>
+                        <td>Current open price</td>
+                        <td>6048.50</td>
+                    </tr>
+                    <tr>
+                        <td><code>{{high}}</code></td>
+                        <td>Current bar high</td>
+                        <td>6055.00</td>
+                    </tr>
+                    <tr>
+                        <td><code>{{low}}</code></td>
+                        <td>Current bar low</td>
+                        <td>6047.75</td>
+                    </tr>
+                    <tr>
+                        <td><code>{{volume}}</code></td>
+                        <td>Current bar volume</td>
+                        <td>15234</td>
+                    </tr>
+                    <tr>
+                        <td><code>{{time}}</code></td>
+                        <td>Bar time (UTC timestamp)</td>
+                        <td>2026-02-27T14:35:00Z</td>
+                    </tr>
+                    <tr>
+                        <td><code>{{exchange}}</code></td>
+                        <td>Exchange name</td>
+                        <td>CME_MINI</td>
+                    </tr>
+                    <tr>
+                        <td><code>{{interval}}</code></td>
+                        <td>Chart timeframe</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+
+                <h3>Advanced Payload Example</h3>
+                <p>A complete webhook payload for an ORB breakout trade with risk management:</p>
+                <pre>
+{
+    "action": "{{strategy.order.action}}",
+    "ticker": "{{ticker}}",
+    "price": {{close}},
+    "order_type": "limit",
+    "quantity": 2,
+    "stop_loss": {{plot("stop")}},
+    "take_profit": {{plot("target")}},
+    "strategy": "ORB_v11",
+    "timeframe": "{{interval}}",
+    "account": "DU12345",
+    "secret": "abc123-your-secret-token"
+}
+                </pre>
+
+                <h2 id="intellitrade-integration">IntelliTrade + TradingView Integration</h2>
+                <p>IntelliTrade's <strong>IBKR Webhook Bridge</strong> is designed to receive TradingView webhook alerts and execute trades through Interactive Brokers. This is how the <a href="/futures/">futures trading</a> system works.</p>
+
+                <h3>Architecture</h3>
+                <pre>
+  TradingView Cloud
+  (Pine Script + Alert)
+        |
+        | HTTPS POST (JSON)
+        v
+  IntelliTrade Webhook Bridge
+  (localhost:5001 or ngrok tunnel)
+        |
+        | Validates auth token
+        | Parses trade parameters
+        | Applies risk checks
+        v
+  Interactive Brokers TWS/Gateway
+  (IB API connection)
+        |
+        | Places order
+        v
+  Exchange (CME, CBOE, etc.)
+        |
+        | Fill confirmation
+        v
+  IntelliTrade Dashboard
+  (trade logged, P/L tracked)
+                </pre>
+
+                <h3>What the Bridge Handles</h3>
+                <ul>
+                    <li><strong>Authentication</strong> &mdash; Validates the secret token in every incoming webhook</li>
+                    <li><strong>Order routing</strong> &mdash; Maps TradingView ticker symbols to IB contract specifications</li>
+                    <li><strong>Risk management</strong> &mdash; Enforces position limits, daily loss limits, and account restrictions</li>
+                    <li><strong>Bracket orders</strong> &mdash; Attaches stop-loss and take-profit orders automatically</li>
+                    <li><strong>Fill tracking</strong> &mdash; Monitors order fills and updates the trade database</li>
+                    <li><strong>Webhook log</strong> &mdash; Records every incoming webhook for debugging and audit</li>
+                </ul>
+
+                <div class="edu-callout success">
+                    <strong>Hands-Free Execution:</strong> Once your TradingView alert and IntelliTrade bridge are configured, the entire flow is automated. Your Pine Script detects a signal, TradingView fires the webhook, the bridge validates and sends it to IB, and the trade is placed &mdash; all in under 2 seconds. You can be away from your computer entirely.
+                </div>
+
+                <h2 id="orb-strategy">Example: Opening Range Breakout Strategy</h2>
+                <p>IntelliTrade's futures module uses a TradingView-based <strong>Opening Range Breakout (ORB)</strong> strategy. Here's how all the pieces fit together:</p>
+
+                <h3>The ORB Flow</h3>
+                <ol>
+                    <li><strong>Market opens at 9:30 AM ET</strong> &mdash; Pine Script starts tracking the first 3 minutes of price action</li>
+                    <li><strong>9:33 AM:</strong> Opening range is defined (high and low of first 3 candles)</li>
+                    <li><strong>Breakout detected:</strong> Price closes above the ORB high (bullish) or below the ORB low (bearish)</li>
+                    <li><strong>Alert fires:</strong> TradingView sends a webhook with action, price, stop, and target</li>
+                    <li><strong>Bridge receives:</strong> Validates the payload and places a bracket order on IB</li>
+                    <li><strong>Order placed:</strong> Entry + stop-loss + take-profit (e.g., 2:1 reward-to-risk)</li>
+                    <li><strong>Trailing stop:</strong> After initial profit target is partially filled, trail the remainder</li>
+                </ol>
+
+                <h3>ORB Alert JSON</h3>
+                <pre>
+{
+    "action": "buy",
+    "ticker": "MES",
+    "price": 6052.25,
+    "stop_loss": 6044.50,
+    "take_profit": 6067.75,
+    "quantity": 2,
+    "strategy": "ORB_v11",
+    "risk_pts": 7.75,
+    "reward_pts": 15.50,
+    "orb_high": 6052.00,
+    "orb_low": 6044.50,
+    "secret": "your-token"
+}
+                </pre>
+
+                <h3>Risk Parameters</h3>
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                        <th>Purpose</th>
+                    </tr>
+                    <tr>
+                        <td>ORB window</td>
+                        <td>First 3 minutes</td>
+                        <td>Defines the breakout range</td>
+                    </tr>
+                    <tr>
+                        <td>Reward:Risk</td>
+                        <td>2:1 minimum</td>
+                        <td>Take profit at 2x the stop distance</td>
+                    </tr>
+                    <tr>
+                        <td>Max daily loss</td>
+                        <td>$500</td>
+                        <td>Stop trading after cumulative loss limit</td>
+                    </tr>
+                    <tr>
+                        <td>Max contracts</td>
+                        <td>2 MES</td>
+                        <td>Position size limit per trade</td>
+                    </tr>
+                    <tr>
+                        <td>Trading window</td>
+                        <td>9:33 AM &ndash; 11:00 AM</td>
+                        <td>ORB signals only valid in first 90 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>Trailing stop</td>
+                        <td>After +$100 profit</td>
+                        <td>Trail stop to lock in gains</td>
+                    </tr>
+                </table>
+
+                <h2 id="best-practices">Best Practices</h2>
+
+                <h3>Pine Script Tips</h3>
+                <ul>
+                    <li><strong>Use <code>barstate.isconfirmed</code></strong> &mdash; Only fire signals on confirmed (closed) bars to avoid false triggers from incomplete candles</li>
+                    <li><strong>Add filters</strong> &mdash; Combine your signal with volume confirmation, trend filters, or time-of-day restrictions</li>
+                    <li><strong>Backtest first</strong> &mdash; Use <code>strategy()</code> mode to test your logic on historical data before going live</li>
+                    <li><strong>Version your scripts</strong> &mdash; Always use <code>//@version=5</code> and keep copies of working versions</li>
+                    <li><strong>Avoid repainting</strong> &mdash; Ensure your indicator doesn't change historical values (test with bar replay)</li>
+                </ul>
+
+                <h3>Webhook Tips</h3>
+                <ul>
+                    <li><strong>Always include a secret token</strong> &mdash; Authenticate every webhook to prevent unauthorized trades</li>
+                    <li><strong>Use "Once Per Bar Close"</strong> &mdash; Avoids multiple signals from the same candle</li>
+                    <li><strong>Test with paper trading</strong> &mdash; Run your webhook pipeline with a paper trading account before going live</li>
+                    <li><strong>Monitor the webhook log</strong> &mdash; IntelliTrade logs every incoming webhook at <code>/futures?tab=webhook-log</code></li>
+                    <li><strong>Set up fallback alerts</strong> &mdash; Send both webhook + email so you're notified if the webhook fails</li>
+                    <li><strong>Use ngrok or a tunnel</strong> &mdash; For local development, use a secure tunnel to expose your webhook bridge to TradingView's servers</li>
+                </ul>
+
+                <div class="edu-callout">
+                    <strong>Getting Started:</strong> If you're new to TradingView, start with the free plan to explore charting and indicators. When you're ready to automate, upgrade to Essential or Plus for webhook support, set up the IntelliTrade IBKR Bridge, and start with paper trading. The <a href="https://intellitrade.live">IntelliTrade dashboard</a> provides setup instructions at the TV Alerts page.
+                </div>
+            </div>
+
+            <nav class="edu-nav-bottom" aria-label="Education navigation">
+                <a href="/ira-collars/" class="edu-nav-link prev">
+                    <span class="nav-direction">Previous</span>
+                    <span class="nav-title">IRA Collars</span>
+                </a>
+                <a href="/" class="edu-nav-link next">
+                    <span class="nav-direction">Back to</span>
+                    <span class="nav-title">Education Hub</span>
+                </a>
+            </nav>
+        </article>
+
+        <div class="site-cta">
+            <h3>Ready to trade smarter?</h3>
+            <p>IntelliTrade automates options and futures trading with GEX analysis, AI insights, and risk management.</p>
+            <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
+        </div>
+        <footer class="site-footer">
+            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+        </footer>
+    </main>
+</div>
+</body>
+</html>

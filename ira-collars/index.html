@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Zero-Cost Collar for IRA: Set-and-Forget Income with Downside Protection - IntelliTrade Learn</title>
+<meta name="description" content="Learn how the zero-cost collar strategy protects your IRA portfolio while allowing up to 20% upside and collecting dividends. A set-and-forget approach to conservative income investing.">
+<meta name="keywords" content="zero cost collar, IRA options strategy, collar strategy, protective put, covered call, dividend income, retirement investing, set and forget, downside protection, IntelliTrade">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zero-Cost Collar for IRA: Set-and-Forget Income with Downside Protection - IntelliTrade Learn">
+<meta property="og:description" content="Learn how the zero-cost collar strategy protects your IRA portfolio while allowing up to 20% upside and collecting dividends. A set-and-forget approach to conservative income investing.">
+<meta property="og:url" content="https://learn.intellitrade.live/ira-collars/">
+<meta property="og:site_name" content="IntelliTrade">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zero-Cost Collar for IRA: Set-and-Forget Income with Downside Protection - IntelliTrade Learn">
+<meta name="twitter:description" content="Learn how the zero-cost collar strategy protects your IRA portfolio while allowing up to 20% upside and collecting dividends.">
+<link rel="canonical" href="https://learn.intellitrade.live/ira-collars/">
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Zero-Cost Collar for IRA: Set-and-Forget Income with Downside Protection",
+    "description": "Learn how the zero-cost collar strategy protects your IRA portfolio while allowing up to 20% upside and collecting dividends.",
+    "author": {"@type": "Organization", "name": "IntelliTrade"},
+    "publisher": {"@type": "Organization", "name": "IntelliTrade", "url": "https://intellitrade.live"},
+    "datePublished": "2026-02-27",
+    "dateModified": "2026-02-27",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://learn.intellitrade.live/ira-collars/"},
+    "isPartOf": {"@type": "WebPage", "name": "IntelliTrade Education Hub", "url": "https://learn.intellitrade.live/"}
+}
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A84FF'/><text x='16' y='23' font-size='20' text-anchor='middle' fill='white'>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="bg-layer"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<header class="learn-header">
+    <a href="/" class="lh-brand">
+        <span class="lh-gem">&#9889;</span>
+        <span class="lh-wordmark">Intelli<span>Trade</span></span>
+    </a>
+    <span class="lh-sep"></span>
+    <span class="lh-title">Education</span>
+    <span class="lh-spacer"></span>
+    <a href="https://intellitrade.live" class="lh-back">&larr; Dashboard</a>
+    <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
+</header>
+<div class="learn-layout">
+    <nav class="learn-sidebar" aria-label="Education topics">
+        <a href="/">Overview</a>
+        <a href="/trading-basics/">Trading Basics</a>
+        <a href="/options/">Options 101</a>
+        <a href="/futures/">Futures</a>
+        <a href="/gex/">GEX</a>
+        <a href="/auto-trading/">Auto Trading</a>
+        <a href="/ai-assistant/">AI Assistant</a>
+        <a href="/zero-dte/">0DTE</a>
+        <a href="/ira-collars/" class="active">IRA Collars</a>
+        <a href="/tradingview/">TradingView</a>
+    </nav>
+    <main class="learn-main">
+        <article class="edu-page">
+            <nav class="edu-breadcrumb" aria-label="Breadcrumb">
+                <a href="/">Learn</a>
+                <span class="sep">/</span>
+                <span>IRA Collars</span>
+            </nav>
+
+            <header class="edu-header">
+                <h1>Zero-Cost Collar for IRA Accounts</h1>
+                <p class="edu-subtitle">How to protect your retirement portfolio while keeping up to 20% upside potential and collecting dividends &mdash; with a strategy you set once and forget.</p>
+                <div class="edu-meta">
+                    <span class="difficulty-badge intermediate">Intermediate</span>
+                    <span>14 min read</span>
+                </div>
+            </header>
+
+            <nav class="edu-toc" aria-label="Table of contents">
+                <h3>In This Article</h3>
+                <ol>
+                    <li><a href="#what-is-collar">What Is a Zero-Cost Collar?</a></li>
+                    <li><a href="#how-it-works">How the Collar Works</a></li>
+                    <li><a href="#why-ira">Why This Strategy Fits IRA Accounts</a></li>
+                    <li><a href="#dividends">The Dividend Advantage</a></li>
+                    <li><a href="#upside">Capturing Up to 20% Upside</a></li>
+                    <li><a href="#set-and-forget">Set It and Forget It</a></li>
+                    <li><a href="#example">Real-World IRA Collar Example</a></li>
+                    <li><a href="#rolling">Rolling and Managing Your Collar</a></li>
+                    <li><a href="#risks">Risks and Considerations</a></li>
+                    <li><a href="#intellitrade-ira">IntelliTrade and IRA Collar Strategies</a></li>
+                </ol>
+            </nav>
+
+            <div class="edu-body">
+                <h2 id="what-is-collar">What Is a Zero-Cost Collar?</h2>
+                <p>A <strong>zero-cost collar</strong> (also called a "costless collar") is an <a href="/options/">options strategy</a> that protects your stock position from large losses while preserving meaningful upside &mdash; and it costs you nothing in net premium.</p>
+                <p>The strategy has three components:</p>
+                <ol>
+                    <li><strong>Own the stock</strong> &mdash; You already hold shares of a quality stock or ETF (e.g., SPY, QQQ, AAPL)</li>
+                    <li><strong>Buy a protective put</strong> &mdash; This sets a floor on your losses (downside protection)</li>
+                    <li><strong>Sell a covered call</strong> &mdash; The premium you receive pays for the put, making it "zero cost"</li>
+                </ol>
+
+                <pre>
+    Covered Call Strike ($130) ─── Upside cap (you sell here)
+          |
+          |   &uarr; You keep gains up to here (~20%)
+          |
+    Current Price ($110) ──────── Your shares
+          |
+          |   &darr; Put protects below here
+          |
+    Protective Put Strike ($100) ── Downside floor (you're protected)
+
+    Net cost: $0 (call premium pays for put)
+    Your range: $100 to $130 (protected + upside)
+                </pre>
+
+                <div class="edu-callout success">
+                    <strong>Why "Zero Cost"?</strong> The premium you collect from selling the call is used to buy the protective put. The two premiums offset each other, so you don't pay anything out of pocket to get downside protection. You give up some upside in exchange for a safety net.
+                </div>
+
+                <h2 id="how-it-works">How the Collar Works</h2>
+                <p>The collar combines two well-known options strategies into one:</p>
+
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>Covered Call (Sell)</h4>
+                        <p>You sell a call option above the current price. This obligates you to sell your shares at the strike price if the stock rises that far. In return, you collect premium. This caps your upside but generates income.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Protective Put (Buy)</h4>
+                        <p>You buy a put option below the current price. This gives you the right to sell your shares at the put strike, no matter how far the stock drops. This is your insurance policy &mdash; it sets a floor on your losses.</p>
+                    </div>
+                </div>
+
+                <h3>The Three Scenarios at Expiration</h3>
+                <table>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Stock Price</th>
+                        <th>What Happens</th>
+                        <th>Your Outcome</th>
+                    </tr>
+                    <tr>
+                        <td>Stock rises above call strike</td>
+                        <td>Above $130</td>
+                        <td>Shares called away at $130</td>
+                        <td>You profit ~18% (capped)</td>
+                    </tr>
+                    <tr>
+                        <td>Stock stays in range</td>
+                        <td>$100&ndash;$130</td>
+                        <td>Both options expire worthless</td>
+                        <td>You keep shares + any gains</td>
+                    </tr>
+                    <tr>
+                        <td>Stock drops below put strike</td>
+                        <td>Below $100</td>
+                        <td>Put protects you at $100</td>
+                        <td>Max loss capped at ~9%</td>
+                    </tr>
+                </table>
+
+                <h2 id="why-ira">Why This Strategy Fits IRA Accounts</h2>
+                <p>The zero-cost collar is one of the best strategies for retirement accounts. Here's why:</p>
+
+                <h3>1. Capital Preservation is Priority #1</h3>
+                <p>In an IRA, you can't easily replace lost capital. Unlike a brokerage account where you can deposit more funds, IRA contributions are capped ($7,000/year for 2026, $8,000 if over 50). A 40% market drawdown in an unprotected portfolio could take years to recover. The collar's protective put ensures your worst case is known and limited.</p>
+
+                <h3>2. No Naked Options Required</h3>
+                <p>IRAs don't allow <a href="/options/">naked option selling</a> or margin-based strategies. The collar is fully covered:</p>
+                <ul>
+                    <li>The call is "covered" because you own the underlying shares</li>
+                    <li>The put is "protective" because it hedges shares you already hold</li>
+                    <li>No margin is needed &mdash; this is a Level 1 or Level 2 options strategy</li>
+                </ul>
+
+                <h3>3. Tax-Deferred Growth</h3>
+                <p>In a Traditional IRA or Roth IRA, the call premium you collect and any gains from rolling the collar are <strong>not taxed</strong> until withdrawal (Traditional) or are <strong>tax-free</strong> forever (Roth). This lets you compound the strategy's returns without tax drag.</p>
+
+                <div class="edu-callout">
+                    <strong>IRA Compatibility:</strong> Most brokers (Schwab, Fidelity, Interactive Brokers, TD Ameritrade) allow covered calls and protective puts in IRA accounts. You typically need Level 1 or Level 2 options approval, which requires a simple application.
+                </div>
+
+                <h3>4. Sleep-at-Night Factor</h3>
+                <p>Retirement money causes anxiety. Watching your IRA drop 30% in a bear market is stressful. The collar lets you stay invested in equities (capturing long-term growth and dividends) while knowing your downside is capped. You literally set it and forget it.</p>
+
+                <h2 id="dividends">The Dividend Advantage</h2>
+                <p>One of the most underrated benefits of the collar strategy: <strong>you keep all the dividends</strong>.</p>
+
+                <h3>Why Dividends Matter in a Collar</h3>
+                <p>Since you still own the underlying shares, you continue to receive quarterly dividend payments. This provides cash flow on top of your collar protection:</p>
+
+                <table>
+                    <tr>
+                        <th>ETF / Stock</th>
+                        <th>Dividend Yield</th>
+                        <th>Annual Dividend on $100K</th>
+                        <th>Quarterly Payment</th>
+                    </tr>
+                    <tr>
+                        <td>SPY (S&amp;P 500)</td>
+                        <td>~1.3%</td>
+                        <td>$1,300</td>
+                        <td>$325</td>
+                    </tr>
+                    <tr>
+                        <td>QQQ (Nasdaq 100)</td>
+                        <td>~0.6%</td>
+                        <td>$600</td>
+                        <td>$150</td>
+                    </tr>
+                    <tr>
+                        <td>SCHD (Div. Growth)</td>
+                        <td>~3.5%</td>
+                        <td>$3,500</td>
+                        <td>$875</td>
+                    </tr>
+                    <tr>
+                        <td>AAPL</td>
+                        <td>~0.5%</td>
+                        <td>$500</td>
+                        <td>$125</td>
+                    </tr>
+                    <tr>
+                        <td>JNJ</td>
+                        <td>~3.2%</td>
+                        <td>$3,200</td>
+                        <td>$800</td>
+                    </tr>
+                </table>
+
+                <div class="edu-callout success">
+                    <strong>Total Return:</strong> With a collar on a dividend-paying stock, your total return comes from three sources: (1) stock appreciation up to the call strike, (2) dividend income, and (3) any residual premium if the call is worth more than the put. In a Roth IRA, all of this is tax-free.
+                </div>
+
+                <h3>Dividends and Early Assignment</h3>
+                <p>One risk to be aware of: if you sell a covered call that is in-the-money near the ex-dividend date, the call buyer may exercise early to capture the dividend. To avoid this:</p>
+                <ul>
+                    <li>Set your call strike well above the current price (out-of-the-money)</li>
+                    <li>Choose expirations that don't span major ex-dividend dates, or</li>
+                    <li>Use index options (SPX) which are cash-settled and can't be early-exercised</li>
+                </ul>
+
+                <h2 id="upside">Capturing Up to 20% Upside</h2>
+                <p>The key to keeping meaningful upside is choosing the right call strike. The further out-of-the-money you place the call, the more upside you retain:</p>
+
+                <table>
+                    <tr>
+                        <th>Call Strike (% Above Current)</th>
+                        <th>Upside Retained</th>
+                        <th>Call Premium</th>
+                        <th>Put Protection You Can Afford</th>
+                    </tr>
+                    <tr>
+                        <td>5% above</td>
+                        <td>5%</td>
+                        <td>High ($4-6)</td>
+                        <td>Strong (put at -3%)</td>
+                    </tr>
+                    <tr>
+                        <td>10% above</td>
+                        <td>10%</td>
+                        <td>Moderate ($2-4)</td>
+                        <td>Moderate (put at -7%)</td>
+                    </tr>
+                    <tr>
+                        <td>15% above</td>
+                        <td>15%</td>
+                        <td>Lower ($1-2.50)</td>
+                        <td>Wider (put at -10%)</td>
+                    </tr>
+                    <tr>
+                        <td>20% above</td>
+                        <td>20%</td>
+                        <td>Small ($0.50-1.50)</td>
+                        <td>Wider (put at -12%)</td>
+                    </tr>
+                </table>
+
+                <p>For IRA accounts focused on long-term growth, a <strong>6-month to 1-year collar</strong> with the call 15-20% above current price is ideal. This gives the stock room to grow while still generating enough call premium to pay for your put protection.</p>
+
+                <div class="edu-callout">
+                    <strong>The Sweet Spot:</strong> A 6-month collar with the call ~15% above and the put ~8% below current price typically costs zero or near-zero in net premium. You participate in up to 15% of gains while limiting your maximum loss to 8%. Add 1-2% in dividends for the period and your worst-case scenario is a modest -6% to -7%.
+                </div>
+
+                <h2 id="set-and-forget">Set It and Forget It</h2>
+                <p>Unlike active trading strategies like <a href="/zero-dte/">0DTE options</a> that require daily monitoring, the IRA collar is designed to be hands-off:</p>
+
+                <h3>The Set-and-Forget Timeline</h3>
+                <ol>
+                    <li><strong>Day 1:</strong> Buy 100 shares of SPY (or already own them). Sell a 6-month covered call 15% above current price. Buy a 6-month protective put 8% below current price.</li>
+                    <li><strong>Months 1-5:</strong> Do nothing. Collect dividends. Your position is protected regardless of market conditions.</li>
+                    <li><strong>Month 6:</strong> At expiration, evaluate and roll to a new collar if desired.</li>
+                </ol>
+
+                <h3>Why It Works for Busy People</h3>
+                <ul>
+                    <li><strong>No daily monitoring needed</strong> &mdash; Protection is automatic via the put</li>
+                    <li><strong>No stop losses to manage</strong> &mdash; The put IS your stop loss, built into the position</li>
+                    <li><strong>No emotional decisions</strong> &mdash; You can't panic-sell because your downside is defined</li>
+                    <li><strong>Works in any market</strong> &mdash; Bull market: you capture gains. Bear market: put protects. Sideways: you collect dividends.</li>
+                    <li><strong>Time commitment:</strong> ~30 minutes every 3-6 months to roll the collar</li>
+                </ul>
+
+                <div class="edu-callout warning">
+                    <strong>One Adjustment Required:</strong> When your collar approaches expiration, you need to decide whether to (1) let it expire and set up a new one, (2) roll both legs to new strikes and expiration, or (3) close the collar entirely. This "roll date" is the only time you need to take action.
+                </div>
+
+                <h2 id="example">Real-World IRA Collar Example</h2>
+                <p>Let's walk through a concrete example using SPY in a Roth IRA:</p>
+
+                <h3>Setup (January 2026)</h3>
+                <table>
+                    <tr>
+                        <th>Component</th>
+                        <th>Details</th>
+                        <th>Cost / Credit</th>
+                    </tr>
+                    <tr>
+                        <td>Own 100 shares SPY</td>
+                        <td>Bought at $590</td>
+                        <td>$59,000 (already held)</td>
+                    </tr>
+                    <tr>
+                        <td>Sell 1 SPY Jul 680 Call</td>
+                        <td>15.3% above current price</td>
+                        <td>+$8.50 credit ($850)</td>
+                    </tr>
+                    <tr>
+                        <td>Buy 1 SPY Jul 545 Put</td>
+                        <td>7.6% below current price</td>
+                        <td>-$8.20 debit ($820)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Net cost</strong></td>
+                        <td></td>
+                        <td><strong>+$0.30 credit ($30)</strong></td>
+                    </tr>
+                </table>
+
+                <h3>Outcome Scenarios (July 2026 Expiration)</h3>
+
+                <div class="edu-concept-grid">
+                    <div class="edu-concept-card">
+                        <h4>Bull Case: SPY at $700</h4>
+                        <p><strong>Gain: +$9,000 (15.3%)</strong><br>Shares called away at $680. You keep the $90/share gain ($680 - $590). Plus ~$5 in dividends over 6 months. Put expires worthless.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Moderate Case: SPY at $640</h4>
+                        <p><strong>Gain: +$5,000 (8.5%)</strong><br>Both options expire worthless. You keep your shares at $640, up $50/share. Plus dividends. No cap reached, no protection needed.</p>
+                    </div>
+                    <div class="edu-concept-card">
+                        <h4>Bear Case: SPY at $500</h4>
+                        <p><strong>Loss: -$4,500 (7.6%)</strong><br>Put protects you at $545. Even though SPY dropped $90/share, your maximum loss is $45/share ($590 - $545). Without the collar, you'd be down $9,000 (15.3%).</p>
+                    </div>
+                </div>
+
+                <div class="edu-callout success">
+                    <strong>Notice the Asymmetry:</strong> Your maximum upside is +15.3% ($9,000), while your maximum downside is -7.6% ($4,500). This is roughly a 2:1 reward-to-risk ratio &mdash; and you paid $0 for this protection. Add approximately $500 in dividends over 6 months and your risk-adjusted return is even better.
+                </div>
+
+                <h2 id="rolling">Rolling and Managing Your Collar</h2>
+                <p>When your collar approaches expiration, you have several options:</p>
+
+                <h3>Rolling Forward</h3>
+                <p>The most common approach: close the expiring collar and open a new one at updated strikes. This is typically done 1-2 weeks before expiration when the remaining time value is minimal.</p>
+                <ol>
+                    <li>Buy back the short call (usually cheap if stock is below the strike)</li>
+                    <li>Sell the protective put (collect any remaining value)</li>
+                    <li>Open a new collar at updated strikes for the next 3-6 months</li>
+                </ol>
+
+                <h3>Rolling Up (After a Rally)</h3>
+                <p>If the stock has risen significantly and the call is now in-the-money:</p>
+                <ul>
+                    <li>Let the shares be called away at the strike (you keep the full gain)</li>
+                    <li>Rebuy shares at the new higher price</li>
+                    <li>Set up a fresh collar from the new price level</li>
+                </ul>
+
+                <h3>Rolling Down (After a Decline)</h3>
+                <p>If the stock has declined and the put is protecting you:</p>
+                <ul>
+                    <li>Exercise the put to sell at the put strike (locking in your protected price)</li>
+                    <li>Rebuy shares at the lower market price (or wait for further decline)</li>
+                    <li>Set up a new collar at the new cost basis</li>
+                </ul>
+
+                <h2 id="risks">Risks and Considerations</h2>
+                <p>The collar is a conservative strategy, but it's not without trade-offs:</p>
+
+                <h3>Key Risks</h3>
+                <ul>
+                    <li><strong>Upside cap</strong> &mdash; If the stock surges 40%, you only capture gains up to your call strike. This is the cost of protection.</li>
+                    <li><strong>Opportunity cost</strong> &mdash; In a strong bull market, an unprotected position outperforms. However, you can't predict bull vs. bear in advance.</li>
+                    <li><strong>Early assignment risk</strong> &mdash; Near ex-dividend dates, your short call may be exercised early. Manageable with proper strike selection.</li>
+                    <li><strong>Collar gap</strong> &mdash; The space between your current price and put strike is your unprotected zone. Keep this manageable (5-10%).</li>
+                    <li><strong>Liquidity</strong> &mdash; Choose liquid underlying stocks/ETFs (SPY, QQQ, AAPL) for tight bid-ask spreads on the options.</li>
+                </ul>
+
+                <div class="edu-callout danger">
+                    <strong>Not a Complete Hedge:</strong> The collar protects against large declines, but you still absorb the loss between your purchase price and put strike. If you bought at $590 and the put is at $545, you accept up to $45/share of loss. This is the trade-off for keeping 15-20% of upside.
+                </div>
+
+                <h3>Who Should NOT Use Collars</h3>
+                <ul>
+                    <li>Traders who want unlimited upside potential</li>
+                    <li>Very short-term traders (the collar is a multi-month position)</li>
+                    <li>Those holding fewer than 100 shares of the underlying (options require 100-share lots)</li>
+                </ul>
+
+                <h2 id="intellitrade-ira">IntelliTrade and IRA Collar Strategies</h2>
+                <p>IntelliTrade's platform supports collar strategy management for IRA accounts:</p>
+
+                <ul>
+                    <li><strong>Collar builder</strong> &mdash; Finds optimal call and put strikes to achieve zero-cost or near-zero-cost collars</li>
+                    <li><strong>Roll alerts</strong> &mdash; Notifies you when your collar is approaching expiration and suggests new strikes</li>
+                    <li><strong>Dividend tracking</strong> &mdash; Tracks dividend income alongside collar returns for total return reporting</li>
+                    <li><strong>Risk visualization</strong> &mdash; Shows your upside cap, downside protection, and break-even levels graphically</li>
+                    <li><strong>IRA compliance</strong> &mdash; Only generates strategies permitted in IRA accounts (no naked options, no margin)</li>
+                </ul>
+
+                <p>The collar strategy pairs well with IntelliTrade's other capabilities &mdash; use <a href="/zero-dte/">0DTE strategies</a> for daily income in a separate margin account, while your IRA sits protected with collars generating steady, protected growth.</p>
+            </div>
+
+            <nav class="edu-nav-bottom" aria-label="Education navigation">
+                <a href="/zero-dte/" class="edu-nav-link prev">
+                    <span class="nav-direction">Previous</span>
+                    <span class="nav-title">0DTE Strategies</span>
+                </a>
+                <a href="/tradingview/" class="edu-nav-link next">
+                    <span class="nav-direction">Next</span>
+                    <span class="nav-title">TradingView &amp; Webhooks</span>
+                </a>
+            </nav>
+        </article>
+
+        <div class="site-cta">
+            <h3>Ready to trade smarter?</h3>
+            <p>IntelliTrade automates options and futures trading with GEX analysis, AI insights, and risk management.</p>
+            <a href="https://intellitrade.live/">Learn More at IntelliTrade.live &rarr;</a>
+        </div>
+        <footer class="site-footer">
+            &copy; 2026 <a href="https://intellitrade.live/">IntelliTrade</a>. Free trading education for everyone.
+        </footer>
+    </main>
+</div>
+</body>
+</html>
