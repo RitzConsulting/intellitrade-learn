@@ -58,6 +58,16 @@
     </a>
     <span class="lh-sep"></span>
     <span class="lh-title">Education</span>
+    <div class="learn-theme-switcher">
+        <button class="learn-theme-btn" data-theme="light" title="Light">&#9788;</button>
+        <button class="learn-theme-btn" data-theme="dark" title="Dark">&#9790;</button>
+        <button class="learn-theme-btn" data-theme="system" title="System">&#9881;</button>
+        <span class="learn-theme-divider"></span>
+        <button class="learn-theme-btn" data-theme="space" title="Space">&#127756;</button>
+        <button class="learn-theme-btn" data-theme="office" title="Office">&#128188;</button>
+        <button class="learn-theme-btn" data-theme="beach" title="Beach">&#127754;</button>
+        <button class="learn-theme-btn" data-theme="travel" title="Travel">&#9992;</button>
+    </div>
     <span class="lh-spacer"></span>
     <a href="https://intellitrade.live" class="lh-back">&larr; Dashboard</a>
     <a href="https://intellitrade.live/" class="lh-cta">Get IntelliTrade</a>
@@ -567,5 +577,20 @@
         </footer>
     </main>
 </div>
+<script>
+(function(){
+  var K='it-theme';
+  function sys(){return matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';}
+  function apply(m){
+    var r=m==='system'?sys():m;
+    document.documentElement.setAttribute('data-theme',r);
+    localStorage.setItem(K,m);
+    document.querySelectorAll('.learn-theme-btn').forEach(function(b){b.classList.toggle('active',b.dataset.theme===m);});
+  }
+  apply(localStorage.getItem(K)||'dark');
+  document.addEventListener('click',function(e){var b=e.target.closest('.learn-theme-btn');if(b)apply(b.dataset.theme);});
+  matchMedia('(prefers-color-scheme:light)').addEventListener('change',function(){if(localStorage.getItem(K)==='system')apply('system');});
+})();
+</script>
 </body>
 </html>
